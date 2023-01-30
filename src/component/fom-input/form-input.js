@@ -1,12 +1,18 @@
 import React from "react";
-function FormInput({labelName,...otherProps}){
+import "./form-input.scss"
+function FormInput({labelName,optionInput}){
 
+    console.log("length",optionInput.value.length)
     return(
-        <div>
-            <label>
-                {labelName}
-            </label>
-            <input {...otherProps} />
+        <div className="group">
+            <input className="form-input" {...optionInput} />
+            {labelName &&
+                        <label className={`${optionInput.value.length ? 'shrink':''} form-input-label`}>
+                        {labelName}
+                    </label>
+            }
+
+            
         </div>
     )
 

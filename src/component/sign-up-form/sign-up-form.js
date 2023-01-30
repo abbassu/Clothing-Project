@@ -2,6 +2,7 @@ import { async } from "@firebase/util";
 import React from "react";
 import { useState } from "react";
 import { createAuthUserDocumentFromAuth,createUserDocumentFromAuth } from "../../utils/firebase/firebase";
+import FormInput from "../fom-input/form-input";
 
 const defaultformFields={
     displayName:'',
@@ -56,17 +57,58 @@ console.log("formfields",formFields)
         <div>
             <h1> Sign up with your email and password </h1>
             <form action="" onSubmit={handleSubmit}>
-                <label htmlFor="">Display Name</label>
-                <input type="text" required  onChange={handleChange} name="displayName" value={displayName}/>
+                
+                <FormInput 
+                    labelName="Display Name" 
+                    optionInput={
+                        {
+                            type:"text",
+                            required:true,
+                            onChange:handleChange,
+                            name:"displayName",
+                            value:displayName
+                        }
+                    }
+                />
 
-                <label htmlFor="">Email</label>
-                <input type="email" required onChange={handleChange} name="email" value={email}/>
+                <FormInput 
+                    labelName="Email" 
+                    optionInput={
+                        {
+                            type:"email",
+                            required:true,
+                            onChange:handleChange,
+                            name:"email",
+                            value:email
+                        }
+                    }
+                />
 
-                <label htmlFor="">Password</label>
-                <input type="password" required onChange={handleChange} name="password" value={password }/>
+                <FormInput 
+                    labelName="Password" 
+                    optionInput={
+                        {
+                            type:"password",
+                            required:true,
+                            onChange:handleChange,
+                            name:"password",
+                            value:password
+                        }
+                    }
+                />
 
-                <label htmlFor="">Confirm Password</label>
-                <input type="password" required onChange={handleChange} name="confirmPassword" value={confirmPassword}/>
+                <FormInput 
+                    labelName="Confirm Password" 
+                    optionInput={
+                        {
+                            type:"password",
+                            required:true,
+                            onChange:handleChange,
+                            name:"confirmPassword",
+                            value:confirmPassword
+                        }
+                    }
+                />
 
                 <button type="submit">Sign up</button>
             </form>
