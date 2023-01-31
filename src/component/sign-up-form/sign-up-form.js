@@ -3,6 +3,8 @@ import React from "react";
 import { useState } from "react";
 import { createAuthUserDocumentFromAuth,createUserDocumentFromAuth } from "../../utils/firebase/firebase";
 import FormInput from "../fom-input/form-input";
+import "./sign-up-form.scss"
+import Button from "../button/button";
 
 const defaultformFields={
     displayName:'',
@@ -54,8 +56,9 @@ console.log("formfields",formFields)
 
 
     return(
-        <div>
-            <h1> Sign up with your email and password </h1>
+        <div className="sign-up-container">
+            <span> Sign up with your email and password </span>
+            <h2>Don't jave an account ?</h2>
             <form action="" onSubmit={handleSubmit}>
                 
                 <FormInput 
@@ -110,7 +113,7 @@ console.log("formfields",formFields)
                     }
                 />
 
-                <button type="submit">Sign up</button>
+                <Button buttonType="" type="submit">Sign up</Button>
             </form>
         </div>
     )
