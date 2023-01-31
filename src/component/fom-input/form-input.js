@@ -1,7 +1,6 @@
 import React from "react";
 import "./form-input.scss"
 function FormInput({labelName,optionInput}){
-
     console.log("length",optionInput.value.length)
     return(
         <div className="group">
@@ -11,8 +10,6 @@ function FormInput({labelName,optionInput}){
                         {labelName}
                     </label>
             }
-
-            
         </div>
     )
 

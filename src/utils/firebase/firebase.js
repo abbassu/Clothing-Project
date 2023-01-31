@@ -1,7 +1,10 @@
 import React from "react";
 
 import {initializeApp} from 'firebase/app'
-import { getAuth, signInWithPopup, GoogleAuthProvider,createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithPopup,
+   GoogleAuthProvider,
+   createUserWithEmailAndPassword,
+   signInWithEmailAndPassword } from "firebase/auth";
 import {getFirestore,doc,setDoc,getDoc} from "firebase/firestore"
 
 
@@ -28,14 +31,15 @@ export const db = getFirestore();
 
 
 export const createAuthUserDocumentFromAuth = async(email,password,)=>{
-
   if(!email || !password) return;
-
   return await createUserWithEmailAndPassword(auth,email,password)
-
-  
-
 }
+
+export const signinwauthithemailandpassword = async(email,password,)=>{
+  if(!email || !password) return;
+  return await signInWithEmailAndPassword(auth,email,password)
+}
+
 
 
 export const createUserDocumentFromAuth = async (userAuth,additionalobject={}) => {
