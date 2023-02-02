@@ -1,61 +1,63 @@
 import { async } from "@firebase/util";
 import React from "react";
-import { useState } from "react";
+import { useState,useContext } from "react";
 import { createAuthUserDocumentFromAuth,createUserDocumentFromAuth,signinwithgooglepopup ,signinwauthithemailandpassword} from "../../utils/firebase/firebase";
 import FormInput from "../fom-input/form-input";
 import "./sign-in-form.scss"
 import Button from "../button/button";
+import { Global } from "../contexte/usercontext";
 
 const defaultformFields={
     email:'',
     password:'',
 }
 
-
 function SignInForm(){
-    const [formFields,setformfields]=useState(defaultformFields)
 
+    const {currentUser,setCurrentUser}=useContext(Global)
+    console.log("currentUser",currentUser)
+    
+    const [formFields,setformfields]=useState(defaultformFields)
     function resetForm(){
         setformfields(defaultformFields)
     }
-
-
     const signinwithgoogle= async()=>{
         const {user} =await signinwithgooglepopup();
         createUserDocumentFromAuth(user)
     }
-
     function handleChange(event){
         const {name,value }=event.target
         setformfields({...formFields,[name]:value})
     }
-
     async function handleSubmit(event){
         event.preventDefault()
         try{
-            const respons = await signinwauthithemailandpassword(email,password)
-            console.log("rrrrr",respons)
+            const {user} = await signinwauthithemailandpassword(email,password)
+            console.log("user-------",user)
+        setCurrentUser(user)
+        // 
             resetForm()
         }catch(error){
+            switch(error.code){
+                case "auth/user-not-found":
+                    alert("no user associated with this email")
+                    break;
+
+                case "auth/wrong-password":
+                    alert("incorrect password for email")
+                    break
+                default:
+                    console.log(error)
+
+                }
         }
     }
-
-
-console.log("formfields",formFields)
-
     const{email,password}=formFields
-
-    console.log(",",email,",",password,",")
-
-
     return(
         <div className="sign-up-container">
             <span> Sign in with your email and password </span>
             <h2>Don't jave an account ?</h2>
             <form action="" onSubmit={handleSubmit}>
-                
-
-
                 <FormInput 
                     labelName="Email" 
                     optionInput={
@@ -68,7 +70,6 @@ console.log("formfields",formFields)
                         }
                     }
                 />
-
                 <FormInput 
                     labelName="Password" 
                     optionInput={
@@ -81,15 +82,10 @@ console.log("formfields",formFields)
                         }
                     }
                 />
-
-
-
                 <div className="buttons-container">
                     <Button buttonType="" type="submit">Sign in</Button>
-                    <Button buttonType="google" onClick={signinwithgoogle} type="submit">Google Sign in</Button>
-                
+                    <Button buttonType="google" onClick={signinwithgoogle} type="button">Google Sign in</Button>
                 </div>
-                
             </form>
         </div>
     )

@@ -1,13 +1,11 @@
 import React from "react";
-import { signinwithgooglepopup } from "../../../utils/firebase/firebase";
-import { createUserDocumentFromAuth } from "../../../utils/firebase/firebase";
 import SignUpForm from "../../sign-up-form/sign-up-form";
 import SignInForm from "../../sign-in-form/sign-in-form";
+import "./authentication.scss"
 function Authentication(){
 
     return(
-        <div>
-            {/* <button onClick={loggoogleuser}> aaaaaaa</button> */}
+        <div className="authentication-container">
             <SignInForm/>
             <SignUpForm/>
         </div>

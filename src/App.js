@@ -19,19 +19,18 @@ function App() {
     )
   }
   return (
-    <BrowserRouter>
-    <Routes>
-      <Route path='/' element={<Navbar/>} >
-        <Route index element={  <CategoriesContainer/>} />
-        <Route path='shop' element={  <Shop/>} />
-        <Route path='auth' element={  <Authentication/>} />
+
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Navbar/>} >
+          <Route index element={  <CategoriesContainer/>} />
+          <Route path='shop' element={  <Shop/>} />
+          <Route path='auth' element={  <Authentication/>} />
+        </Route>
+      </Routes>
+      </BrowserRouter>
 
 
-      </Route>
-
-    </Routes>
-        
-    </BrowserRouter>
 
   );
 }
