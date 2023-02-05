@@ -24,6 +24,7 @@ function SignInForm(){
     const signinwithgoogle= async()=>{
         const {user} =await signinwithgooglepopup();
         createUserDocumentFromAuth(user)
+        setCurrentUser(user)
     }
     function handleChange(event){
         const {name,value }=event.target

@@ -2,13 +2,11 @@ import React from "react";
 
 import {initializeApp} from 'firebase/app'
 import { getAuth, signInWithPopup,
-   GoogleAuthProvider,
-   createUserWithEmailAndPassword,
-   signInWithEmailAndPassword,
-  signOut } from "firebase/auth";
+        GoogleAuthProvider,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+        signOut,onAuthStateChanged } from "firebase/auth";
 import {getFirestore,doc,setDoc,getDoc} from "firebase/firestore"
-
-
 
 const firebaseConfig = {
     apiKey: "AIzaSyC4IHDAnYYcnLRlIbMqiqp5uviFP4q5HsE",
@@ -29,8 +27,6 @@ export const signinwithgooglepopup = ()=> signInWithPopup(auth,provider)
 
 export const db = getFirestore();
 
-
-
 export const createAuthUserDocumentFromAuth = async(email,password,)=>{
   if(!email || !password) return;
   return await createUserWithEmailAndPassword(auth,email,password)
@@ -40,9 +36,10 @@ export const signinwauthithemailandpassword = async(email,password,)=>{
   if(!email || !password) return;
   return await signInWithEmailAndPassword(auth,email,password)
 }
+
 export const SingOUtAuth=()=>signOut(auth)
 
-
+export const onAuthStateChangeFirebase= (callback)=>onAuthStateChanged(auth,callback)
 
 export const createUserDocumentFromAuth = async (userAuth,additionalobject={}) => {
   const userDocRef = doc(db, 'users', userAuth.uid);
@@ -67,3 +64,4 @@ export const createUserDocumentFromAuth = async (userAuth,additionalobject={}) =
   }
   return userDocRef;
 };
+
