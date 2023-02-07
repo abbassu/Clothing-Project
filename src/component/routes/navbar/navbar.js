@@ -7,10 +7,13 @@ import { Global } from "../../contexte/usercontext";
 import { SingOUtAuth } from "../../../utils/firebase/firebase";
 import { async } from "@firebase/util";
 import Cart from "../../cart/cart";
+import CartDropdown from "../../cart-dropdown/cart-dropdown";
+import { CartContext } from "../../contexte/cart";
 // import "./in.css"
 
 function Navbar(){
     const {currentUser,setCurrentUser}=useContext(Global)
+    const {isOpen}=useContext(CartContext)
    async function handleSignOut(){
       const tt= await SingOUtAuth()
       console.log("ttttttttttttttttttttttttttt",tt)
@@ -35,7 +38,8 @@ function Navbar(){
             {/* <Link className="nav-link" to={"auth"}> SIGN IN</Link> */}
             <Cart/>
         </div>
-        
+        {isOpen && <CartDropdown/> }
+         
       </div>
       <Outlet/>
 
