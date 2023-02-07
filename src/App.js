@@ -6,18 +6,12 @@ import CategoriesContainer from './component/categories-container/categories-con
 import { BrowserRouter, Outlet, Route,Routes } from 'react-router-dom';
 import Navbar from './component/routes/navbar/navbar';
 import Authentication from './component/routes/Authentication/Authentication';
-
+import Shop from './component/shop/shop';
 
 function App() {
 
 
-  const Shop = ()=>{
-    return(
-      <div>
-        Shop
-      </div>
-    )
-  }
+
   return (
 
       <BrowserRouter>
