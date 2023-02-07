@@ -6,6 +6,7 @@ import "./navbar.scss"
 import { Global } from "../../contexte/usercontext";
 import { SingOUtAuth } from "../../../utils/firebase/firebase";
 import { async } from "@firebase/util";
+import Cart from "../../cart/cart";
 // import "./in.css"
 
 function Navbar(){
@@ -32,7 +33,7 @@ function Navbar(){
             <span className="nav-link" onClick={handleSignOut}> SIGN OUT</span>:<Link className="nav-link" to={"auth"}> SIGN IN</Link>
             }
             {/* <Link className="nav-link" to={"auth"}> SIGN IN</Link> */}
-            
+            <Cart/>
         </div>
         
       </div>
