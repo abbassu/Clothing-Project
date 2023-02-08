@@ -9,7 +9,7 @@ function CartDropdown(){
 
     return(
         <div className="cart-dropdown-container">
-            <div className="cart-itmes">
+            <div className="cart-items">
                 {cartItems.map((item)=>{
                     return(
                         <CartItem cartitem={item} />
