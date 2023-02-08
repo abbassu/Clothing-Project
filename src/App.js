@@ -7,6 +7,7 @@ import { BrowserRouter, Outlet, Route,Routes } from 'react-router-dom';
 import Navbar from './component/routes/navbar/navbar';
 import Authentication from './component/routes/Authentication/Authentication';
 import Shop from './component/shop/shop';
+import Checkout from './component/routes/checkout/checkout';
 
 
 
@@ -17,13 +18,14 @@ function App() {
   return (
 
       <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Navbar/>} >
-          <Route index element={  <CategoriesContainer/>} />
-          <Route path='shop' element={  <Shop/>} />
-          <Route path='auth' element={  <Authentication/>} />
-        </Route>
-      </Routes>
+        <Routes>
+          <Route path='/' element={<Navbar/>} >
+            <Route index element={  <CategoriesContainer/>} />
+            <Route path='shop' element={  <Shop/>} />
+            <Route path='auth' element={  <Authentication/>} />
+            <Route path='checkout' element={  <Checkout/>} />
+          </Route>
+        </Routes>
       </BrowserRouter>
 
 
