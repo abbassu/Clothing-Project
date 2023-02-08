@@ -10,7 +10,6 @@ import { ProductProvider } from './component/contexte/product';
 import { CartProvider } from './component/contexte/cart';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
     <ProviderContext >
       <ProductProvider>
         <CartProvider>
@@ -18,7 +17,6 @@ root.render(
         </CartProvider>
       </ProductProvider>
     </ProviderContext >
-  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
