@@ -1,0 +1,27 @@
+.category-preview-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    // background-color: red;
+    .title-in-sub {
+      font-size: 55px;
+      margin-bottom: 5px;
+      display: block;
+      width: 100%;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      background-color: rgb(168, 162, 162);
+      border-radius: 10px;
+    }
+  
+    .preview-sub {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 20px;
+      row-gap: 30px;
+      // background-color: yellow;
+      // margin-bottom: 0px;
+    }
+  }
+  

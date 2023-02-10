@@ -8,6 +8,7 @@ import Navbar from './component/routes/navbar/navbar';
 import Authentication from './component/routes/Authentication/Authentication';
 import Shop from './component/shop/shop';
 import Checkout from './component/routes/checkout/checkout';
+import SubCategory from './component/sub-category/sub-category';
 
 
 
@@ -23,6 +24,7 @@ function App() {
             <Route index element={  <CategoriesContainer/>} />
             <Route path='shop' element={  <Shop/>} />
             <Route path='auth' element={  <Authentication/>} />
+            <Route path='subcategory/:title' element={<SubCategory/>}/>
             <Route path='checkout' element={  <Checkout/>} />
           </Route>
         </Routes>
