@@ -1,6 +1,6 @@
 import { async } from "@firebase/util";
 import React, { useEffect } from "react";
-import { useState } from "react";
+import { useState ,useReducer} from "react";
 import { createContext } from "react";
 import { Await } from "react-router-dom";
 import { onAuthStateChangeFirebase } from "../../utils/firebase/firebase";
@@ -11,19 +11,46 @@ export const Global=createContext({
     // setCurrentUser :()=>null
 })
 
-export const ProviderContext=({children})=>{
+export const USER_ACTION_TYPES={
+    SET_CURRENT_USER:"SET_CURRENT_USER"
+}
 
-    console.log("in provider ")
-    // SingOUtAuth()
+const userReducer=(state,action)=>{
+    const {type,payload}=action;
+    switch(type){
+        case USER_ACTION_TYPES.SET_CURRENT_USER:
+            console.log("yyyyyyayyyyyyy",state,"-------------",payload)
+        return{
+            ...state,
+            currentUser:payload
+        }
+        default:
+            throw new Error(`unhandled type ${type} in userReducer`)
+    }
+}
+
+const INITIAL_STATE={
+    currentUser:null
+}
+
+
+export const ProviderContext=({children})=>{
+    const [{currentUser},dispatch]=useReducer(userReducer,INITIAL_STATE)
+
+    console.log("currentUser===========",currentUser)
+
+    const setCurrentUser=(user)=>{
+        console.log("useruseruser",user)
+        dispatch({type:USER_ACTION_TYPES.SET_CURRENT_USER,payload:user})
+    }
+
 
     function before(){
         console.log("in before")
         const  unsubcribe =  onAuthStateChangeFirebase(async(user)=>{
-
             if(user){
         createUserDocumentFromAuth(user)
             }
-
             await setCurrentUser(user)
             console.log("user",user)
         })
@@ -32,15 +59,15 @@ export const ProviderContext=({children})=>{
 
     useEffect(()=>{
         console.log("in effect ")
-
+        before()
 
     },[])
+   
 
-
-    const [currentUser,setCurrentUser]=useState(null)
+    // const [currentUser,setCurrentUser]=useState(null)
     const dd=4444
     const val={currentUser,setCurrentUser,dd}
-    before()
+
 
 
     return <Global.Provider value={val}> {children} </Global.Provider>
