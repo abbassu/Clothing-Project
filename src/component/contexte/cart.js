@@ -42,6 +42,11 @@ const clearCartItem=(cartItems,cartItemToClear)=>{
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 const cartReducer=(state,action)=>{
 
   const {type,payload}=action;
@@ -51,6 +56,13 @@ const cartReducer=(state,action)=>{
         ...state,
         ...payload
       }
+
+    case 'SET_IS_CART_OPEN':
+      return{
+        ...state,
+        isOpen:payload
+      }
+
       default : 
       throw new Error(`unhandled type of ${type} in cartReducer`)
   }
@@ -58,7 +70,7 @@ const cartReducer=(state,action)=>{
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 const INITIAL_STATE={
-  isOpen:true,
+  isOpen:false,
   cartItems:[],
   cartCount:0,
   cartTotal:0,
@@ -84,6 +96,9 @@ export const CartProvider=({children})=>{
     //   setCartTotal(newTotalCount)
     // },[cartItems])
 
+    const setIsOpen=(bool)=>{
+      dispatch({type:"SET_IS_CART_OPEN",payload:bool})
+    }
 
     const updateCartItemsReducer= (newCartItems)=>{
       const newCartCount = newCartItems.reduce((total,item)=> total+item.quantity,0 )
@@ -110,7 +125,7 @@ export const CartProvider=({children})=>{
     }
 
     const value={ isOpen,
-                  setIsOpen:()=>{},
+                  setIsOpen,
                   addItemToCard,
                   cartItems,
                   cartCount,
