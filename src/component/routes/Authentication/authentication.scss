@@ -1,6 +1,24 @@
 .authentication-container{
-    display: flex;
-    justify-content: space-between;
-    width: 900px;
-    margin: 30px auto;
+
+    display: flex; 
+    justify-content: center; 
+    width: 100%; 
+    margin: 30px auto; 
+    gap: 80px; 
+    // background-color: rebeccapurple; 
+    padding: 5px; 
+
+    @media (max-width:700px) {
+        gap: 40px;
+    }
+
+    @media (max-width:520px) {
+        gap: 20px;
+    }
+
+    @media (max-width:460px) {
+        flex-direction: column;
+        
+    }
+
 }

@@ -4,9 +4,8 @@
     margin-bottom: 40px;
     // background-color: red;
     .title-in-sub {
-      font-size: 55px;
-      margin-bottom: 5px;
-      display: block;
+      font-size: 34px;
+      margin-bottom: 25px;
       width: 100%;
       cursor: pointer;
       display: flex;
@@ -14,15 +13,16 @@
       background-color: rgb(168, 162, 162);
       border-radius: 10px;
       align-items: center;
+      padding: 10px;
     }
   
     .preview-sub {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      column-gap: 20px;
-      row-gap: 30px;
-      // background-color: yellow;
-      // margin-bottom: 0px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
   }
   

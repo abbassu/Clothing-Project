@@ -12,7 +12,6 @@ function CartItem({cartitem}){
                     {quantity} X {price}
                 </span>
             </div>
-
         </div>
     )
 }export default CartItem

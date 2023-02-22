@@ -13,10 +13,7 @@ const defaultformFields={
 }
 
 function SignInForm(){
-
     const {currentUser,setCurrentUser}=useContext(Global)
-    console.log("currentUser",currentUser)
-    
     const [formFields,setformfields]=useState(defaultformFields)
     function resetForm(){
         setformfields(defaultformFields)
@@ -33,60 +30,63 @@ function SignInForm(){
         event.preventDefault()
         try{
             const {user} = await signinwauthithemailandpassword(email,password)
-            console.log("user-------",user)
-        setCurrentUser(user)
-        // 
+            setCurrentUser(user)
             resetForm()
         }catch(error){
             switch(error.code){
                 case "auth/user-not-found":
                     alert("no user associated with this email")
                     break;
-
                 case "auth/wrong-password":
                     alert("incorrect password for email")
                     break
                 default:
                     console.log(error)
-
                 }
         }
     }
     const{email,password}=formFields
     return(
-        <div className="sign-up-container">
-            <span> Sign in with your email and password </span>
-            <h2>Don't jave an account ?</h2>
-            <form action="" onSubmit={handleSubmit}>
-                <FormInput 
-                    labelName="Email" 
-                    optionInput={
-                        {
-                            type:"email",
-                            required:true,
-                            onChange:handleChange,
-                            name:"email",
-                            value:email
-                        }
+    <div className="sign-up-container">
+            
+        <span> Sign in with your email and password </span>
+
+        <h2>Don't jave an account ?</h2>
+
+        <form action="" onSubmit={handleSubmit}>
+
+            <FormInput 
+                labelName="Email" 
+                optionInput={
+                    {
+                        type:"email",
+                        required:true,
+                        onChange:handleChange,
+                        name:"email",
+                        value:email
                     }
-                />
-                <FormInput 
-                    labelName="Password" 
-                    optionInput={
-                        {
-                            type:"password",
-                            required:true,
-                            onChange:handleChange,
-                            name:"password",
-                            value:password
-                        }
+                }
+            />
+
+            <FormInput 
+                labelName="Password" 
+                optionInput={
+                    {
+                        type:"password",
+                        required:true,
+                        onChange:handleChange,
+                        name:"password",
+                        value:password
                     }
-                />
-                <div className="buttons-container">
-                    <Button buttonType="" type="submit">Sign in</Button>
-                    <Button buttonType="google" onClick={signinwithgoogle} type="button">Google Sign in</Button>
-                </div>
-            </form>
-        </div>
+                }
+            />
+
+            <div className="buttons-container">
+                <Button buttonType="" type="submit">Sign in</Button>
+                <Button buttonType="google" onClick={signinwithgoogle} type="button">Google Sign in</Button>
+            </div>
+
+        </form>
+    </div>
     )
 }export default SignInForm

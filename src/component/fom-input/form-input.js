@@ -5,11 +5,13 @@ function FormInput({labelName,optionInput}){
     return(
         <div className="group">
             <input className="form-input" {...optionInput} />
-            {labelName &&
-                        <label className={`${optionInput.value.length ? 'shrink':''} form-input-label`}>
-                        {labelName}
-                    </label>
-            }
+                {labelName &&
+                <label 
+                    className={`${optionInput.value.length ? 'shrink':''}
+                    form-input-label`}>
+                    {labelName}
+                </label>
+                }
         </div>
     )
 

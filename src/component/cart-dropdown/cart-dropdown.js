@@ -6,10 +6,11 @@ import { useContext } from "react";
 import { CartContext } from "../contexte/cart";
 import { useNavigate } from "react-router-dom";
 function CartDropdown(){
-    const {cartItems}= useContext(CartContext)
+    const {cartItems,setIsOpen}= useContext(CartContext)
     const navigate=useNavigate()
 
     const goToCheckout=()=>{
+        setIsOpen(false)
         navigate("/checkout")
     }
 
@@ -22,7 +23,6 @@ function CartDropdown(){
                     )
                 })}
             </div>
-
             <Button buttonType="inverted" onClick={goToCheckout}>GO TO CHECKOUT</Button>
         </div>
     )

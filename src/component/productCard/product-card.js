@@ -12,16 +12,14 @@ function ProductCard({product}){
         console.log("fffff")
     }
 
-    // console.log("product : ",product)
     return(
-        <div className="product-card-container" onClick={()=>addItemToCard(product)}
-        >
+        <div className="product-card-container" >
                 <img src={imageUrl} alt="" />
                 <div className="footer">
                     <span className="name">{name}</span>
                     <span className="cost">{price}</span>
                 </div>
-            <Button buttonType="inverted">ADD TO CARD</Button>
+            <Button buttonType="inverted" onClick={()=>addItemToCard(product)}>ADD TO CARD</Button>
         </div>
         )
 }

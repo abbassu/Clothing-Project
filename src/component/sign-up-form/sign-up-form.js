@@ -112,8 +112,9 @@ function SignUpForm(){
                         }
                     }
                 />
-
-                <Button buttonType="" type="submit">Sign up</Button>
+                <div className="buttons-container">
+                    <Button buttonType="" type="submit">Sign up</Button>
+                </div>
             </form>
         </div>
     )
