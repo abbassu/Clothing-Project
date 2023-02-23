@@ -15,5 +15,6 @@ a {
 }
 
 * {
+  z-index: 1;
   box-sizing: border-box;
 }/*# sourceMappingURL=index.css.map */

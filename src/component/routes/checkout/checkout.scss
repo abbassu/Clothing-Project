@@ -3,9 +3,7 @@
   width: 100%;
   text-align: center;
 }
-
 .checkout-container {
-
     width: 700px;
     min-height: 90vh;
     display: flex;
@@ -13,9 +11,6 @@
     align-items: center;
     justify-content: center;
     margin: 50px auto 0;
-
-
-
     .total {
       font-size: 36px;
     }
@@ -26,7 +21,6 @@
       align-items: center;
       gap: 40px;
     }
-
     @media (max-width:1066px) {
       .checkout-container{
         width: 55%;
@@ -41,4 +35,3 @@ background-color: rgb(157, 128, 185);      }
       width: 100%;
     }
   }
-  

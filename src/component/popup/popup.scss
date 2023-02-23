@@ -1,0 +1,50 @@
+.popup-box{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    background-color: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    position: absolute;
+    .box{
+        position: relative;
+        width: 50%;
+        height: 380px;
+        background-color: white;
+        margin: 100px auto;
+        border-radius: 10px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        z-index: 13;
+        .warning{
+            text-align: center;
+            font-size: 24px;
+            color: rgb(107, 75, 75);
+        }
+        .btn-close{
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            right: -10px;
+            top: -10px;
+            background-color: yellow;
+            border: none;
+            border-radius: 20px;
+        }
+        .twoButton{
+            display: flex;
+            gap: 30px;
+        }
+    }
+
+    @media (max-width:800px) {
+        & .box .warning{
+            font-size: 18px;
+        }
+    }
+}
+
+
+
