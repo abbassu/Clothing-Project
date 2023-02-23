@@ -6,7 +6,7 @@ export const categories=[
       },
       {
         id:2,
-        title : 'Jakets',
+        title : 'Jackets',
         image:"https://i.ibb.co/px2tCc3/jackets.png"
       },
       {
@@ -16,12 +16,12 @@ export const categories=[
       },
       {
         id:4,
-        title : 'Women',
+        title : 'Womens',
         image:"https://i.ibb.co/GCCdy8t/womens.png"
       },
       {
         id:5,
-        title : 'Men',
+        title : 'Mens',
         image:"https://i.ibb.co/R70vBrQ/men.png"
       },
 ]

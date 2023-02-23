@@ -10,14 +10,17 @@ function SubCategory(){
     const [pp,spp]=useState(product)
     const param=useParams()
     const titlee=param.title
-    console.log("params",param.title,",,,,,",product,",,,,,",pp)
+    const [arr,setarr]=useState(product[titlee.toLowerCase()])
+    console.log("ararrrrrrrrrrrrrrrrrrrrrrrr",arr)
+
+    console.log("params",param.title,",,,,,",product,",,,,,",titlee)
     return(
         <div className="category-preview-container">
             <h2>
                 <span className="title-in-sub">{titlee.toUpperCase()}</span>
             </h2>
             <div className="preview-sub">
-            {product[titlee]?.map((item)=>{
+            {product[titlee.toLowerCase()]?.map((item)=>{
                 return(
                     <ProductCard key={item.id} product={item}/>
                 )

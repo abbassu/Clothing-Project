@@ -1,8 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Category({item}){
-    return(
-        <div className="category-container">
+  const navigate=useNavigate()
+  
+  const changePaht=(value)=>{
+    navigate(`subcategory/${value}`)
+  }
+  
+  return(
+        <div className="category-container" onClick={()=>{
+          changePaht(item.title)
+        }}>
         <div className="background-image" style={{ 
             backgroundImage: `url(${item.image})` 
           }}>
