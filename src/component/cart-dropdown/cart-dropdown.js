@@ -9,13 +9,21 @@ function CartDropdown(){
     const {cartItems,setIsOpen}= useContext(CartContext)
     const navigate=useNavigate()
 
-    const goToCheckout=()=>{
+
+    const closePage=()=>{
         setIsOpen(false)
+    }
+
+    const goToCheckout=()=>{
+        closePage() 
         navigate("/checkout")
     }
 
     return(
         <div className="cart-dropdown-container">
+            <div className="close" onClick={closePage}>
+            ✕
+            </div>
             <div className="cart-items">
                 {cartItems.map((item)=>{
                     return(
