@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+
 
 import {initializeApp} from 'firebase/app'
+import { CartContext } from "../../component/contexte/cart";
 import { getAuth, signInWithPopup,
         GoogleAuthProvider,
         createUserWithEmailAndPassword,
@@ -82,6 +84,28 @@ export const addCollectionAndDocuments= async (collectionKey,objectsToAdd)=>{
   await Batsh.commit();
   console.log("done")
 }
+////////////////////////////////////////////// -------------testtest
+
+
+export const addtalabat= async (collectionKey,objectsToAdd,uid)=>{
+
+  const collectionRef=collection(db,collectionKey)
+  const Batsh=writeBatch(db)
+  const docRef=doc(collectionRef,uid.toLowerCase())
+    Batsh.set(docRef,objectsToAdd)
+  await Batsh.commit();
+  console.log("done")
+}
+
+// export const addtalabat= async (collectionKey,objectsToAdd,uid)=>{
+
+//   const collectionRef=collection(db,collectionKey)
+//   const Batsh=writeBatch(db)
+//   const docRef=doc(collectionRef,uid.toLowerCase())
+//     Batsh.set(docRef,objectsToAdd)
+//   await Batsh.commit();
+//   console.log("done")
+// }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

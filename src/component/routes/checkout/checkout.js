@@ -6,14 +6,24 @@ import { PopupContext } from "../../contexte/popup";
 import "./checkout.scss"
 import Button from "../../button/button";
 import Popup from "../../popup/popup";
-
+import { addtalabat } from "../../../utils/firebase/firebase";
+import TESTDAT from "../../../shop_data/testdata";
+import { Global } from "../../contexte/usercontext";
 
 function Checkout(){
-
-    const {cartItems,cartTotal}=useContext(CartContext)
+    const {currentUser,setCurrentUser}=useContext(Global)
+    const {cartItems,cartTotal,clearItemCart}=useContext(CartContext)
     const {close,changeState}=useContext(PopupContext)
-    console.log("incheckout  ",close)
+    console.log("incheckout  ",close, currentUser?.uid,'hhhhhhhhhhhhhhhhhh',cartItems)
+    // const uid=currentUser.uid;
 
+
+    
+
+    function ff(){
+        addtalabat("tale",{cartItems},currentUser?.uid)
+        clearItemCart()
+    }
 
     return(
         <>
@@ -32,7 +42,7 @@ function Checkout(){
             })}
         <div className="lastc">
             <span className="total"> Total : {cartTotal}$</span>
-            {cartTotal >0 ? <Button buttonType="google" >Confirm</Button>: ""}
+            {cartTotal >0 ? <Button buttonType="google" onClick={ff} >Confirm</Button>: ""}
             
         </div>
         </div>

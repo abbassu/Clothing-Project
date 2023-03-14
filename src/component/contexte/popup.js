@@ -6,10 +6,13 @@ export const PopupContext=createContext({})
 
 export const PopupProvider=({children})=>{
 
-    const [close,setClose]=useState(true)
+    const [close,setClose]=useState(false)
     function changeState(state){
         setClose(!state)
     }
+    useEffect(()=>{
+        console.log("change state to ",close)
+    },[close])
     const value={changeState, close}
     
     return <PopupContext.Provider value={value}>{children}</PopupContext.Provider>

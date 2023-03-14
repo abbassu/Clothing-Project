@@ -13,8 +13,7 @@ import SubCategory from './component/sub-category/sub-category';
 
 
 function App() {
-
-
+  
 
   return (
 

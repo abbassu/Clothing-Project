@@ -42,7 +42,9 @@ const clearCartItem=(cartItems,cartItemToClear)=>{
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+const clearCart=(cartItems,cartItemToClear)=>{
+  return []
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -124,6 +126,11 @@ export const CartProvider=({children})=>{
       updateCartItemsReducer(newCartItems)
     }
 
+    const clearItemCart=()=>{
+      const newCartItems=clearCart(cartItems)
+      updateCartItemsReducer(newCartItems)
+    }
+
     const value={ isOpen,
                   setIsOpen,
                   addItemToCard,
@@ -131,7 +138,8 @@ export const CartProvider=({children})=>{
                   cartCount,
                   removeItemfromCart,
                   clearItemfromCart,
-                  cartTotal
+                  cartTotal,
+                  clearItemCart
     }
 
     return <CartContext.Provider value={value}> {children} </CartContext.Provider>
