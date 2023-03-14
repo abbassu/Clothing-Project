@@ -9,7 +9,7 @@ import Popup from "../../popup/popup";
 import { addtalabat } from "../../../utils/firebase/firebase";
 import TESTDAT from "../../../shop_data/testdata";
 import { Global } from "../../contexte/usercontext";
-
+import { gettalabat } from "../../../utils/firebase/firebase";
 function Checkout(){
     const {currentUser,setCurrentUser}=useContext(Global)
     const {cartItems,cartTotal,clearItemCart}=useContext(CartContext)
@@ -21,8 +21,9 @@ function Checkout(){
     
 
     function ff(){
+        // gettalabat()
         addtalabat("tale",{cartItems},currentUser?.uid)
-        clearItemCart()
+        // clearItemCart()
     }
 
     return(

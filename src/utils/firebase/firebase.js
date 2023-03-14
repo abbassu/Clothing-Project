@@ -91,21 +91,42 @@ export const addtalabat= async (collectionKey,objectsToAdd,uid)=>{
 
   const collectionRef=collection(db,collectionKey)
   const Batsh=writeBatch(db)
-  const docRef=doc(collectionRef,uid.toLowerCase())
-    Batsh.set(docRef,objectsToAdd)
+  var today = new Date();
+  console.log("jjjjjjjjj",today.toString())
+  const docRef=doc(collectionRef,today.toString())
+
+  let all=await gettalabat()
+  const children = all.concat(objectsToAdd)
+  console.log("children ---- ",children)
+  console.log("fffffffffffffffffff",objectsToAdd)
+  
+
+    Batsh.set(docRef,{objectsToAdd,uid})
   await Batsh.commit();
   console.log("done")
 }
 
-// export const addtalabat= async (collectionKey,objectsToAdd,uid)=>{
+export const gettalabat= async ()=>{
 
-//   const collectionRef=collection(db,collectionKey)
-//   const Batsh=writeBatch(db)
-//   const docRef=doc(collectionRef,uid.toLowerCase())
-//     Batsh.set(docRef,objectsToAdd)
-//   await Batsh.commit();
-//   console.log("done")
-// }
+  const collectionRef=collection(db,"tale")
+  const q =query(collectionRef)
+  let ss=[]
+
+  const querySnapShot= await getDocs(q)
+  const categoryMap=querySnapShot.docs.reduce((acc,docSnapShot)=>{
+    const tata=docSnapShot.data()
+    console.log("titel",docSnapShot.data())
+    ss.push(docSnapShot.data())
+  },{})
+  // const newTotalCount = cartItems.reduce((total,item)=> total+item.quantity* item.price,0 )
+
+  console.log("categoryMap",ss)
+  // console.log("categoryMap",categoryMap)
+
+  return ss
+
+}
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
