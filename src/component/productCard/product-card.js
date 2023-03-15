@@ -14,9 +14,6 @@ function ProductCard({product}){
 
     return(
         <div className="product-card-container" >
-            <div className="has_image">
-
-            </div>
                 <img src={imageUrl} alt="" />
                 <div className="footer">
                     <span className="name">{name}</span>

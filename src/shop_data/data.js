@@ -5,13 +5,14 @@ const SHOP_DATA = [
       {
         id: 1,
         name: 'Brown Brim',
-        imageUrl: 'https://i.ibb.co/ZYW3VTp/brown-brim.png',
+        // imageUrl: 'https://i.ibb.co/ZYW3VTp/brown-brim.png',
+        imageUrl: 'https://images.pexels.com/photos/984619/pexels-photo-984619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         price: 25,
       },
       {
         id: 2,
         name: 'Blue Beanie',
-        imageUrl: 'https://i.ibb.co/ypkgK0X/blue-beanie.png',
+        imageUrl: 'https://images.pexels.com/photos/3651597/pexels-photo-3651597.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         price: 18,
       },
       {
@@ -29,7 +30,7 @@ const SHOP_DATA = [
       {
         id: 5,
         name: 'Green Beanie',
-        imageUrl: 'https://i.ibb.co/YTjW3vF/green-beanie.png',
+        imageUrl: 'https://images.pexels.com/photos/2832037/pexels-photo-2832037.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         price: 18,
       },
       {
@@ -41,19 +42,37 @@ const SHOP_DATA = [
       {
         id: 7,
         name: 'Red Beanie',
-        imageUrl: 'https://i.ibb.co/bLB646Z/red-beanie.png',
+        imageUrl: 'https://images.pexels.com/photos/2570145/pexels-photo-2570145.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         price: 18,
       },
       {
         id: 8,
         name: 'Wolf Cap',
-        imageUrl: 'https://i.ibb.co/1f2nWMM/wolf-cap.png',
+        imageUrl: 'https://images.pexels.com/photos/3217911/pexels-photo-3217911.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         price: 14,
       },
       {
         id: 9,
         name: 'Blue Snapback',
-        imageUrl: 'https://i.ibb.co/X2VJP2W/blue-snapback.png',
+        imageUrl: 'https://images.pexels.com/photos/1820656/pexels-photo-1820656.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 16,
+      },
+      {
+        id: 130,
+        name: 'Blue Snapback',
+        imageUrl: 'https://images.pexels.com/photos/6437821/pexels-photo-6437821.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 16,
+      },
+      {
+        id: 131,
+        name: 'Blue Snapback',
+        imageUrl: 'https://images.pexels.com/photos/838879/pexels-photo-838879.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 16,
+      },
+      {
+        id: 132,
+        name: 'Blue Snapback',
+        imageUrl: 'https://images.pexels.com/photos/5560035/pexels-photo-5560035.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         price: 16,
       },
     ],
@@ -129,7 +148,7 @@ const SHOP_DATA = [
       {
         id: 20,
         name: 'Grey Jean Jacket',
-        imageUrl: 'https://i.ibb.co/N71k1ML/grey-jean-jacket.png',
+        imageUrl: 'https://images.pexels.com/photos/1124468/pexels-photo-1124468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         price: 90,
       },
       {
@@ -141,56 +160,99 @@ const SHOP_DATA = [
       {
         id: 22,
         name: 'Tan Trench',
-        imageUrl: 'https://i.ibb.co/M6hHc3F/brown-trench.png',
+        imageUrl: 'https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 185,
+      },
+      {
+        id: 111,
+        name: 'Brown Shearling',
+        imageUrl: 'https://images.pexels.com/photos/2229712/pexels-photo-2229712.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 165,
+      },
+      {
+        id: 122,
+        name: 'Tan Trench',
+        imageUrl: 'https://images.pexels.com/photos/2245433/pexels-photo-2245433.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 185,
+      },
+      {
+        id: 121,
+        name: 'Brown Shearling',
+        imageUrl: 'https://images.pexels.com/photos/3217911/pexels-photo-3217911.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 165,
+      },
+      {
+        id: 221,
+        name: 'Tan Trench',
+        imageUrl: 'https://images.pexels.com/photos/13995205/pexels-photo-13995205.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         price: 185,
       },
     ],
   },
   {
-    title: 'Womens',
+    title: 'Glasses',
     items: [
+      {
+        id: 35,
+        name: 'Burgundy T-shirt',
+        imageUrl: 'https://images.pexels.com/photos/39716/pexels-photo-39716.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 25,
+      },
       {
         id: 23,
         name: 'Blue Tanktop',
-        imageUrl: 'https://i.ibb.co/7CQVJNm/blue-tank.png',
+        imageUrl:'https://images.pexels.com/photos/131018/pexels-photo-131018.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         price: 25,
       },
       {
         id: 24,
         name: 'Floral Blouse',
-        imageUrl: 'https://i.ibb.co/4W2DGKm/floral-blouse.png',
+        imageUrl: 'https://images.pexels.com/photos/185769/pexels-photo-185769.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         price: 20,
       },
       {
         id: 25,
         name: 'Floral Dress',
-        imageUrl: 'https://i.ibb.co/KV18Ysr/floral-skirt.png',
+        imageUrl: 'https://images.pexels.com/photos/3042732/pexels-photo-3042732.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         price: 80,
       },
       {
         id: 26,
         name: 'Red Dots Dress',
-        imageUrl: 'https://i.ibb.co/N3BN1bh/red-polka-dot-dress.png',
+        imageUrl: 'https://images.pexels.com/photos/3030823/pexels-photo-3030823.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         price: 80,
       },
       {
         id: 27,
         name: 'Striped Sweater',
-        imageUrl: 'https://i.ibb.co/KmSkMbH/striped-sweater.png',
+        imageUrl: 'https://images.pexels.com/photos/265686/pexels-photo-265686.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         price: 45,
       },
       {
         id: 28,
         name: 'Yellow Track Suit',
-        imageUrl: 'https://i.ibb.co/v1cvwNf/yellow-track-suit.png',
+        imageUrl: 'https://images.pexels.com/photos/947885/pexels-photo-947885.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         price: 135,
       },
       {
         id: 29,
         name: 'White Blouse',
-        imageUrl: 'https://i.ibb.co/qBcrsJg/white-vest.png',
+        imageUrl: 'https://images.pexels.com/photos/343720/pexels-photo-343720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         price: 20,
       },
+      {
+        id: 290,
+        name: 'White Blouse',
+        imageUrl: 'https://images.unsplash.com/photo-1574258495973-f010dfbb5371?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+        price: 20,
+      }
+      ,
+      {
+        id: 291,
+        name: 'White Blouse',
+        imageUrl: 'https://images.unsplash.com/photo-1556306510-31ca015374b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80',
+        price: 20,
+      }
     ],
   },
   {
@@ -232,6 +294,8 @@ const SHOP_DATA = [
         imageUrl: 'https://i.ibb.co/mh3VM1f/polka-dot-shirt.png',
         price: 25,
       },
+      
+
     ],
   },
 ];

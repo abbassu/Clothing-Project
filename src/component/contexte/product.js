@@ -11,9 +11,9 @@ export const ProductContext=createContext({})
 export const ProductProvider=({children})=>{
  
 
-    // useEffect(()=>{
-    //     addCollectionAndDocuments("categories",SHOP_DATA)
-    // },[])
+    useEffect(()=>{
+        addCollectionAndDocuments("categories",SHOP_DATA)
+    },[])
 
     useEffect(()=>{
         const getData= async(  )=>{

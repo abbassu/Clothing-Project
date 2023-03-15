@@ -22,7 +22,7 @@ function Checkout(){
 
     function ff(){
         // gettalabat()
-        addtalabat("tale",{cartItems},currentUser?.uid)
+        addtalabat("tale",{cartItems},currentUser?.uid,cartTotal)
         // clearItemCart()
     }
 

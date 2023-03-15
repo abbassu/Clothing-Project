@@ -87,7 +87,7 @@ export const addCollectionAndDocuments= async (collectionKey,objectsToAdd)=>{
 ////////////////////////////////////////////// -------------testtest
 
 
-export const addtalabat= async (collectionKey,objectsToAdd,uid)=>{
+export const addtalabat= async (collectionKey,objectsToAdd,uid,cartTotal)=>{
 
   const collectionRef=collection(db,collectionKey)
   const Batsh=writeBatch(db)
@@ -101,7 +101,7 @@ export const addtalabat= async (collectionKey,objectsToAdd,uid)=>{
   console.log("fffffffffffffffffff",objectsToAdd)
   
 
-    Batsh.set(docRef,{objectsToAdd,uid})
+    Batsh.set(docRef,{objectsToAdd,cartTotal,uid})
   await Batsh.commit();
   console.log("done")
 }
