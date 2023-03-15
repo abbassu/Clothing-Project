@@ -77,6 +77,210 @@ const SHOP_DATA = [
       },
     ],
   },
+
+
+  {
+    title: 'Kids',
+    items: [
+      {
+        id: 177,
+        name: 'Brown Brim',
+        // imageUrl: 'https://i.ibb.co/ZYW3VTp/brown-brim.png',
+        imageUrl: 'https://images.pexels.com/photos/189857/pexels-photo-189857.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 25,
+      },
+      {
+        id: 662,
+        name: 'Blue Beanie',
+        imageUrl: 'https://images.pexels.com/photos/36029/aroni-arsa-children-little.jpg?auto=compress&cs=tinysrgb&w=600',
+        price: 18,
+      },
+      {
+        id: 366,
+        name: 'Brown Cowboy',
+        imageUrl: 'https://images.pexels.com/photos/1104007/pexels-photo-1104007.jpeg?auto=compress&cs=tinysrgb&w=600',
+        price: 35,
+      },
+      {
+        id: 45,
+        name: 'Grey Brim',
+        imageUrl: 'https://images.pexels.com/photos/1374509/pexels-photo-1374509.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 25,
+      },
+      {
+        id: 55,
+        name: 'Green Beanie',
+        imageUrl: 'https://images.pexels.com/photos/969373/pexels-photo-969373.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 18,
+      },
+      {
+        id: 61,
+        name: 'Palm Tree Cap',
+        imageUrl: 'https://images.pexels.com/photos/1650281/pexels-photo-1650281.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 14,
+      },
+      {
+        id: 711,
+        name: 'Red Beanie',
+        imageUrl: 'https://images.pexels.com/photos/4055337/pexels-photo-4055337.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 18,
+      },
+      {
+        id: 81,
+        name: 'Wolf Cap',
+        imageUrl: 'https://images.pexels.com/photos/1619801/pexels-photo-1619801.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 14,
+      },
+      {
+        id: 91,
+        name: 'Blue Snapback',
+        imageUrl: 'https://images.pexels.com/photos/1068209/pexels-photo-1068209.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 16,
+      },
+      {
+        id: 1130,
+        name: 'Blue Snapback',
+        imageUrl: 'https://images.pexels.com/photos/3661356/pexels-photo-3661356.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 16,
+      },
+      {
+        id: 1131,
+        name: 'Blue Snapback',
+        imageUrl: 'https://images.pexels.com/photos/1620769/pexels-photo-1620769.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 16,
+      },
+      {
+        id: 1132,
+        name: 'Blue Snapback',
+        imageUrl: 'https://images.pexels.com/photos/459949/pexels-photo-459949.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 16,
+      },
+    ],
+  },
+
+  {
+    title: 'Perfume',
+    items: [
+      {
+        id: 1757,
+        name: 'Brown Brim',
+        // imageUrl: 'https://i.ibb.co/ZYW3VTp/brown-brim.png',
+        imageUrl: 'https://images.pexels.com/photos/264870/pexels-photo-264870.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 25,
+      },
+      {
+        id: 6625,
+        name: 'Blue Beanie',
+        imageUrl: 'https://images.pexels.com/photos/755992/pexels-photo-755992.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 18,
+      },
+      {
+        id: 3666,
+        name: 'Brown Cowboy',
+        imageUrl: 'https://images.pexels.com/photos/3059609/pexels-photo-3059609.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 35,
+      },
+      {
+        id: 458,
+        name: 'Grey Brim',
+        imageUrl: 'https://images.pexels.com/photos/3640668/pexels-photo-3640668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 25,
+      },
+      {
+        id: 505,
+        name: 'Green Beanie',
+        imageUrl: 'https://images.pexels.com/photos/2508558/pexels-photo-2508558.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 18,
+      },
+      {
+        id: 621,
+        name: 'Palm Tree Cap',
+        imageUrl: 'https://images.pexels.com/photos/11028230/pexels-photo-11028230.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 14,
+      },
+      {
+        id: 7211,
+        name: 'Red Beanie',
+        imageUrl: 'https://images.pexels.com/photos/12563411/pexels-photo-12563411.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 18,
+      },
+      {
+        id: 812,
+        name: 'Wolf Cap',
+        imageUrl: 'https://images.pexels.com/photos/1961794/pexels-photo-1961794.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 14,
+      },
+      {
+        id: 9111,
+        name: 'Blue Snapback',
+        imageUrl: 'https://images.pexels.com/photos/1961786/pexels-photo-1961786.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 16,
+      },
+      {
+        id: 11330,
+        name: 'Blue Snapback',
+        imageUrl: 'https://images.pexels.com/photos/4938270/pexels-photo-4938270.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 16,
+      },
+      {
+        id: 1331,
+        name: 'Blue Snapback',
+        imageUrl: 'https://images.pexels.com/photos/989962/pexels-photo-989962.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 16,
+      },
+      {
+        id: 1632,
+        name: 'Blue Snapback',
+        imageUrl: 'https://images.pexels.com/photos/10191848/pexels-photo-10191848.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 16,
+      },
+      {
+        id: 16321,
+        name: 'Blue Snapback',
+        imageUrl: 'https://images.pexels.com/photos/12538232/pexels-photo-12538232.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 16,
+      },
+      {
+        id: 16322,
+        name: 'Blue Snapback',
+        imageUrl: 'https://images.pexels.com/photos/11122042/pexels-photo-11122042.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 16,
+      },
+      {
+        id: 16323,
+        name: 'Blue Snapback',
+        imageUrl: 'https://m.media-amazon.com/images/I/41tr5QQoxgL.jpg',
+        price: 16,
+      },
+      {
+        id: 16324,
+        name: 'Blue Snapback',
+        imageUrl: 'https://images.pexels.com/photos/8516275/pexels-photo-8516275.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 16,
+      },
+      {
+        id: 16325,
+        name: 'Blue Snapback',
+        imageUrl: 'https://images.pexels.com/photos/13800878/pexels-photo-13800878.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 16,
+      },
+      {
+        id: 16326,
+        name: 'Blue Snapback',
+        imageUrl: 'https://images.pexels.com/photos/1961791/pexels-photo-1961791.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 16,
+      },
+      {
+        id: 16327,
+        name: 'Blue Snapback',
+        imageUrl: 'https://images.pexels.com/photos/6867430/pexels-photo-6867430.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 16,
+      }
+    ],
+  },
+
+
+  
   {
     title: 'Sneakers',
     items: [

@@ -9,6 +9,7 @@ import Authentication from './component/routes/Authentication/Authentication';
 import Shop from './component/shop/shop';
 import Checkout from './component/routes/checkout/checkout';
 import SubCategory from './component/sub-category/sub-category';
+import Layout from './component/layout/layout';
 
 
 
@@ -25,6 +26,8 @@ function App() {
             <Route path='auth' element={  <Authentication/>} />
             <Route path='subcategory/:title' element={<SubCategory/>}/>
             <Route path='checkout' element={  <Checkout/>} />
+            <Route path='cc' element={  <Layout/>} />
+
           </Route>
         </Routes>
       </BrowserRouter>
