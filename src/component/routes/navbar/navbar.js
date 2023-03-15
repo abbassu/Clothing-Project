@@ -33,7 +33,6 @@ function Navbar(){
         </div>
         {isOpen && <CartDropdown/> }
       </div>
-      <Outlet/>
     </>
     )
 }

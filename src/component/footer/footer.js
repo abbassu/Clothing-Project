@@ -2,16 +2,31 @@ import React from "react";
 import "./footer.scss"
 function Footer(){
     return(
-        <div className="footer">
+        <div className="footerfooter">
             
-            <div className="subclass">
-                <div className="ch1"> CH1 </div>
-                <div className="ch2"> CH2 </div>
-                <div className="ch3"> CH3 </div>
-            </div>
-            <div className="down">
+            <div className="onef">
+            © 2023 noon. All Rights Reserved
+
 
             </div>
+            <div className="twof">
+                <img src="https://f.nooncdn.com/s/app/com/noon/images/mastercard-color.svg" alt="" />
+                <img src="https://f.nooncdn.com/s/app/com/noon/images/visa-color-v2.png" alt="" />
+                <img src="https://f.nooncdn.com/s/app/com/noon/images/cash-color.svg" alt="" />
+                <img src="https://f.nooncdn.com/s/app/com/noon/images/amex-color.svg" alt="" />
+            </div>
+            <div className="threef">
+                <ul>
+                    <li>Careers</li>
+                    <li>Warranty Policy</li>
+                    <li>Sell with us</li>
+                    <li>Terms of Use</li>
+                    <li>Terms of Sale</li>
+                    <li>Privacy Policy</li>
+                    <li>Consumer Rights</li>
+                </ul>
+            </div>
+
 
 
 

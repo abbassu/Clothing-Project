@@ -20,7 +20,7 @@ function Category({title,products}){
                 <span className="title" onClick={rout}>{title.toUpperCase()}</span>
             </h2>
             <div className="preview">
-            {products.filter((_,idx)=>idx<4).map((item)=>{
+            {products.filter((_,idx)=>idx<5).map((item)=>{
                 return(
                     <ProductCard key={item.id} product={item}/>
                 )

@@ -10,12 +10,15 @@ function Shop(){
     const [arr_product,set_arr_product]=useState(product)
     return(
         <Fragment>
-        {Object.keys(product).map((title) => {
+         <div className="shpe">
+         {Object.keys(product).map((title) => {
             const item=product[title]
             return(
                 <Category title={title} products={item}/>
             )
         })}
+            </div>   
+
       </Fragment>
     )
 }export default Shop

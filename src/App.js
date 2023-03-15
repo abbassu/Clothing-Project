@@ -20,13 +20,13 @@ function App() {
 
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Navbar/>} >
+          <Route path='/' element={<Layout/>} >
             <Route index element={  <CategoriesContainer/>} />
             <Route path='shop' element={  <Shop/>} />
             <Route path='auth' element={  <Authentication/>} />
             <Route path='subcategory/:title' element={<SubCategory/>}/>
             <Route path='checkout' element={  <Checkout/>} />
-            <Route path='cc' element={  <Layout/>} />
+            {/* <Route path='cc' element={  <Layout/>} /> */}
 
           </Route>
         </Routes>
