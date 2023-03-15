@@ -6,8 +6,10 @@ import "./layout.scss"
 function Layout(){
     return(
         <div className="layout">
+            <div className="sublay">
             <Navbar/>
             <Outlet/>
+            </div>
             <Footer/>
         </div>
     )
