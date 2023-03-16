@@ -28,7 +28,7 @@ function Checkout(){
 
     return(
         <>
-        {close ? <Popup/> : "" }
+        {!close ? <Popup/> : "" }
                 <div className="calcolater">
             Bill Page
         </div>

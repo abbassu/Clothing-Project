@@ -1,0 +1,49 @@
+.popup-cart-box{
+    // height: 800px;
+    width: 100%;
+    padding: 20px;
+    background-color: red;
+    .box-cart{
+        width: 100%;
+        height: 590px;
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        img{
+            width: 300px;
+            max-height: 350px;
+        }
+
+        .name-of-product{
+
+            display: flex;
+            flex-direction: column;
+            .namename{
+                background-color: rebeccapurple;
+                font-size: 24px;
+                margin-bottom: 20px;
+                padding: 5px;
+            }
+        }
+   
+    .starrating{
+        width: 300px;
+        display: flex;
+        justify-content: center;
+    }
+    .rightsiderate{
+        display: flex;
+        flex-direction: column;
+        .num-of-rate{
+            font-size: 24px;
+            width: 300px;
+            text-align: center;
+        }
+
+    }
+   
+    }
+}
+

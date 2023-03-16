@@ -10,6 +10,7 @@ import Shop from './component/shop/shop';
 import Checkout from './component/routes/checkout/checkout';
 import SubCategory from './component/sub-category/sub-category';
 import Layout from './component/layout/layout';
+import Cartpopup from './component/cart-popup/cart-popup';
 
 
 
@@ -23,6 +24,7 @@ function App() {
           <Route path='/' element={<Layout/>} >
             <Route index element={  <CategoriesContainer/>} />
             <Route path='shop' element={  <Shop/>} />
+            <Route path='clicked/:prod' element={  <Cartpopup/>} />
             <Route path='auth' element={  <Authentication/>} />
             <Route path='subcategory/:title' element={<SubCategory/>}/>
             <Route path='checkout' element={  <Checkout/>} />
