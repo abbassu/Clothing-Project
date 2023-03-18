@@ -97,6 +97,103 @@ const SHOP_DATA = [
     ],
   },
   {
+    title: 'Fitness',
+    items: [
+      {
+        reate:5,
+        id: 1,
+        name: 'Brown Brim',
+        // imageUrl: 'https://i.ibb.co/ZYW3VTp/brown-brim.png',
+        imageUrl: 'https://images.pexels.com/photos/1552252/pexels-photo-1552252.jpeg?auto=compress&cs=tinysrgb&w=600',
+        price: 25,
+      },
+      {
+        reate:3,
+
+        id: 2,
+        name: 'Blue Beanie',
+        imageUrl: 'https://images.pexels.com/photos/4325439/pexels-photo-4325439.jpeg?auto=compress&cs=tinysrgb&w=600',
+        price: 18,
+      },
+      {
+        reate:2,
+
+        id: 3,
+        name: 'Brown Cowboy',
+        imageUrl: 'https://images.pexels.com/photos/3490348/pexels-photo-3490348.jpeg?auto=compress&cs=tinysrgb&w=600',
+        price: 35,
+      },
+      {
+        reate:5,
+
+        id: 4,
+        name: 'Grey Brim',
+        imageUrl: 'https://images.pexels.com/photos/416717/pexels-photo-416717.jpeg?auto=compress&cs=tinysrgb&w=600',
+        price: 25,
+      },
+      {
+        reate:5,
+
+        id: 5,
+        name: 'Green Beanie',
+        imageUrl: 'https://images.pexels.com/photos/4397833/pexels-photo-4397833.jpeg?auto=compress&cs=tinysrgb&w=600',
+        price: 18,
+      },
+      {
+        reate:4,
+
+        id: 6,
+        name: 'Palm Tree Cap',
+        imageUrl: 'https://images.pexels.com/photos/6456153/pexels-photo-6456153.jpeg?auto=compress&cs=tinysrgb&w=600',
+        price: 14,
+      },
+      {
+        reate:4,
+
+        id: 7,
+        name: 'Red Beanie',
+        imageUrl: 'https://images.pexels.com/photos/4325436/pexels-photo-4325436.jpeg?auto=compress&cs=tinysrgb&w=600',
+        price: 18,
+      },
+      {
+        reate:3,
+        id: 8,
+        name: 'Wolf Cap',
+        imageUrl: 'https://images.pexels.com/photos/45056/pexels-photo-45056.jpeg?auto=compress&cs=tinysrgb&w=600',
+        price: 14,
+      },
+      {
+        reate:3,
+        
+        id: 9,
+        name: 'Blue Snapback',
+        imageUrl: 'https://images.pexels.com/photos/6740821/pexels-photo-6740821.jpeg?auto=compress&cs=tinysrgb&w=600',
+        price: 16,
+      },
+      {
+        reate:2,
+        id: 130,
+        name: 'Blue Snapback',
+        imageUrl: 'https://images.pexels.com/photos/4793229/pexels-photo-4793229.jpeg?auto=compress&cs=tinysrgb&w=600',
+        price: 16,
+      },
+      {
+        reate:5,
+        id: 131,
+        name: 'Blue Snapback',
+        imageUrl: 'https://images.pexels.com/photos/4325451/pexels-photo-4325451.jpeg?auto=compress&cs=tinysrgb&w=600',
+        price: 16,
+      },
+      {
+        reate:3,
+        id: 132,
+        name: 'Blue Snapback',
+        imageUrl: 'https://images.pexels.com/photos/45058/pexels-photo-45058.jpeg?auto=compress&cs=tinysrgb&w=600',
+        price: 16,
+      },
+    ],
+  },
+  {
     title: 'Kids',
     items: [
       {
@@ -189,6 +286,150 @@ const SHOP_DATA = [
   {
     title: 'Perfume',
     items: [
+      {
+        reate:5,
+        id: 1757,
+        name: 'Brown Brim',
+        // imageUrl: 'https://i.ibb.co/ZYW3VTp/brown-brim.png',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/t/w/twin_gold_3.jpg?auto=webp&format=pjpg&width=320&height=320&fit=cover',
+        price: 25,
+      },
+      {
+        reate:3,
+        id: 6625,
+        name: 'Blue Beanie',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/_/-/_-_-3.jpg?auto=webp&format=pjpg&width=320&height=320&fit=cover',
+        price: 18,
+      },
+      {
+        reate:3,
+        id: 3666,
+        name: 'Brown Cowboy',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/a/d/adore-2.jpg?auto=webp&format=pjpg&width=320&height=320&fit=cover',
+        price: 35,
+      },
+      {
+        reate:4,
+        id: 458,
+        name: 'Grey Brim',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/3/0/301020265_6.png?auto=webp&format=png&width=320&height=320&fit=cover',
+        price: 25,
+      },
+      {
+        reate:2,
+        id: 505,
+        name: 'Green Beanie',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/3/0/301020293-1_3.png?auto=webp&format=png&width=320&height=320&fit=cover',
+        price: 18,
+      },
+      {
+        reate:4,
+        id: 621,
+        name: 'Palm Tree Cap',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/3/0/301020426-1_3.png?auto=webp&format=png&width=320&height=320&fit=cover',
+        price: 14,
+      },
+      {
+        reate:5,
+        id: 7211,
+        name: 'Red Beanie',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/0/3/0301020488-3.jpg?auto=webp&format=pjpg&width=320&height=320&fit=cover',
+        price: 18,
+      },
+      {
+        reate:5,
+        id: 812,
+        name: 'Wolf Cap',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/0/3/0301020487-2.jpg?auto=webp&format=pjpg&width=320&height=320&fit=cover',
+        price: 14,
+      },
+      {
+        reate:4,
+        id: 9111,
+        name: 'Blue Snapback',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/_/3/_3_14.jpg?auto=webp&format=pjpg&width=320&height=320&fit=cover',
+        price: 160,
+      },
+      {
+        reate:2,
+        id: 11330,
+        name: 'Blue Snapback',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/0/1/0101020044-musk-al-aroos.jpg?auto=webp&format=pjpg&width=320&height=320&fit=cover',
+        price: 100,
+      },
+      {
+        reate:4,
+        id: 1331,
+        name: 'Blue Snapback',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/t/r/transparent2_1_tola_5.png?auto=webp&format=png&width=320&height=320&fit=cover',
+        price: 211,
+      },
+      {
+        reate:5,
+        id: 1632,
+        name: 'Blue Snapback',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/0/3/0301020409-1_1.png?auto=webp&format=png&width=320&height=320&fit=cover',
+        price: 430,
+      },
+      {
+        reate:1,
+        id: 16321,
+        name: 'Blue Snapback',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/_/1/_1_1_7.jpg?auto=webp&format=pjpg&width=320&height=320&fit=cover',
+        price: 160,
+      },
+      {
+        reate:5,
+        id: 16322,
+        name: 'Blue Snapback',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/_/1/_1_.jpg?auto=webp&format=pjpg&width=320&height=320&fit=cover',
+        price: 176,
+      },
+      {
+        reate:4,
+        id: 16323,
+        name: 'Blue Snapback',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/3/0/301020403-1_6.png?auto=webp&format=png&width=320&height=320&fit=cover',
+        price: 900,
+      },
+      {
+        reate:5,
+        id: 16324,
+        name: 'Blue Snapback',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/3/0/301020223_6.png?auto=webp&format=png&width=320&height=320&fit=cover',
+        price: 776,
+      },
+      {
+        reate:4,
+        id: 16325,
+        name: 'Blue Snapback',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/3/0/301020445-1_3.png?auto=webp&format=png&width=320&height=320&fit=cover',
+        price: 550,
+      },
+      {
+        reate:5,
+        id: 16326,
+        name: 'Blue Snapback',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/_/2/_2_2.jpg?auto=webp&format=pjpg&width=320&height=320&fit=cover',
+        price: 122,
+      },
+      {
+        reate:2,
+        id: 16327,
+        name: 'Blue Snapback',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/_/2/_2__5.jpg?auto=webp&format=pjpg&width=320&height=320&fit=cover',
+        price: 162,
+      }
+      ,
+      {
+        reate:2,
+        id: 16327,
+        name: 'Blue Snapback',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/_/2/_2_1_7.jpg?auto=webp&format=pjpg&width=320&height=320&fit=cover',
+        price: 16,
+      }
+      ,
+      /////////////////////
       {
         reate:5,
         id: 1757,
@@ -321,6 +562,86 @@ const SHOP_DATA = [
         id: 16327,
         name: 'Blue Snapback',
         imageUrl: 'https://images.pexels.com/photos/6867430/pexels-photo-6867430.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        price: 16,
+      }
+      ,
+      {
+        reate:2,
+        id: 16327,
+        name: 'Blue Snapback',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/3/0/301020405-1_4.png?auto=webp&format=png&width=320&height=320&fit=cover',
+        price: 16,
+      }
+      ,
+      {
+        reate:2,
+        id: 16327,
+        name: 'Blue Snapback',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/e/h/ehsas_2.jpg?auto=webp&format=pjpg&width=320&height=320&fit=cover',
+        price: 16,
+      }
+      ,
+      {
+        reate:2,
+        id: 16327,
+        name: 'Blue Snapback',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/3/0/301020257_5.png?auto=webp&format=png&width=320&height=320&fit=cover',
+        price: 16,
+      }
+      ,
+      {
+        reate:2,
+        id: 16327,
+        name: 'Blue Snapback',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/_/2/_2_2_8.png?auto=webp&format=png&width=320&height=320&fit=cover',
+        price: 16,
+      }
+      ,
+      {
+        reate:2,
+        id: 16327,
+        name: 'Blue Snapback',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/3/0/301020451_6.png?auto=webp&format=png&width=320&height=320&fit=cover',
+        price: 16,
+      }
+      ,
+      {
+        reate:2,
+        id: 16327,
+        name: 'Blue Snapback',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/3/0/301020282_4.png?auto=webp&format=png&width=320&height=320&fit=cover',
+        price: 16,
+      }
+      ,
+      {
+        reate:2,
+        id: 16327,
+        name: 'Blue Snapback',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/3/0/301020140_1_1_8.png?auto=webp&format=png&width=320&height=320&fit=cover',
+        price: 16,
+      }
+      ,
+      {
+        reate:2,
+        id: 16327,
+        name: 'Blue Snapback',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/_/2/_2_1_9.jpg?auto=webp&format=pjpg&width=320&height=320&fit=cover',
+        price: 16,
+      }
+      ,
+      {
+        reate:2,
+        id: 16327,
+        name: 'Blue Snapback',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/v/e/velvet_touch_2.png?auto=webp&format=png&width=320&height=320&fit=cover',
+        price: 16,
+      }
+      ,
+      {
+        reate:2,
+        id: 16327,
+        name: 'Blue Snapback',
+        imageUrl: 'https://cdn-ara-images.halaexpress.com/media/catalog/product/cache/d3470a8a7a3ceb0328c354c4622cde6a/e/h/ehsas_2.jpg?auto=webp&format=pjpg&width=320&height=320&fit=cover',
         price: 16,
       }
     ],

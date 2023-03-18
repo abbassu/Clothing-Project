@@ -3,14 +3,41 @@
     flex-direction: column;
     margin-bottom: 30px;
     .title {
+      .left-arrow, .right-arrow{
+        // color: rgb(13, 20, 19);
+        // background-color: blue;
+        opacity: 0;
+        position: absolute;
+        transition: 0.4s;
+
+      }
+
       font-size: 34px;
       margin-bottom: 25px;
       cursor: pointer;
       display: flex;
       justify-content: center;
-      background-color: rgb(168, 162, 162);
+      gap: 30px;
+      background-color: rgb(49, 116, 92);
+      color: whitesmoke;
       padding: 10px;
       border-radius: 10px;
+      transition: 0.3s;
+      
+      &:hover{
+        transition: 0.3s;
+        color: rgb(21, 10, 10);
+        .arr{
+          transition: 0.4s;
+          opacity: 1;
+        }
+        .left-arrow{
+          transform: translateX(-110px);
+        }
+        .right-arrow{
+          transform: translateX(110px);
+        }
+      }
     }
     .preview {
       display: flex;

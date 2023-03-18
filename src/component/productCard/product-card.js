@@ -20,16 +20,19 @@ function ProductCard({product}){
     }
 
     return(
+        <div className="allpropro">
                 <Link to={`/clicked/${'kkk121'}`} state={product}>
                         <div className="product-card-container" onClick={aa}>
                                 <img src={imageUrl} alt="" />
                                 <div className="footer">
                                     <span className="name">{name}</span>
-                                    <span className="cost">{price}</span>
+                                    <span className="cost">{price}$</span>
                                 </div>
                             <Button buttonType="inverted" onClick={()=>addItemToCard(product)}>ADD TO CARD</Button>
                         </div>
                 </Link>
+        </div>
+
         )
 }
 export default ProductCard

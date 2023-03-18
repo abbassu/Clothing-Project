@@ -21,9 +21,7 @@ function Footer(){
                     <li>Warranty Policy</li>
                     <li>Sell with us</li>
                     <li>Terms of Use</li>
-                    <li>Terms of Sale</li>
                     <li>Privacy Policy</li>
-                    <li>Consumer Rights</li>
                 </ul>
             </div>
 

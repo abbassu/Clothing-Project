@@ -17,7 +17,19 @@ function SubCategory(){
     return(
         <div className="category-preview-container">
             <h2>
-                <span className="title-in-sub">{titlee.toUpperCase()}</span>
+
+                <span className="title-in-sub">
+                    
+                <span className="left-arrow arr">
+                    <i class="fa-solid fa-angles-left "></i>
+                    </span>
+                    {titlee.toUpperCase()}
+                
+                
+                <span className="right-arrow arr">
+                    <i class="fa-solid fa-angles-right "></i>
+                    </span>
+                </span>
             </h2>
             <div className="preview-sub">
             {product[titlee.toLowerCase()]?.map((item)=>{
