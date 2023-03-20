@@ -34,7 +34,7 @@ function SubCategory(){
             <div className="preview-sub">
             {product[titlee.toLowerCase()]?.map((item)=>{
                 return(
-                    <ProductCard key={item.id} product={item}/>
+                    <ProductCard key={item.id} product={item} tite={titlee}/>
                 )
             })}
             </div>

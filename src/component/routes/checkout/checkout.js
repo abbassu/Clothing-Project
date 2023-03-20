@@ -15,10 +15,6 @@ function Checkout(){
     const {cartItems,cartTotal,clearItemCart}=useContext(CartContext)
     const {close,changeState}=useContext(PopupContext)
     console.log("incheckout  ",close, currentUser?.uid,'hhhhhhhhhhhhhhhhhh',cartItems)
-    // const uid=currentUser.uid;
-
-
-    
 
     function ff(){
         addtalabat("tale",{cartItems},currentUser?.uid,cartTotal)
@@ -31,9 +27,6 @@ function Checkout(){
             Bill Page
         </div>
         <div className="checkout-container">
-
-
-
             {cartItems.map((cartItem)=>{
                 return(
                     <CheckoutItem cartItem={cartItem}/>

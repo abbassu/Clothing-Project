@@ -26,7 +26,7 @@ function Category({title,products}){
             <div className="preview">
             {products.filter((_,idx)=>idx<5).map((item)=>{
                 return(
-                    <ProductCard key={item.id} product={item}/>
+                    <ProductCard key={item.id} product={item} tite={title} />
                 )
             })}
             <div onClick={rout}>

@@ -18,6 +18,9 @@ function Cartpopup(){
     const {clearItemfromCart,cartItems,addAllItemToCard,addItemToCard,removeItemfromCart}=useContext(CartContext)
     const {quantity}=product
     
+
+    console.log("propssesesese",prod)
+
     function addAllTalab(){
         addAllItemToCard(product,ss)
     }
@@ -75,26 +78,34 @@ function Cartpopup(){
                     <div className="num-of-rate">
                       {bub} Rating 
                       <hr />
-                      Price {price}$
+                      Price &nbsp; {price}$  &nbsp; for 1 Item
                     </div>
-
                     <div className="right-side">
-                <span className="name"> {name} </span>
-                <div className="quantity"> 
-                    <div className="arrow" onClick={downState} >Quantity &nbsp;  &#10094;</div>
-                    <span className="value">
-                    {ss}
-                        </span>
-                    <div className="arrow" onClick={upState}> &#10095;</div>
+                    <div className="quantity"> 
+                            <div className="arrow minus" onClick={downState} > 
+                            _
+                            
+                            </div>
+
+                            <span className="value">
+                            {ss}
+                            </span>
+                            
+                            <div className="arrow opper" onClick={upState}>
+                                +
+                            </div>
                     </div>
-                <span className="price">Price : {price}$ </span>
                 </div>
-
-                    <Button onClick={()=>addAllTalab()} >ADD TOo CARD</Button>
-
+                    <button onClick={()=>addAllTalab()} >ADD TOo CARD</button>
                 </div>
-
             </div>
+
+            {/* <div className="lefleft">
+                mam
+            </div> */}
+
+
+
         </div>
     )
 }

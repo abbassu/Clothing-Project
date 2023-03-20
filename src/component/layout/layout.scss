@@ -1,7 +1,11 @@
 .layout{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
     height: 100vh;
     .sublay{
-        padding: 0 40px 0 40px;
+        padding: 0 30px 0 30px;
         margin-bottom: 50px;
     }
 }

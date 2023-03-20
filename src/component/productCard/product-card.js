@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../button/button";
 import "./product-card.scss"
 import { useContext } from "react";
@@ -9,14 +9,16 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 
-function ProductCard({product}){
+function ProductCard({product,tite}){
     const {name, price , imageUrl}=product
+    const [title,setTitle]=useState(tite)
     const {addItemToCard}= useContext(CartContext)
+    console.log("titleeeeeeeeee",title)
     
     return(
                 
                         <div className="product-card-container" >
-                                <Link to={`/clicked/${'kkk121'}`} state={product}>
+                                <Link to={`/clicked/${tite}`} state={product}>
                                 <img src={imageUrl} alt="" />
                                 </Link>
                                 <div className="footer">
