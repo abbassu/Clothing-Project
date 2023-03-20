@@ -21,9 +21,7 @@ function Checkout(){
     
 
     function ff(){
-        // gettalabat()
         addtalabat("tale",{cartItems},currentUser?.uid,cartTotal)
-        // clearItemCart()
     }
 
     return(

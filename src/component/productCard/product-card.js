@@ -12,26 +12,20 @@ import { Link } from "react-router-dom";
 function ProductCard({product}){
     const {name, price , imageUrl}=product
     const {addItemToCard}= useContext(CartContext)
-    const nav=useNavigate()
     
-
-    function aa(){
-        console.log("hhhhhh",product)
-    }
-
     return(
-        <div className="allpropro">
-                <Link to={`/clicked/${'kkk121'}`} state={product}>
-                        <div className="product-card-container" onClick={aa}>
+                
+                        <div className="product-card-container" >
+                                <Link to={`/clicked/${'kkk121'}`} state={product}>
                                 <img src={imageUrl} alt="" />
+                                </Link>
                                 <div className="footer">
                                     <span className="name">{name}</span>
                                     <span className="cost">{price}$</span>
                                 </div>
                             <Button buttonType="inverted" onClick={()=>addItemToCard(product)}>ADD TO CARD</Button>
                         </div>
-                </Link>
-        </div>
+               
 
         )
 }

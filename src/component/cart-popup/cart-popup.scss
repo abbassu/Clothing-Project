@@ -5,27 +5,24 @@
     background-color: red;
     .box-cart{
         width: 100%;
-        height: 590px;
+        // height: 590px;
         background-color: white;
         border-radius: 10px;
         padding: 20px;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        gap: 50px;
+
         img{
-            width: 300px;
-            max-height: 350px;
+            width: 400px;
+            max-height: 450px;
         }
 
         .name-of-product{
 
             display: flex;
             flex-direction: column;
-            .namename{
-                background-color: rebeccapurple;
-                font-size: 24px;
-                margin-bottom: 20px;
-                padding: 5px;
-            }
+
         }
    
     .starrating{
@@ -34,6 +31,12 @@
         justify-content: center;
     }
     .rightsiderate{
+        .namename{
+            background-color: rebeccapurple;
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding: 5px;
+        }
         display: flex;
         flex-direction: column;
         .num-of-rate{
@@ -41,7 +44,12 @@
             width: 300px;
             text-align: center;
         }
-
+.right-side {
+    .quantity{
+        display: flex;
+        
+    }
+}
     }
    
     }
