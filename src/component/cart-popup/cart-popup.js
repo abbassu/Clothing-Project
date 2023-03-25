@@ -76,21 +76,18 @@ function Cartpopup(){
                         />
                     </div>
                     <div className="num-of-rate">
-                      {bub} Rating 
-                      <hr />
-                      Price &nbsp; {price}$  &nbsp; for 1 Item
+                        {bub} Rating 
+                        <hr />
+                        Price &nbsp; {price}$  &nbsp; for 1 Item
                     </div>
                     <div className="right-side">
                     <div className="quantity"> 
                             <div className="arrow minus" onClick={downState} > 
                             _
-                            
                             </div>
-
                             <span className="value">
                             {ss}
                             </span>
-                            
                             <div className="arrow opper" onClick={upState}>
                                 +
                             </div>

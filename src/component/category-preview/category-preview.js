@@ -7,7 +7,7 @@ import More from "../more/more";
 function Category({title,products}){
         const navigate=useNavigate()
         const rout=()=>{
-            console.log("kkkkkkkkkk")
+            // console.log("kkkkkkkkkk")
             navigate(`/subcategory/${title}`)
         }
     return(

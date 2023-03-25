@@ -19,7 +19,7 @@ const userReducer=(state,action)=>{
     const {type,payload}=action;
     switch(type){
         case USER_ACTION_TYPES.SET_CURRENT_USER:
-            console.log("yyyyyyayyyyyyy",state,"-------------",payload)
+            // console.log("yyyyyyayyyyyyy",state,"-------------",payload)
         return{
             ...state,
             currentUser:payload
@@ -37,16 +37,16 @@ const INITIAL_STATE={
 export const ProviderContext=({children})=>{
     const [{currentUser},dispatch]=useReducer(userReducer,INITIAL_STATE)
 
-    console.log("currentUser===========",currentUser)
+    // console.log("currentUser===========",currentUser)
 
     const setCurrentUser=(user)=>{
-        console.log("useruseruser",user)
+        // console.log("useruseruser",user)
         dispatch({type:USER_ACTION_TYPES.SET_CURRENT_USER,payload:user})
     }
 
 
     function before(){
-        console.log("in before")
+        // console.log("in before")
         const  unsubcribe =  onAuthStateChangeFirebase(async(user)=>{
             if(user){
         createUserDocumentFromAuth(user)
@@ -58,7 +58,7 @@ export const ProviderContext=({children})=>{
     }
 
     useEffect(()=>{
-        console.log("in effect ")
+        // console.log("in effect ")
         before()
 
     },[])

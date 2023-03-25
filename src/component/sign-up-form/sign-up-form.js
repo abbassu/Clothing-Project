@@ -13,7 +13,6 @@ const defaultformFields={
     email:'',
     password:'',
     confirmPassword:'',
-
 }
 
 

@@ -6,12 +6,12 @@ export const CartContext=createContext({
 })
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 const addCartItem=(cartItems,productToAdd)=>{
-  console.log("iiiiiiiiiiiiiii")
+  // console.log("iiiiiiiiiiiiiii")
     //find if cartitems contains product items
     const existingCartItem= cartItems.find((item)=>item.id===productToAdd.id)
     // if found increment quantity 
     if (existingCartItem) {
-      console.log("ttttttttttttttt")
+      // console.log("ttttttttttttttt")
         const editCart= cartItems.map((cartItem) =>
           cartItem.id === productToAdd.id
             ? { ...cartItem, quantity: cartItem.quantity + 1 }
@@ -19,7 +19,7 @@ const addCartItem=(cartItems,productToAdd)=>{
         );
         return editCart
       }
-      console.log("ccccccccccccc")
+      // console.log("ccccccccccccc")
 
     // retuen new array with midified cartitems  new cart item
     return [...cartItems, {...productToAdd, quantity:1}] 
@@ -27,7 +27,7 @@ const addCartItem=(cartItems,productToAdd)=>{
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const addCartItemAllFromStorage=(allcartItems,value)=>{
-  console.log("iiiiiiiiiiiiiii--addCartItemAllFromStorage")
+  // console.log("iiiiiiiiiiiiiii--addCartItemAllFromStorage")
     //find if cartitems contains product items
     // if found increment quantity 
     // retuen new array with midified cartitems  new cart item
@@ -36,7 +36,7 @@ const addCartItemAllFromStorage=(allcartItems,value)=>{
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 const addCartItemAll=(cartItems,productToAdd,value)=>{
-  console.log("iiiiiiiiiiiiiii")
+  // console.log("iiiiiiiiiiiiiii")
     //find if cartitems contains product items
     const existingCartItem= cartItems.find((item)=>item.id===productToAdd.id)
     // if found increment quantity 
@@ -48,7 +48,7 @@ const addCartItemAll=(cartItems,productToAdd,value)=>{
         );
         return editCart
       }
-      console.log("ccccccccccccc")
+      // console.log("ccccccccccccc")
 
     // retuen new array with midified cartitems  new cart item
     return [...cartItems, {...productToAdd, quantity:value}] 
@@ -136,10 +136,10 @@ export const CartProvider=({children})=>{
     useEffect(() => {
 
       const items = JSON.parse(localStorage.getItem('items'));
-      console.log("pppppppppp2------------",items)
+      // console.log("pppppppppp2------------",items)
       if (cartItems.length>=1) {
         localStorage.setItem('items', JSON.stringify(cartItems));
-        console.log("ssssssssssssssssssssssssssssssssssssssssss",items)
+        // console.log("ssssssssssssssssssssssssssssssssssssssssss",items)
         
       }
     }, [cartItems]);
@@ -149,7 +149,7 @@ export const CartProvider=({children})=>{
 
       const items = JSON.parse(localStorage.getItem('items'));
       if (items) {
-        console.log("ssssssssssssssssssssssssssssssssssssssssss111",items)
+        // console.log("ssssssssssssssssssssssssssssssssssssssssss111",items)
         addAllItemToCardStorage(items) 
       }
     }, []);
@@ -161,7 +161,7 @@ export const CartProvider=({children})=>{
     }
 
     const updateCartItemsReducer= (newCartItems)=>{
-      console.log("llllllllllll")
+      // console.log("llllllllllll")
       const newCartCount = newCartItems.reduce((total,item)=> total+item.quantity,0 )
 
       const newTotalCount = newCartItems.reduce((total,item)=> total+item.quantity* item.price,0 )

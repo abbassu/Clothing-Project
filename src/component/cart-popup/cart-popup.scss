@@ -1,13 +1,10 @@
 .popup-cart-box{
-
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5px;
-
     .box-cart{
         width: 740px;
-        // height: 590px;
         background-color: white;
         border-radius: 10px;
         background-color: rgb(228, 228, 188);
@@ -26,7 +23,6 @@
             transition: 0.3s;
             user-select: none;
             background-color: rgb(255 ,216 ,20);
-
         }
         button:hover{
             transition: 0.3s;
@@ -34,20 +30,15 @@
             background-color: rgb(142, 226, 47);
             color: white;
         }
-
         img{
             border-radius: 10px;
             width: 350px;
             max-height: 410px;
         }
-
         .name-of-product{
-
             display: flex;
             flex-direction: column;
-
         }
-   
     .starrating{
         width: 100%;
         display: flex;
@@ -56,7 +47,6 @@
     .rightsiderate{
         margin-top: 30px;
         .namename{
-            // user-select: none;
             border: 1ps solid gray;
             text-align: center;
             font-weight: 600;
@@ -86,8 +76,7 @@
                         align-items: center;
                         justify-content: center;
                         font-size: 18px;
-  user-select: none;
-
+                        user-select: none;
                     }
                     .arrow{
                         display: flex;
@@ -99,9 +88,7 @@
                         width: 50px;
                         cursor: pointer;
                         height: 50px;
-  user-select: none;
-
-                        
+                        user-select: none;
                     }
                     .minus{
                         padding-bottom: 14px;
@@ -111,7 +98,6 @@
                         border-top-left-radius: 10px;
                         border-bottom-left-radius: 10px;
                         transition: 0.3s;
-
                     }
                     .minus:hover{
                         transition: 0.3s;
@@ -120,7 +106,6 @@
                     }
                     .opper{
                         transition: 0.3s;
-
                         padding-top: 5px;
                         border-top-right-radius: 10px;
                         border-bottom-right-radius: 10px;
@@ -135,19 +120,15 @@
     }
 
    @media (max-width:950px) {
-    
     width: 700px;
-
     }    
-
-
    @media (max-width:800px) {
 
-&{
-    width: 600px;
-    gap:30px
-}
-            img{
+        &{
+            width: 600px;
+            gap:30px
+        }
+        img{
             width: 300px;
             max-height: 360px;
         }
@@ -194,25 +175,18 @@
         
         
         @media (max-width:400px) {
-    
             &{
                 width: 280px;
             }
             img{
-                // padding: 10px;
                 width: 260px;
             }
-    
             .rightsiderate{
                 margin-top: 0px;
-    
                 .namename{
                     margin-bottom: 0px;
                     padding: 5px;
                 }
-    
-    
-    
             }
             }   
 }

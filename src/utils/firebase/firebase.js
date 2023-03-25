@@ -16,6 +16,8 @@ import {getFirestore
   ,writeBatch
   ,query
   ,getDocs} from "firebase/firestore"
+  import { getStorage } from "firebase/storage";
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyC4IHDAnYYcnLRlIbMqiqp5uviFP4q5HsE",
@@ -30,7 +32,9 @@ const app = initializeApp(firebaseConfig);
 const provider = new GoogleAuthProvider();
 export const auth=getAuth();
 export const signinwithgooglepopup = ()=> signInWithPopup(auth,provider)
-export const db = getFirestore();
+export const db = getFirestore(app);
+const storage = getStorage(app);
+export default storage;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const createAuthUserDocumentFromAuth = async(email,password,)=>{
@@ -92,19 +96,33 @@ export const addtalabat= async (collectionKey,objectsToAdd,uid,cartTotal)=>{
   const collectionRef=collection(db,collectionKey)
   const Batsh=writeBatch(db)
   var today = new Date();
-  console.log("jjjjjjjjj",today.toString())
+  // console.log("jjjjjjjjj",today.toString())
   const docRef=doc(collectionRef,today.toString())
 
   let all=await gettalabat()
+  let aar=[]
+  // let all=[]
+
+  const f=all.map((element)=>{
+    if(element.uid==="FEZDZevygzWSyTjV0cNRMriRwJ33")aar.push(element.objectsToAdd.cartItems)
+  })
+
+  console.log("final state machine",aar)
+
+  console.log("talabat qadeem --------",all)
+
   const children = all.concat(objectsToAdd)
   console.log("children ---- ",children)
-  console.log("fffffffffffffffffff",objectsToAdd)
+  console.log("objectsToAdd --------",objectsToAdd)
   
 
     Batsh.set(docRef,{objectsToAdd,cartTotal,uid})
   await Batsh.commit();
   console.log("done")
 }
+
+
+///////////////////////////////////////////////////////////////////////
 
 export const gettalabat= async ()=>{
 
@@ -137,7 +155,7 @@ export const getCategoriesAndDocuments= async ()=>{
   const querySnapShot= await getDocs(q)
   const categoryMap=querySnapShot.docs.reduce((acc,docSnapShot)=>{
     const {title,items}=docSnapShot.data()
-    console.log("titel",docSnapShot.data())
+    // console.log("titel",docSnapShot.data())
     s.push(docSnapShot.data())
     
     acc[title.toLowerCase()]=items
@@ -145,8 +163,8 @@ export const getCategoriesAndDocuments= async ()=>{
   },{})
   // const newTotalCount = cartItems.reduce((total,item)=> total+item.quantity* item.price,0 )
 
-  console.log("categoryMap",s)
-  console.log("categoryMap",categoryMap)
+  // console.log("categoryMap",s)
+  // console.log("categoryMap",categoryMap)
 
   return categoryMap
 }

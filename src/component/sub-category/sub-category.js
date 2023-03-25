@@ -11,9 +11,9 @@ function SubCategory(){
     const param=useParams()
     const titlee=param.title
     const [arr,setarr]=useState(product[titlee.toLowerCase()])
-    console.log("ararrrrrrrrrrrrrrrrrrrrrrrr",arr)
+    // console.log("ararrrrrrrrrrrrrrrrrrrrrrrr",arr)
 
-    console.log("params",param.title,",,,,,",product,",,,,,",titlee)
+    // console.log("params",param.title,",,,,,",product,",,,,,",titlee)
     return(
         <div className="category-preview-container">
             <h2>

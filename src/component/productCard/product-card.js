@@ -13,7 +13,7 @@ function ProductCard({product,tite}){
     const {name, price , imageUrl}=product
     const [title,setTitle]=useState(tite)
     const {addItemToCard}= useContext(CartContext)
-    console.log("titleeeeeeeeee",title)
+    // console.log("titleeeeeeeeee",title)
     
     return(
                 
