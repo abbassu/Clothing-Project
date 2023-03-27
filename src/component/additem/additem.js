@@ -68,18 +68,7 @@ function AddItem(){
             <div className="additem">
 
                 <form action=""onSubmit={add} >
-                    {/* <FormInput
-                        labelName="Url" 
-                        optionInput={
-                            {
-                                onChange:handleChange,
-                                type:"text",
-                                // required:true,
-                                value:url,
-                                name:"url"
-                            }
-                        }
-                    /> */}
+
                     <FormInput
                         labelName="Name" 
                         optionInput={
