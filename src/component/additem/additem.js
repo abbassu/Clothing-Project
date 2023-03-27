@@ -63,7 +63,7 @@ function AddItem(){
     }
 
     return(
-        <div className="">
+        <div className="trtr">
             <h1>Add Product</h1>
             <div className="additem">
 
@@ -129,11 +129,14 @@ function AddItem(){
                             }
                         }
                     />
-                    <Button>Submit</Button>
+                    <Button buttonType="google">Submit</Button>
                 </form>
 
                 <div className="imim">
-                <img src={url} alt="" />
+                    <div className="fff">
+                     <img src={url} alt="" />
+                    </div>
+                
                 <TestFire fun={putUrl} type="button"/>
                 </div>
 

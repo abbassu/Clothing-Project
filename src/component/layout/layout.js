@@ -10,7 +10,7 @@ function Layout(){
         <div className="layout">
             <div className="sublay">
             <Navbar/>
-         <AddItem/> 
+         {/* <AddItem/>  */}
              
 
 {/* <TestFire/> */}

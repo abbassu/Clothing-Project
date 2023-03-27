@@ -20,6 +20,7 @@ function Category({title,products}){
                         {title.toUpperCase()}
                         <span className="right-arrow arr">
                     <i class="fa-solid fa-angles-right "></i>
+
                     </span>
                 </span>
             </h2>

@@ -4,7 +4,7 @@ import storage from "../../utils/firebase/firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import Button from "../button/button";
 import "./fire.scss"
- 
+
 function TestFire({fun}) {
         // State to store uploaded file
         const [file, setFile] = useState("");
@@ -53,10 +53,11 @@ function TestFire({fun}) {
                 <div className="ioio">
                     <div className="choose">
                                 <input type="file" onChange={handleChange} accept="/image/*" id="filephoto" />
-                    <label htmlFor="filephoto">Choose Photo</label>
+                    <label htmlFor="filephoto">Choose Photo  <span>  </span>   </label>
                     </div>
+                    
                     <Button onClick={handleUpload}>Upload to Storage</Button>
-                    <p className="donepre">{percent} % done</p>
+                    <p className="donepre">{percent} % done  </p>
                 </div>
         );
 }

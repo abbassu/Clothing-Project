@@ -11,14 +11,10 @@ import Checkout from './component/routes/checkout/checkout';
 import SubCategory from './component/sub-category/sub-category';
 import Layout from './component/layout/layout';
 import Cartpopup from './component/cart-popup/cart-popup';
-
-
+import AddItem from './component/additem/additem';
 
 function App() {
-  
-
   return (
-
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Layout/>} >
@@ -28,14 +24,10 @@ function App() {
             <Route path='auth' element={  <Authentication/>} />
             <Route path='subcategory/:title' element={<SubCategory/>}/>
             <Route path='checkout' element={  <Checkout/>} />
-            {/* <Route path='cc' element={  <Layout/>} /> */}
-
+            <Route path='additem' element={    <AddItem/> } />
           </Route>
         </Routes>
       </BrowserRouter>
-
-
-
   );
 }
 
