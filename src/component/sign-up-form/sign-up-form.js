@@ -57,7 +57,7 @@ function SignUpForm(){
     return(
         <div className="sign-up-container">
             <span> Sign up with your email and password </span>
-            <h2>Don't jave an account ?</h2>
+            <h2>Don't have an account ?</h2>
             <form action="" onSubmit={handleSubmit}>
                 
                 <FormInput 

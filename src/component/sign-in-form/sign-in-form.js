@@ -51,7 +51,7 @@ function SignInForm(){
             
         <span> Sign in with your email and password </span>
 
-        <h2>Don't jave an account ?</h2>
+        <h2>Do you have an account ?</h2>
 
         <form action="" onSubmit={handleSubmit}>
 

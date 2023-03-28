@@ -1,13 +1,12 @@
 import React from "react";
 import "./category.scss"
 import ProductCard from "../productCard/product-card";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import More from "../more/more";
 
 function Category({title,products}){
         const navigate=useNavigate()
         const rout=()=>{
-            // console.log("kkkkkkkkkk")
             navigate(`/subcategory/${title}`)
         }
     return(
@@ -30,9 +29,11 @@ function Category({title,products}){
                     <ProductCard key={item.id} product={item} tite={title} />
                 )
             })}
-            <div onClick={rout}>
+            <Link to={`/subcategory/${title}`}
+            //  onClick={rout}
+             >
             <More  />
-            </div>
+            </Link>
             
             </div>
         </div>

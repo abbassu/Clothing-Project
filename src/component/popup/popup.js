@@ -8,10 +8,10 @@ import Button from "../button/button";
 function Popup(){
 
     const navigate=useNavigate()
-    const {close,changeState}=useContext(PopupContext)
+    const {close,changeState,changeStateFalse}=useContext(PopupContext)
 
     const change=()=>{
-        changeState(close)
+        changeState()
     }
     const goToLogin=()=>{
         navigate("/auth")

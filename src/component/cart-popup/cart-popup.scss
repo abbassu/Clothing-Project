@@ -7,7 +7,7 @@
         width: 740px;
         background-color: white;
         border-radius: 10px;
-        background-color: rgb(228, 228, 188);
+        background-color: rgb(224, 223, 223);
         padding: 20px;
         display: flex;
         flex-direction: row;
@@ -22,12 +22,11 @@
             cursor: pointer;
             transition: 0.3s;
             user-select: none;
-            background-color: rgb(255 ,216 ,20);
+            background-color: rgb(240, 167, 32);
         }
         button:hover{
             transition: 0.3s;
             // font-size: 19px;
-            background-color: rgb(142, 226, 47);
             color: white;
         }
         img{

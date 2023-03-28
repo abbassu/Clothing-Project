@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { CartContext } from "../../contexte/cart";
 import { useContext } from "react";
 import CheckoutItem from "../../checkout-item/checkout-item";
@@ -12,17 +12,29 @@ import { Global } from "../../contexte/usercontext";
 import { gettalabat } from "../../../utils/firebase/firebase";
 function Checkout(){
     const {currentUser,setCurrentUser}=useContext(Global)
+    const [view,setview]=useState(false)
     const {cartItems,cartTotal,clearItemCart}=useContext(CartContext)
-    const {close,changeState}=useContext(PopupContext)
-    console.log("incheckout  ",close, currentUser?.uid,'hhhhhhhhhhhhhhhhhh',cartItems)
+    const {close,changeState,changeStateFalse}=useContext(PopupContext)
+    // console.log("incheckout  ",close, currentUser?.uid,'hhhhhhhhhhhhhhhhhh',cartItems)
 
     function ff(){
-        addtalabat("tale",{cartItems},currentUser?.uid,cartTotal)
+        if(currentUser){
+            addtalabat("tale",{cartItems},currentUser?.uid,cartTotal)
+        }
+        else{
+            setview(true)
+            changeStateFalse()
+        }
     }
+
+
+    console.log("currentUser",currentUser)
+
 
     return(
         <>
-        {!close ? <Popup/> : "" }
+        
+        {  close ? "" : <Popup/> }
                 <div className="calcolater">
             Bill Page
         </div>

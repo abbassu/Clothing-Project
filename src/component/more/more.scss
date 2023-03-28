@@ -4,6 +4,7 @@
     max-width: 150px;
     max-height: 250px;
     background-color: rgba(185, 229, 229, 0.5);
+
     font-size: 30px;
     display: flex;
     justify-content: center;
@@ -16,7 +17,9 @@
     &:hover{
         transition: 0.3s;
         background-color: rgb(49, 116, 92);
-        color: rgb(255, 255, 255);
+      background-color: rgb(230, 178, 84);
+
+        color: rgb(0, 0, 0);
         cursor: pointer;
         font-size: 33px;
         
