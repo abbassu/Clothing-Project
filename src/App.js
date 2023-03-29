@@ -13,6 +13,7 @@ import Layout from './component/layout/layout';
 import Cartpopup from './component/cart-popup/cart-popup';
 import AddItem from './component/additem/additem';
 import Orders from './component/talabat/talabat';
+import OrderUser from './component/order/order';
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
             <Route path='checkout' element={  <Checkout/>} />
             <Route path='additem' element={    <AddItem/> } />
             <Route path='orders' element={    <Orders/> } />
-
+            <Route path='orderuser' element={    <OrderUser/> } />
           </Route>
         </Routes>
       </BrowserRouter>

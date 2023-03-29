@@ -91,30 +91,15 @@ export const addCollectionAndDocuments= async (collectionKey,objectsToAdd)=>{
 ////////////////////////////////////////////// -------------testtest
 
 
-export const addtalabat= async (collectionKey,objectsToAdd,uid,cartTotal,city,phone,street,name,currentDate)=>{
+export const addtalabat= async (collectionKey,cartItems,uid,cartTotal,city,phone,street,name,currentDate)=>{
 
   const collectionRef=collection(db,collectionKey)
   const Batsh=writeBatch(db)
   var today = new Date();
-  const docRef=doc(collectionRef,today.toString())
-  let all=[]
-  let aar=[]
-  let gg = await gettalabat()
-  console.log("orders",gg)
-  const f=all.map((element)=>{
-    if(element.uid==="FEZDZevygzWSyTjV0cNRMriRwJ33")aar.push(element.objectsToAdd.cartItems)
-  })
 
-  console.log("final state machine",aar)
+  const docRef=doc(collectionRef,today.toString()+uid)
 
-  console.log("talabat qadeem --------",all)
-
-  const children = all.concat(objectsToAdd)
-  console.log("children ---- ",children)
-  console.log("objectsToAdd --------",objectsToAdd)
-  
-
-    Batsh.set(docRef,{objectsToAdd,cartTotal,uid,city,street,phone,name,currentDate})
+  Batsh.set(docRef,{cartItems,cartTotal,uid,city,street,phone,name,currentDate})
   await Batsh.commit();
   console.log("done")
 }
