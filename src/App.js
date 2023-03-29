@@ -12,6 +12,7 @@ import SubCategory from './component/sub-category/sub-category';
 import Layout from './component/layout/layout';
 import Cartpopup from './component/cart-popup/cart-popup';
 import AddItem from './component/additem/additem';
+import Orders from './component/talabat/talabat';
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
             <Route path='subcategory/:title' element={<SubCategory/>}/>
             <Route path='checkout' element={  <Checkout/>} />
             <Route path='additem' element={    <AddItem/> } />
+            <Route path='orders' element={    <Orders/> } />
+
           </Route>
         </Routes>
       </BrowserRouter>

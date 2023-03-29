@@ -91,18 +91,16 @@ export const addCollectionAndDocuments= async (collectionKey,objectsToAdd)=>{
 ////////////////////////////////////////////// -------------testtest
 
 
-export const addtalabat= async (collectionKey,objectsToAdd,uid,cartTotal)=>{
+export const addtalabat= async (collectionKey,objectsToAdd,uid,cartTotal,city,phone,street,name,currentDate)=>{
 
   const collectionRef=collection(db,collectionKey)
   const Batsh=writeBatch(db)
   var today = new Date();
-  // console.log("jjjjjjjjj",today.toString())
   const docRef=doc(collectionRef,today.toString())
-
-  let all=await gettalabat()
+  let all=[]
   let aar=[]
-  // let all=[]
-
+  let gg = await gettalabat()
+  console.log("orders",gg)
   const f=all.map((element)=>{
     if(element.uid==="FEZDZevygzWSyTjV0cNRMriRwJ33")aar.push(element.objectsToAdd.cartItems)
   })
@@ -116,7 +114,7 @@ export const addtalabat= async (collectionKey,objectsToAdd,uid,cartTotal)=>{
   console.log("objectsToAdd --------",objectsToAdd)
   
 
-    Batsh.set(docRef,{objectsToAdd,cartTotal,uid})
+    Batsh.set(docRef,{objectsToAdd,cartTotal,uid,city,street,phone,name,currentDate})
   await Batsh.commit();
   console.log("done")
 }
@@ -126,14 +124,14 @@ export const addtalabat= async (collectionKey,objectsToAdd,uid,cartTotal)=>{
 
 export const gettalabat= async ()=>{
 
-  const collectionRef=collection(db,"tale")
+  const collectionRef=collection(db,"orders")
   const q =query(collectionRef)
   let ss=[]
 
   const querySnapShot= await getDocs(q)
   const categoryMap=querySnapShot.docs.reduce((acc,docSnapShot)=>{
     const tata=docSnapShot.data()
-    console.log("titel",docSnapShot.data())
+    // console.log("titel",docSnapShot.data())
     ss.push(docSnapShot.data())
   },{})
   // const newTotalCount = cartItems.reduce((total,item)=> total+item.quantity* item.price,0 )
