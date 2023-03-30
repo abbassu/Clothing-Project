@@ -23,7 +23,7 @@ function OrderUser ({}){
                   Address &nbsp;:&nbsp;  {element.city} /&nbsp;{element.street}-street
                 </div>
                 <div className="hiscartTotal ggg">
-                  TOtel Payment &nbsp;: &nbsp; {element.cartTotal}$
+                  Totel Payment &nbsp;: &nbsp; {element.cartTotal}$
                 </div>
                 <div className="hiscurrentDate ggg">
                     Order Date &nbsp;:&nbsp;{element.currentDate}
