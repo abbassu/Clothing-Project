@@ -21,6 +21,12 @@
             border-radius: 8px;
         }
     }
+    .ssss{
+        text-align: center;
+    }
+    .jjj{
+        // padding: 20px;
+    }
     .yyy{
         width: 440px;
         height: 400px;
@@ -31,10 +37,24 @@
         // justify-content: center;
         gap: 20px;
     }
+    @media (max-width:1130px) {
+        &{
+            flex-direction: column;
+            align-items: center;
+        }
 
+        .ooo{
+            width: 300px;
+            .ggg{
+                font-size: 16px;
+                // width: 300px;
+            }
+        }
+    }
     @media (max-width:900px) {
         &{
-            flex-direction: column;align-items: center;
+            flex-direction: column;
+            align-items: center;
         }
 
         .ooo{
@@ -47,7 +67,7 @@
     }
     @media (max-width:600px) {
         .yyy{
-            width:300px ;
+            width:330px ;
         }
     }
     @media (max-width:430px) {

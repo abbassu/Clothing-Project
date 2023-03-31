@@ -64,7 +64,8 @@ function AddItem(){
 
     return(
         <div className="trtr">
-            <h1>Add Item</h1>
+            
+            <h1 className="lablee">Add Item</h1>
             <div className="additem">
 
                 <form action=""onSubmit={add} >

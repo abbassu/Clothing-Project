@@ -6,6 +6,7 @@ import FormInput from "../fom-input/form-input";
 import "./sign-in-form.scss"
 import Button from "../button/button";
 import { Global } from "../contexte/usercontext";
+import { useNavigate } from "react-router-dom";
 
 const defaultformFields={
     email:'',
@@ -13,6 +14,7 @@ const defaultformFields={
 }
 
 function SignInForm(){
+    const navigate=useNavigate()
     const {currentUser,setCurrentUser}=useContext(Global)
     const [formFields,setformfields]=useState(defaultformFields)
     function resetForm(){
@@ -32,6 +34,7 @@ function SignInForm(){
             const {user} = await signinwauthithemailandpassword(email,password)
             setCurrentUser(user)
             resetForm()
+            navigate("/")
         }catch(error){
             switch(error.code){
                 case "auth/user-not-found":

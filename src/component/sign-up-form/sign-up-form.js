@@ -7,6 +7,7 @@ import { Global } from "../contexte/usercontext";
 import "./sign-up-form.scss"
 import Button from "../button/button";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 const defaultformFields={
     displayName:'',
@@ -17,12 +18,13 @@ const defaultformFields={
 
 
 function SignUpForm(){
+    const navigate=useNavigate()
     // const {currentUser,setCurrentUser}=useContext(Global)
     // console.log("currentUser--------",currentUser)
     const [formFields,setformfields]=useState(defaultformFields)
     console.log("hit")
     function resetForm(){
-        setformfields()
+        setformfields(defaultformFields)
     }
 
     function handleChange(event){
@@ -42,7 +44,8 @@ function SignUpForm(){
             // setCurrentUser(user)
             console.log("in sign up",user)
             const responts= await  createUserDocumentFromAuth(user,{displayName})
-
+            resetForm()
+            navigate("/")
             console.log(responts)
         }catch(error){
             if(error.code ==="auth/email-already-in-use")alert("email is already used")

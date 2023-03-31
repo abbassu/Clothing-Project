@@ -28,13 +28,14 @@ function Orders(){
 
     return(
         <div>
-             <h1>All Orders</h1>
+             <h1 className="lablee">All Orders</h1>
             {/* <button onClick={setdata}>fffffffffffffffffffff</button> */}
             {orders.map((Element,index)=>{
                 return(
                     <div className="back">
                        
                     <div className="order" >
+                        
                     <span className="index"> {index}</span>
                     <span className="phone talab"> <span className="frow">Name </span>   :{Element.name?Element.name :"ahamd"}  </span>
                         <span className="phone talab"> <span className="frow">Phone </span>  :  {Element.phone}  </span>
@@ -43,9 +44,9 @@ function Orders(){
                         <span className="date talab"> <span className="frow"> Order Date</span>   :   {Element.currentDate} </span>
                         
                         <Link to="/orderuser" state={{ data: Element }} >
-                            <button className="seeOrder" onClick={()=>{sentdata(Element)}}>See Order <span> <i class="fa-solid fa-arrow-right"></i> </span></button>
+                            <button className="seeOrder" onClick={()=>{sentdata(Element)}}>See Order <span> <i class="fa-solid fa-arrow-right gfd"></i> </span></button>
                         </Link>
-                    
+                        <button className="seeOrder gg" onClick={()=>{sentdata(Element)}}>Delete order <span> <i class="fa-solid fa-trash gfd"></i> </span></button>
                     
                     </div>
                     </div>

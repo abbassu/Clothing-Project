@@ -8,8 +8,9 @@ import AddItem from "../additem/additem";
 function Layout(){
     return(
         <div className="layout">
-            <div className="sublay">
             <Navbar/>
+            <div className="sublay">
+            
          {/* <AddItem/>  */}
              
 

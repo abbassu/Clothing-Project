@@ -32,7 +32,7 @@ function OrderUser ({}){
 
            
             
-            <div className="ooo">
+            <div className="jjj">
                 <h2 className="ssss">Order Information</h2>
                 <div className="yyy"> 
                 {element.cartItems.map((cartItem)=>{

@@ -1,4 +1,13 @@
 
+
+.lablee{
+    background-color: rgb(64, 64, 240);
+    color: white;
+    width: 320px;
+    margin: 5px auto;
+    border-radius: 7px;
+}
+
 .back{
     padding: 2px;
     background-color: #ffffff;
@@ -16,22 +25,22 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
-        padding: 10px 20px;
+        padding: 10px 10px;
         font-size: 16px;
         flex-wrap: wrap;
         .index{
-            min-width: 30px;
-            min-height: 30px;
+            min-width: 40px;
+            min-height: 40px;
             border: 1px rgb(139, 134, 134) solid;
             text-align: center;
-            padding-top: 3px;
+            padding-top: 7px;
             border-radius: 50%;
             margin: 0 20px;
         }
         .talab{
             width:18% ;
             min-width: 200px;
-            padding: 5px;
+            padding: 5px 0px;
             // font-weight: 500;
             .frow{
                 font-weight: 500;
@@ -48,7 +57,7 @@
             border-radius: 7px;
             color: white;
             position: relative;
-            .fa-arrow-right{
+            .gfd{
                 opacity: 0;
                 position: absolute;
                 top: 9px;
@@ -56,12 +65,15 @@
                 transition: 0.2s;
             }
             &:hover{
-                .fa-arrow-right{
-                    left: 122px;
+                .gfd{
+                    left: 128px;
                     transition: 0.2s;
                     opacity: 1;
                 }
             }
+        }
+        .gg{
+            background-color: #da7a7a;
         }
     }
     &:hover{
