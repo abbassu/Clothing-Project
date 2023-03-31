@@ -71,9 +71,9 @@ function Checkout(){
         <>
         
         {  close ? "" : <Popup/> }
-                <div className="calcolater">
+                <h1 className="lablee">
             Order Page
-        </div>
+        </h1>
         <div className="checkout-container">
             {cartItems.map((cartItem)=>{
                 return(

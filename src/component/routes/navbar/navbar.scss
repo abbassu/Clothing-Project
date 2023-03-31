@@ -7,6 +7,9 @@
     // background-color: aqua;
     padding: 10px 30px;
     border-bottom: 1px gray solid;
+    position: fixed;
+    z-index: 31234;
+    background-color: white;
     .logo-container {
       img{
         width: 200px;

@@ -7,14 +7,15 @@
 }
     .category-container{
         min-width: 30%;
-        flex: 1 1 auto;
+        flex: 1 1 0;
         height: 240px;
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 1px solid black;
+        // border: 1px solid rgb(141, 150, 158);
         margin: 0 7.5px 15px;
         overflow: hidden;
+        border-radius: 7px;
         
         &:hover{
             transition: 0.3s;

@@ -42,11 +42,11 @@ function Orders(){
                         <span className="address talab"> <span className="frow">Address </span>  :  {Element.city} - {Element.street}  </span>
                         <span className="mony talab"> <span className="frow"> Total Payment</span>   :   {Element.cartTotal}$  </span>
                         <span className="date talab"> <span className="frow"> Order Date</span>   :   {Element.currentDate} </span>
-                        
+                        <button className="seeOrder gg" onClick={()=>{sentdata(Element)}}>Delete <span> <i class="fa-solid fa-trash gfd"></i> </span></button>
                         <Link to="/orderuser" state={{ data: Element }} >
                             <button className="seeOrder" onClick={()=>{sentdata(Element)}}>See Order <span> <i class="fa-solid fa-arrow-right gfd"></i> </span></button>
                         </Link>
-                        <button className="seeOrder gg" onClick={()=>{sentdata(Element)}}>Delete order <span> <i class="fa-solid fa-trash gfd"></i> </span></button>
+                        
                     
                     </div>
                     </div>
