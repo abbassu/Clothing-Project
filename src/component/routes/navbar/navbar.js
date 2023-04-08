@@ -31,9 +31,8 @@ function Navbar(){
             <Link className="nav-link" to={"/"}> HOME </Link>
             <Link className="nav-link" to={"shop"}> SHOP</Link>
             {currentUser?.uid==="upCC9gHfwcQQFN2ObsYXgHKg6193"? <>
-            <Link className="nav-link" to={"additem"}> Add Item</Link>
+            <Link className="nav-link" to={"additem"}> Operation</Link>
             <Link className="nav-link" to={"orders"}>Orders </Link>
-            
             </> :""}
             
 

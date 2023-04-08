@@ -4,7 +4,8 @@
     margin-bottom: 40px;
     // background-color: red;
     .title-in-sub {
-    
+    user-select: none;
+      // pointer-events: none;
       .left-arrow, .right-arrow{
         // color: rgb(13, 20, 19);
         // background-color: blue;
@@ -24,8 +25,8 @@
       display: flex;
       justify-content: center;
       gap: 30px;
-      background-color: rgb(106, 201, 168);
-      color: whitesmoke;
+            background-color: #19A7CE;
+      color: rgb(8, 8, 8);
       padding: 10px;
       border-radius: 10px;
       transition: 0.3s;

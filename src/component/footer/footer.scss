@@ -4,8 +4,8 @@
     padding: 20px 30px 20px;
     // margin-top: 30px;
     width: calc(100% );
-    background-color: rgb(235, 228, 228);
-    border-top: 1px solid rgb(175, 154, 154);
+    background-color: #19A7CE;
+    border-top: 1px solid #146C94;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -13,7 +13,7 @@
     gap: 30px;
 
     .onef{
-        color: rgb(77, 75, 75);
+        color: #F6F1F1;
         flex-wrap: nowrap;
         min-width: 250px;
     }
@@ -36,7 +36,7 @@
             width: 460px;
             font-size: 14px;
             justify-content: space-between;
-            color: rgb(77, 75, 75);
+            color: #F6F1F1;
             li{
                 cursor: pointer;
             }

@@ -3,6 +3,7 @@
     flex-direction: column;
     margin-bottom: 30px;
     .title {
+      user-select: none;
       .left-arrow, .right-arrow{
         // color: rgb(13, 20, 19);
         // background-color: blue;
@@ -19,7 +20,7 @@
       justify-content: center;
       gap: 30px;
       background-color: rgb(49, 116, 92);
-      background-color: rgb(230, 178, 84);
+      background-color:#19A7CE;
 
       color: whitesmoke;
       padding: 10px;
