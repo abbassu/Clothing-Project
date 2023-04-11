@@ -7,6 +7,53 @@
     margin: 5px auto;
     border-radius: 7px;
 }
+.searchFilter{
+    padding: 5px ;
+    // height: 100px;
+    background-color: rgb(137, 128, 128);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    .search{
+        font-size: 18px;
+        font-weight: 400;
+        padding: 5px 10px;
+        white-space: nowrap;
+    }
+    .boxing{
+        width: 200px;
+        input{
+            width: 80%;
+            flex: 1 1 100px;
+        }
+        display: flex;
+        justify-content: left;
+        gap: 10px;
+    }
+    .uu{
+        width: 300px;
+    }
+    .inin{
+        font-size: 16px;
+        padding: 8px 5px;
+        outline: none;
+        border: 1px gray solid;
+        border-radius: 8px;
+        color: red;
+        flex: 1 1 100px;
+    }
+    .kk{
+        border-radius: none;
+        margin-bottom: 5px;
+        font-size: 15px;
+        width: 100px;
+        padding: 8px 5px;
+        option{
+            font-size: 14px;
+        }
+    }
+
+}
 
 .back{
     padding: 2px;

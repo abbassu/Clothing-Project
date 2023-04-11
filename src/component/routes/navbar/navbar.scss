@@ -3,8 +3,6 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    // margin-bottom: 25px;
-    // background-color: aqua;
     padding: 10px 30px;
     border-bottom: 1px rgb(210, 201, 201) solid;
     position: fixed;
@@ -26,37 +24,11 @@
         font-size: 24px;
         margin: 0px 10px;
         display: none;
-        // color: red;
       }
       .jal{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: rgb(240, 167, 32);
-        color: white;
-        opacity: 1;
-        position: absolute;
-        width: 150px;
-        top: 90px;
-        border-radius: 7px;
-        right: 40px;
-        .nav-link{
-          color: white;
-          font-size: 18px;
-          border-bottom: 1px rgb(255, 255, 255) solid;
-          width: 100%;
-          text-align: center;
-          transition: 0.3s;
-          &:hover{
-            transition: 0.3s;
-            color: black;
-          }
-        }
-        z-index: 1900;
+        display: none;
       }
-      
-      width: 540px;
+      width: 570px;
       height: 100%;
       display: flex;
       align-items: center;
@@ -67,26 +39,41 @@
         cursor: pointer;
       }
     }
-    @media (max-width : 750px) {
+    @media (max-width : 765px) {
       &{
+        .linkss {
+          border-radius: 8px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          background-color: whitesmoke;
+          gap: 4px;
+          color: white;
+          opacity: 1;
+          position: absolute;
+          width: 150px;
+          top: 95px;
+          border-radius: 7px;
+          right: 40px;
+          overflow: hidden;
+          .nav-link {
+            color: white;
+            font-size: 18px;
+            background-color: #146C94;
+            width: 100%;
+            text-align: center;
+            transition: 0.3s;
+            &:hover{
+              transition: 0.3s;
+              color: black;
+            }
+          }
+          z-index: 1900;
+        }
         .nav-links-container .fa-bars{
           display: block;
-          // color: yellow;
-        }
-        .linkss {
-          display: none;
-          // opacity: 0;
-          // transition: 0.7s;
-          align-items: center;
-          justify-content: center;
-          gap: 2px;
-          .nav-link {
-            padding: 10px 15px;
-            cursor: pointer;
-          }
         }
       }
     }
-
   }
-  

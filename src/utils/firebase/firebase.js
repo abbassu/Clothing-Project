@@ -15,7 +15,7 @@ import {getFirestore
   ,collection
   ,writeBatch
   ,query
-  ,getDocs} from "firebase/firestore"
+  ,getDocs,deleteDoc } from "firebase/firestore"
   import { getStorage } from "firebase/storage";
 
 
@@ -96,10 +96,11 @@ export const addtalabat= async (collectionKey,cartItems,uid,cartTotal,city,phone
   const collectionRef=collection(db,collectionKey)
   const Batsh=writeBatch(db)
   var today = new Date();
+  let info=uid+"-"+currentDate+"-"+cartTotal;
 
-  const docRef=doc(collectionRef,today.toString()+uid)
+  const docRef=doc(collectionRef,info)
 
-  Batsh.set(docRef,{cartItems,cartTotal,uid,city,street,phone,name,currentDate})
+  Batsh.set(docRef,{cartItems,cartTotal,uid,city,street,phone,name,currentDate,info})
   await Batsh.commit();
   console.log("done")
 }
@@ -119,10 +120,8 @@ export const gettalabat= async ()=>{
     // console.log("titel",docSnapShot.data())
     ss.push(docSnapShot.data())
   },{})
-  // const newTotalCount = cartItems.reduce((total,item)=> total+item.quantity* item.price,0 )
 
   console.log("categoryMap",ss)
-  // console.log("categoryMap",categoryMap)
 
   return ss
 
@@ -138,16 +137,36 @@ export const getCategoriesAndDocuments= async ()=>{
   const querySnapShot= await getDocs(q)
   const categoryMap=querySnapShot.docs.reduce((acc,docSnapShot)=>{
     const {title,items}=docSnapShot.data()
-    // console.log("titel",docSnapShot.data())
+    console.log("titel",docSnapShot.data())
     s.push(docSnapShot.data())
     
     acc[title.toLowerCase()]=items
     return acc
   },{})
-  // const newTotalCount = cartItems.reduce((total,item)=> total+item.quantity* item.price,0 )
 
-  // console.log("categoryMap",s)
-  // console.log("categoryMap",categoryMap)
-
+  console.log("ffffffffffffffff",categoryMap)
   return categoryMap
+}
+
+export const GetOrder= async ()=>{
+  const collectionRef=collection(db,"orders")
+  const q =query(collectionRef)
+  let s=[]
+  const querySnapShot= await getDocs(q)
+  const Orders=querySnapShot.docs.reduce((acc,docSnapShot)=>{
+    // const {title,items}=docSnapShot.data()
+    console.log("ddddd",docSnapShot.data())
+    s.push(docSnapShot.data())
+    // return acc
+  },{})
+  // console.log("orders",Orders)
+  return s
+}
+
+export const DeleteOrder=async(ex)=>{
+  console.log("exexex",ex)
+
+  await deleteDoc(doc(db, "orders", ex));
+  console.log("deleted")
+  
 }

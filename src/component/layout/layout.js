@@ -18,7 +18,7 @@ function Layout(){
 {/* <TestFire/> */}
 
             <Outlet/>
-            <EditItem/>
+            {/* <EditItem/> */}
             </div>
             <Footer/>
         </div>
