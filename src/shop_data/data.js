@@ -20,7 +20,6 @@ const SHOP_DATA = [
       },
       {
         reate:2,
-
         id: 3,
         name: 'Brown Cowboy',
         imageUrl: 'https://i.ibb.co/QdJwgmp/brown-cowboy.png',

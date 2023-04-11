@@ -8,83 +8,53 @@ import Compressor from 'compressorjs';
 import Resizer from "react-image-file-resizer";
 
 function TestFire({fun}) {
-        // State to store uploaded file
         const [file, setFile] = useState("");
-        
-       // progress
+        const [editfile, seteditFile] = useState("");
+
         const [percent, setPercent] = useState(0);
-    
-            // Handle file upload event and update state
-           function handleChange(event) {
-               setFile(event.target.files[0])
+      async  function handleChange(event) {
+             
+        await setFile(event.target.files[0])
 
-            }
 
-        const resizeFile = (file) => new Promise(resolve => {
-                Resizer.imageFileResizer(file, 450, 500, 'JPG', 100, 0,
-                uri => {
-                  resolve(uri);
-                }, 'base64' );
-            });
+        }
 
-                const onChangekkk = async () => {
-                // const file = event.target.files[0];
-                const image = await resizeFile(file);
-                setFile(image)
-                console.log("resize",image);
-                }     
-
-        const comp=()=>{
-                // console.log("------befor comp",file)
-        new Compressor(file, {
-                
-                quality: 0.6, // 0.6 can also be used, but its not recommended to go below.
+        const comp=async ()=>{
+                // console.log("before",file)
+      await new Compressor(file, {
+                quality: 0.4, // 0.6 can also be used, but its not recommended to go below.
                 success: (compressedResult) => {
-                  // compressedResult has the compressed file.
-                  // Use the compressed file to upload the images to your server.        
-                   setFile(compressedResult)
-                  console.log("------after comp",compressedResult)
+                //   setFile(compressedResult)
+                  seteditFile(compressedResult)
+                //   console.log("after",file)
+
                 },
               });
-
-
-
-              
         }
 
         useEffect(()=>{
-                console.log(",,,,,,,,,,,,,,,------",file)
+                comp()
         },[file])
-         
+        
             const handleUpload = async () => {
-                console.log("filebefor",file)
 
-                await comp();
-                
-                console.log("fileafter",file)
-
-                if (!file) {
+                if (!editfile) {
                     alert("Please upload an image first!");
                 }
-         
                 const storageRef = ref(storage, `/files/${file.name}`);
-                const uploadTask = uploadBytesResumable(storageRef, file);
+                const uploadTask = uploadBytesResumable(storageRef, editfile);
                 uploadTask.on(
                     "state_changed",
                     (snapshot) => {
                         const percent = Math.round(
                             (snapshot.bytesTransferred / snapshot.totalBytes) * 100
                         );
-         
-                        // update progress
                         setPercent(percent);
                     },
                     (err) => console.log(err),
                     () => {
-                        // download url
                         getDownloadURL(uploadTask.snapshot.ref).then((url) => {
                         fun(url)
-                            console.log("rtl",url);
                         });
                     }
                 );
@@ -93,18 +63,11 @@ function TestFire({fun}) {
             return (
                 <div className="ioio">
                     <div className="choose">
-                                <input type="file" onChange={handleChange} accept="/image/*" id="filephoto" />
-                        
+                       <input type="file" onChange={handleChange} accept="/image/*" id="filephoto" />
                     <label htmlFor="filephoto">Choose Photo  <i class="fa-sharp fa-solid fa-image"></i>  <span className="pluss">+</span>   </label>
                     </div>
-                    
                     <Button onClick={handleUpload}>Upload to Storage</Button>
-
-        
-
                     <p className="donepre">{percent} % done  </p>
-                        <button onClick={comp}> compress</button>
-                        {/* <button onClick={onChangekkk}> resize</button> */}
                 </div>
         );
 }

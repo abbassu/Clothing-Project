@@ -25,9 +25,9 @@ function Navbar(){
              <img src={logo} alt="" />
             </Link>
             <div className="nav-links-container" onClick={()=>{
-                // setnotopeen(!opeen)
+                setnotopeen(!opeen)
             }}>
-            <div className={`  linkss  ${opeen ? "":"jal" } `}>
+            <div className={`linkss  ${opeen ? "":"jal" } `}>
             <Link className="nav-link" to={"/"}> HOME </Link>
             <Link className="nav-link" to={"shop"}> SHOP</Link>
             {currentUser?.uid==="upCC9gHfwcQQFN2ObsYXgHKg6193"? <>

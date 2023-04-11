@@ -22,9 +22,6 @@ function Cartpopup(){
 
 
     const { pathname } = useLocation();
-    // useEffect(()=>{
-    //         window.scrollTo(0, 0);
-    // },[pathname])
 
     useEffect(()=>{
         window.scrollTo(0, 0);
@@ -38,7 +35,6 @@ function Cartpopup(){
 
     const found = cartItems.find(element => element.id===product.id);
     if(found?.quantity){
-        // sss(found.quantity)
     }
     const [ss,sss]=useState( 1 )
 
@@ -63,7 +59,7 @@ function Cartpopup(){
     const change=()=>{
         changeState(close)
     }
-    const bub = Math.floor((Math.random() * 100) + 1);
+    const [bub,setbub]=useState(Math.floor((Math.random() * 100) + 1))
 
     return(
 

@@ -16,7 +16,6 @@
         height: 100%;
       };
       height: 100%;
-
     }
     .nav-links-container {
       .fa-bars{
@@ -26,7 +25,6 @@
         display: none;
       }
       .jal{
-        display: none;
       }
       width: 570px;
       height: 100%;
@@ -42,6 +40,9 @@
     @media (max-width : 765px) {
       &{
         .linkss {
+          display: none;
+        }
+        .jal{
           border-radius: 8px;
           display: flex;
           flex-direction: column;
@@ -71,6 +72,7 @@
           }
           z-index: 1900;
         }
+
         .nav-links-container .fa-bars{
           display: block;
         }
