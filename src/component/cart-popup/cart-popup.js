@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./cart-popup.scss"
 import { PopupCartContext } from "../contexte/cart-popup";
 import { useContext } from "react";
@@ -17,7 +17,18 @@ function Cartpopup(){
     const product=useLocation().state
     const {clearItemfromCart,cartItems,addAllItemToCard,addItemToCard,removeItemfromCart}=useContext(CartContext)
     const {quantity}=product
-    
+
+
+
+
+    const { pathname } = useLocation();
+    // useEffect(()=>{
+    //         window.scrollTo(0, 0);
+    // },[pathname])
+
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+    },[pathname])
 
     console.log("propssesesese",prod)
 
