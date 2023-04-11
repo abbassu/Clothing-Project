@@ -58,7 +58,9 @@ function TestFire({fun}) {
          
             const handleUpload = async () => {
                 console.log("filebefor",file)
+
                 await comp();
+                
                 console.log("fileafter",file)
 
                 if (!file) {
