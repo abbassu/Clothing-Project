@@ -25,10 +25,8 @@ function TestFire({fun}) {
       await new Compressor(file, {
                 quality: 0.4, // 0.6 can also be used, but its not recommended to go below.
                 success: (compressedResult) => {
-                //   setFile(compressedResult)
-                  seteditFile(compressedResult)
-                //   console.log("after",file)
 
+                  seteditFile(compressedResult)
                 },
               });
         }
@@ -37,7 +35,7 @@ function TestFire({fun}) {
                 comp()
         },[file])
         
-            const handleUpload = async () => {
+        const handleUpload = async () => {
 
                 if (!editfile) {
                     alert("Please upload an image first!");
@@ -60,7 +58,6 @@ function TestFire({fun}) {
                     }
                 );
             };
-         
             return (
                 <div className="ioio">
                     <div className="choose">
@@ -68,9 +65,7 @@ function TestFire({fun}) {
                     <label htmlFor="filephoto">Choose Photo  <i class="fa-sharp fa-solid fa-image"></i>  <span className="pluss">+</span>   </label>
                     </div>
                     <Button onClick={handleUpload}>Upload to Storage</Button>
-
                     <p className="donepre">{percent} % done  </p>
-        <button onClick={DeleteProduct}> ffffff</button>
                 </div>
         );
 }

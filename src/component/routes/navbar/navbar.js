@@ -30,7 +30,7 @@ function Navbar(){
             <div className={`linkss  ${opeen ? "":"jal" } `}>
 
             {currentUser?.uid==="upCC9gHfwcQQFN2ObsYXgHKg6193"? <>
-            <Link className="nav-link" to={"additem"}> Operation</Link>
+            <Link className="nav-link" to={"operation"}> Operation</Link>
             <Link className="nav-link" to={"orders"}>Orders </Link>
             </> :
             <>

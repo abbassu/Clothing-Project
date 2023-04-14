@@ -70,8 +70,8 @@ function DeleteItem(){
     return(
         <div>
 
-<h1 className="lablee">Delete Item</h1>
-            <div className="searchFilter">
+<h1 className="lablee ddd">Delete Item</h1>
+            <div className="searchFilter ddd">
                 
                 <div className="boxing uu">
                     <span className="search"> 
@@ -110,7 +110,7 @@ function DeleteItem(){
             <div className="tale">
                 <div className="jojo">
                     <button  className="saveupdates" onClick={()=>{
-Save()
+                        Save()
                     }}> Save Updates </button>
                 </div>
 
@@ -123,7 +123,6 @@ Save()
                         <div className="oppri e22">
                         <span className="eie"> Price </span>  {element.price} $
                         </div>
-
                         <div className="opid e22">
                         <span className="eie"> ID </span>  {element.id}
                         </div>

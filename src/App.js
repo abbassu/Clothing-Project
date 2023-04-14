@@ -13,7 +13,9 @@ import Layout from './component/layout/layout';
 import Cartpopup from './component/cart-popup/cart-popup';
 import AddItem from './component/additem/additem';
 import Orders from './component/talabat/talabat';
+import Operation from './component/operation/Operation';
 import OrderUser from './component/order/order';
+import DeleteItem from './component/deleteitem/deleteitem';
 
 function App() {
   return (
@@ -27,7 +29,8 @@ function App() {
             <Route path='subcategory/:title' element={<SubCategory/>}/>
             <Route path='checkout' element={  <Checkout/>} />
             <Route path='additem' element={    <AddItem/> } />
-            <Route path='operation' element={    <Orders/> } />
+            <Route path='deleteitem' element={    <DeleteItem/> } />
+            <Route path='operation' element={    <Operation/> } />
             <Route path='orders' element={    <Orders/> } />
             <Route path='orderuser' element={    <OrderUser/> } />
           </Route>
