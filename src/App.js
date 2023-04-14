@@ -27,6 +27,7 @@ function App() {
             <Route path='subcategory/:title' element={<SubCategory/>}/>
             <Route path='checkout' element={  <Checkout/>} />
             <Route path='additem' element={    <AddItem/> } />
+            <Route path='operation' element={    <Orders/> } />
             <Route path='orders' element={    <Orders/> } />
             <Route path='orderuser' element={    <OrderUser/> } />
           </Route>

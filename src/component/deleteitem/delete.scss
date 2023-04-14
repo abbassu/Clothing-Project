@@ -1,0 +1,61 @@
+.tale{
+    
+    .jojo{
+        height: 100px;
+        display: flex;
+        justify-content: right;
+    }
+}
+.saveupdates{
+    background-color: rgb(115, 134, 228);
+    color: white;
+    padding: 5px;
+    margin: 20px 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    
+}
+.opoo{
+    display: flex;
+    gap: 10px;
+    // width: 90%;
+    // margin: 10px auto;
+    height: 60px;
+    justify-content: center;
+    border: 1px solid red;
+    margin-bottom: 5px;
+    border-radius: 6px;
+    .e22{
+        width: 300px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        button{
+            font-size: 19px;
+            padding: 5px;
+            transition: 0.3s;
+            border: 1px solid red;
+            border-radius: 6px;
+
+        }
+        button:hover{
+            transition: 0.3s;
+            background-color: rgb(230, 37, 37);
+            color: white;
+        }
+        .eie{
+            background-color: rgb(115, 134, 228);
+            color: white;
+            padding: 5px;
+            margin-right: 5px;
+            border-radius: 5px;
+        }
+    }
+    .opid,.oppri{
+        // width: 150px;
+    }
+    flex-wrap: wrap;
+}

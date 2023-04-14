@@ -71,10 +71,8 @@ function Orders(){
                         <option value="phone"   >Phone</option>
                         <option value="name">Name</option>
                         <option value="currentDate">Date</option>
-
                     </select>
                 </div>
-
              </div>
             {/* <button onClick={setdata}>fffffffffffffffffffff</button> */}
             {arrayOfTalabat.map((Element,index)=>{

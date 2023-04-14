@@ -28,12 +28,17 @@ function Navbar(){
                 setnotopeen(!opeen)
             }}>
             <div className={`linkss  ${opeen ? "":"jal" } `}>
-            <Link className="nav-link" to={"/"}> HOME </Link>
-            <Link className="nav-link" to={"shop"}> SHOP</Link>
+
             {currentUser?.uid==="upCC9gHfwcQQFN2ObsYXgHKg6193"? <>
             <Link className="nav-link" to={"additem"}> Operation</Link>
             <Link className="nav-link" to={"orders"}>Orders </Link>
-            </> :""}
+            </> :
+            <>
+            <Link className="nav-link" to={"/"}> HOME </Link>
+            <Link className="nav-link" to={"shop"}> SHOP</Link>
+            </>
+
+            }
             {!currentUser?
             <Link className="nav-link" to={"auth"}> SIGN IN</Link>:<span className="nav-link" onClick={handleSignOut}> SIGN OUT</span>
             }

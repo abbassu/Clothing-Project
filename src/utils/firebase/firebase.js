@@ -15,11 +15,13 @@ import {getFirestore
   ,collection
   ,writeBatch
   ,query
-  ,getDocs,deleteDoc } from "firebase/firestore"
+  ,getDocs
+  ,deleteDoc
+  ,updateDoc} from "firebase/firestore"
   import { getStorage } from "firebase/storage";
 
 
-const firebaseConfig = {
+  const firebaseConfig = {
     apiKey: "AIzaSyC4IHDAnYYcnLRlIbMqiqp5uviFP4q5HsE",
     authDomain: "clothing-app-7b41e.firebaseapp.com",
     projectId: "clothing-app-7b41e",
@@ -56,9 +58,7 @@ export const onAuthStateChangeFirebase= (callback)=>onAuthStateChanged(auth,call
 
 export const createUserDocumentFromAuth = async (userAuth,additionalobject={}) => {
   const userDocRef = doc(db, 'users', userAuth.uid);
-  // console.log("userDocRef : ",userDocRef)
   const userSnapshot = await getDoc(userDocRef);
-  // console.log("usersnapshot : ",userSnapshot)
   if (!userSnapshot.exists()) {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
@@ -90,7 +90,6 @@ export const addCollectionAndDocuments= async (collectionKey,objectsToAdd)=>{
 }
 ////////////////////////////////////////////// -------------testtest
 
-
 export const addtalabat= async (collectionKey,cartItems,uid,cartTotal,city,phone,street,name,currentDate)=>{
 
   const collectionRef=collection(db,collectionKey)
@@ -105,28 +104,21 @@ export const addtalabat= async (collectionKey,cartItems,uid,cartTotal,city,phone
   console.log("done")
 }
 
-
 ///////////////////////////////////////////////////////////////////////
 
 export const gettalabat= async ()=>{
-
   const collectionRef=collection(db,"orders")
   const q =query(collectionRef)
   let ss=[]
-
   const querySnapShot= await getDocs(q)
   const categoryMap=querySnapShot.docs.reduce((acc,docSnapShot)=>{
     const tata=docSnapShot.data()
     // console.log("titel",docSnapShot.data())
     ss.push(docSnapShot.data())
   },{})
-
   console.log("categoryMap",ss)
-
   return ss
-
 }
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -139,14 +131,14 @@ export const getCategoriesAndDocuments= async ()=>{
     const {title,items}=docSnapShot.data()
     console.log("titel",docSnapShot.data())
     s.push(docSnapShot.data())
-    
     acc[title.toLowerCase()]=items
     return acc
   },{})
-
   console.log("ffffffffffffffff",categoryMap)
   return categoryMap
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////
 
 export const GetOrder= async ()=>{
   const collectionRef=collection(db,"orders")
@@ -154,14 +146,13 @@ export const GetOrder= async ()=>{
   let s=[]
   const querySnapShot= await getDocs(q)
   const Orders=querySnapShot.docs.reduce((acc,docSnapShot)=>{
-    // const {title,items}=docSnapShot.data()
     console.log("ddddd",docSnapShot.data())
     s.push(docSnapShot.data())
-    // return acc
   },{})
-  // console.log("orders",Orders)
   return s
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////
 
 export const DeleteOrder=async(ex)=>{
   console.log("exexex",ex)
@@ -169,4 +160,21 @@ export const DeleteOrder=async(ex)=>{
   await deleteDoc(doc(db, "orders", ex));
   console.log("deleted")
   
+}
+
+export const DeleteProduct=(documentname,newitem)=>{
+  // console.log("documentname",documentname)
+  const docRef = doc(db, "categories", documentname );
+  const data = {
+    items: newitem
+  };
+  updateDoc(docRef, data)
+  .then(docRef => {
+      console.log("Value of an Existing Document Field has been updated");
+  })
+  .catch(error => {
+      console.log(error);
+  })
+
+  console.log("done delete ")
 }

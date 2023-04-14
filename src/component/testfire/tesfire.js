@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 // import { storage } from "./firebaseConfig";
 import storage from "../../utils/firebase/firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { DeleteProduct } from "../../utils/firebase/firebase";
 import Button from "../button/button";
 import "./fire.scss"
 import Compressor from 'compressorjs';
@@ -67,7 +68,9 @@ function TestFire({fun}) {
                     <label htmlFor="filephoto">Choose Photo  <i class="fa-sharp fa-solid fa-image"></i>  <span className="pluss">+</span>   </label>
                     </div>
                     <Button onClick={handleUpload}>Upload to Storage</Button>
+
                     <p className="donepre">{percent} % done  </p>
+        <button onClick={DeleteProduct}> ffffff</button>
                 </div>
         );
 }

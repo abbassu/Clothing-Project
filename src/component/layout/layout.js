@@ -6,6 +6,7 @@ import "./layout.scss"
 import TestFire from "../testfire/tesfire";
 import AddItem from "../additem/additem";
 import EditItem from "../edititem/edititem";
+import DeleteItem from "../deleteitem/deleteitem";
 function Layout(){
     return(
         <div className="layout">
@@ -16,7 +17,7 @@ function Layout(){
              
 
 {/* <TestFire/> */}
-
+        {/* <DeleteItem/> */}
             <Outlet/>
             {/* <EditItem/> */}
             </div>

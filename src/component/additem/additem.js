@@ -23,13 +23,6 @@ function AddItem(){
     }
     const [formFields,setformfields]=useState(defaultformFields)
 
-    // const [name,setname]=useState("")
-    // const [url,seturl]=useState("")
-    // const [id,setid]=useState(0)
-    // const [price,setprice]=useState(0)
-    // const [department,setdepartment]=useState("")
-    // const [reate,setreate]=useState(0)
-
     useEffect(()=>{
         console.log("form",formFields)
     },[formFields])
