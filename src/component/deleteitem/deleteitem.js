@@ -68,9 +68,9 @@ function DeleteItem(){
 
 
     return(
-        <div>
+        <div className="fffa">
 
-<h1 className="lablee ddd">Delete Item</h1>
+<h1 className="lable">Delete Item</h1>
             <div className="searchFilter ddd">
                 
                 <div className="boxing uu">
