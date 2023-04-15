@@ -11,10 +11,13 @@ import Resizer from "react-image-file-resizer";
 function TestFire({fun}) {
         const [file, setFile] = useState("");
         const [editfile, seteditFile] = useState("");
+        const [ii,setii]=useState("") 
 
         const [percent, setPercent] = useState(0);
       async  function handleChange(event) {
              
+          console.log("photot",event.target.files[0].name)
+          setii(event.target.files[0].name)
         await setFile(event.target.files[0])
 
 
@@ -53,7 +56,7 @@ function TestFire({fun}) {
                     (err) => console.log(err),
                     () => {
                         getDownloadURL(uploadTask.snapshot.ref).then((url) => {
-                        fun(url)
+                        fun(url,ii)
                         });
                     }
                 );

@@ -8,12 +8,15 @@ function Operation() {
   return (
     <div className='opaeration'>
 
-        <button className='aaa' onClick={()=>{
+<div className='kkk'>
+<button className='aaa' onClick={()=>{
             nav("/additem")
         }} > Add Item <span className='ffff'><i class="fa-solid fa-plus"></i></span> </button>
         <button className='ddd' onClick={()=>{
             nav("/deleteitem")
         }}> Delete Item  <span className='ffff' ><i class="fa-solid fa-trash"></i></span> </button>
+
+</div>
 
 
     </div>

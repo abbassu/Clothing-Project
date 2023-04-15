@@ -5,31 +5,35 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
-    button{
-        width: 250px;
-        font-size: 24px;
-        height: 60px;
-        border-radius: 7px;
-        border: none;
-        margin: 10px;
-        .ffff{
-opacity: 0;
-transition: 0.2s;
+    .kkk{
+        // background-color: yellow;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        button{
+            width: 250px;
+            font-size: 24px;
+            height: 60px;
+            border-radius: 7px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+    
+        .aaa{
+            transition: 0.3s;
+            background-color: rgb(115, 134, 228);
+            color: white;
+        }
+    
+        .ddd{
+            transition: 0.3s;
+            background-color: rgb(230, 37, 37);
+            color: white;
+        }
+    }
 
-        }
-    }
-    button:hover{
-        .ffff{
-            transition: 0.2s;
-            opacity: 1;
-        }
-    }
-    .aaa{
-        background-color: rgb(115, 134, 228);
-        color: white;
-    }
-    .ddd{
-        background-color: rgb(230, 37, 37);
-        color: white;
-    }
+
+
 }

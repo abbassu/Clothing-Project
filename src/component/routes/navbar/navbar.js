@@ -12,6 +12,9 @@ import { CartContext } from "../../contexte/cart";
 function Navbar(){
     const {currentUser,setCurrentUser}=useContext(Global)
     const [opeen,setnotopeen]=useState(true)
+
+
+
     const {isOpen}=useContext(CartContext)
     async function handleSignOut(){
         const tt= await SingOUtAuth()
@@ -24,10 +27,10 @@ function Navbar(){
             <Link className="logo-container" to={"/"}>
              <img src={logo} alt="" />
             </Link>
-            <div className="nav-links-container" onClick={()=>{
+            <div className="nav-links-container" >
+            <div className={`linkss  ${opeen ? "":"jal" } `} onClick={()=>{
                 setnotopeen(!opeen)
-            }}>
-            <div className={`linkss  ${opeen ? "":"jal" } `}>
+            }}  >
 
             {currentUser?.uid==="upCC9gHfwcQQFN2ObsYXgHKg6193"? <>
             <Link className="nav-link" to={"operation"}> Operation</Link>
@@ -47,8 +50,9 @@ function Navbar(){
             <i class="fa-solid fa-bars" onClick={()=>{
                 setnotopeen(!opeen)
             }}></i>
-        </div>
-        {isOpen && <CartDropdown/> }
+            </div>
+    
+            {isOpen && <CartDropdown/> }
       </div>
     </>
     )

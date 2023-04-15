@@ -19,7 +19,8 @@ function AddItem(){
         id:'',
         price:'',
         department:'',
-        reate:''
+        reate:'',
+        nameurl:''
     }
     const [formFields,setformfields]=useState(defaultformFields)
 
@@ -27,12 +28,12 @@ function AddItem(){
         console.log("form",formFields)
     },[formFields])
 
-    const putUrl= (element)=>{
+    const putUrl= (element,namename)=>{
         console.log("added url ")
-       setformfields({...formFields,url:element})
+       setformfields({...formFields,url:element,nameurl:namename})
     }
 
-    const{name,url,id,price,department,reate}=formFields
+    const{name,url,id,price,department,reate,nameurl}=formFields
 
     function handleChange(event){
         const {name,value }=event.target
@@ -49,7 +50,7 @@ function AddItem(){
                 variable=index
             console.log("varirir",variable)}
         })
-        docs[variable].items.push({name:name,imageUrl:url,id,price,reate})
+        docs[variable].items.push({name:name,imageUrl:url,id,price,reate,nameurl})
         console.log("variable",variable,"---------","departemnt",department)
         const docRef=doc(db,"categories",department)
         await setDoc(docRef,{title:department,items:docs[variable].items})

@@ -18,7 +18,7 @@ import {getFirestore
   ,getDocs
   ,deleteDoc
   ,updateDoc} from "firebase/firestore"
-  import { getStorage } from "firebase/storage";
+  import { getStorage, ref, deleteObject  } from "firebase/storage";
 
 
   const firebaseConfig = {
@@ -162,15 +162,25 @@ export const DeleteOrder=async(ex)=>{
   
 }
 
-export const DeleteProduct=(documentname,newitem)=>{
+export const DeleteProduct=(documentname,newitem,uu)=>{
   // console.log("documentname",documentname)
   const docRef = doc(db, "categories", documentname );
+  
+  const desertRef = ref(storage, `files/${uu}`);
+
   const data = {
     items: newitem
   };
   updateDoc(docRef, data)
   .then(docRef => {
-      console.log("Value of an Existing Document Field has been updated");
+    // // Delete the file
+    deleteObject(desertRef).then(() => {
+      // File deleted successfully
+      console.log("deletedddddd")
+    }).catch((error) => {
+      // Uh-oh, an error occurred!
+    });
+    console.log("Value of an Existing Document Field has been updated");
   })
   .catch(error => {
       console.log(error);

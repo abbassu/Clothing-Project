@@ -11,6 +11,10 @@ function DeleteItem(){
     const [orders,setorders]=  useState ([])
     const [arrayOfTalabat,setarrOfTalabat]=useState([])
     const {product}=useContext(ProductContext)
+
+    const [uu,setuu]=useState("")
+
+
     function selectType(event){
         setTextSearch(event.target.value)
         console.log("search by ",event.target.value)
@@ -56,13 +60,16 @@ function DeleteItem(){
     function Deleteitem(iddd){
         let updatedList=[];
         updatedList = arr.filter((element) =>{ 
+            if(element.id ===iddd){
+            setuu(element.nameurl)
+            }
           return  (element.id ===iddd) ? false :true;
         });
         setarr(updatedList);
     }
     function Save(){
         console.log("searcj on",SearchOn)
-        DeleteProduct(SearchOn,arr)
+        DeleteProduct(SearchOn,arr,uu)
     }
 
 
