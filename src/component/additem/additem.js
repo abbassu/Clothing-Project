@@ -60,6 +60,7 @@ function AddItem(){
         console.log("variable",variable,"---------","departemnt",department)
         const docRef=doc(db,"categories",department)
         await setDoc(docRef,{title:department,items:docs[variable].items})
+        // setdefault()
     }
 
     return(
