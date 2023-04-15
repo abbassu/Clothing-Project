@@ -27,6 +27,12 @@ function AddItem(){
     useEffect(()=>{
         console.log("form",formFields)
     },[formFields])
+    
+
+
+    function setdefault(){
+        setformfields(defaultformFields)
+    }
 
     const putUrl= (element,namename)=>{
         console.log("added url ")
@@ -134,13 +140,7 @@ function AddItem(){
                 
                 <TestFire fun={putUrl} type="button"/>
                 </div>
-
-
-
-
             </div>
-            {/* {loading && "Loading ..."} */}
-            
         </div>
     )
 
