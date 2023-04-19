@@ -14,6 +14,7 @@ function Popup(){
         changeState()
     }
     const goToLogin=()=>{
+        changeState()
         navigate("/auth")
     }
     return(

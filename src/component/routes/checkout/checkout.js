@@ -38,19 +38,16 @@ function Checkout(){
     function clear(){
         setfields(defaultFields)
         clearItemCart()
+        localStorage.clear();
     }
 
     function ff(){
         if(currentUser){
-
             if(street!=="" && phone !=='' && city !==''){
                 let currentDate = new Date().toJSON().slice(0, 10);
                 addtalabat("orders",cartItems,currentUser?.uid,cartTotal,city,phone,street,name,currentDate)
                 clear()
             }
-
-
-
             else{
                 alert("please enter all information")
             }
