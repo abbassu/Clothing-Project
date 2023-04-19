@@ -17,7 +17,7 @@ function Category({item}){
           }}>
           <div className="category-body-container">
           <img src="" alt="" />
-          <h2> {item.title}</h2>
+          <h3> {item.title}</h3>
           <p>Shop Now</p>
           </div>
         </div>

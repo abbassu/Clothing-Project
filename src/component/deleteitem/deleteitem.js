@@ -102,7 +102,7 @@ function DeleteItem(){
                     </span> 
                     <select name="" id="" className="inin kk" onChange={selectOn}  > 
                         <option value="hats">Hats</option>
-                        <option value="fitness">Fitness</option>
+                        <option value="baby">Baby</option>
                         <option value="kids">Kids</option>
                         <option value="perfume">Perfume</option>
                         <option value="sneakers">Sneakers</option>

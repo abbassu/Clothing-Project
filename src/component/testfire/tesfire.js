@@ -56,6 +56,7 @@ function TestFire({fun}) {
                     (err) => console.log(err),
                     () => {
                         getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+          console.log("urlll",url)
                         fun(url,ii)
                         });
                     }
