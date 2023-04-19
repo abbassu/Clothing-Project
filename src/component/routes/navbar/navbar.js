@@ -42,11 +42,29 @@ function Navbar(){
             </>
 
             }
+
+
+
+
+
+
             {!currentUser?
             <Link className="nav-link" to={"auth"}> SIGN IN</Link>:<span className="nav-link" onClick={handleSignOut}> SIGN OUT</span>
             }
             </div>
+
+
+            {currentUser?.uid==="upCC9gHfwcQQFN2ObsYXgHKg6193"? <>
+            </> :
+            <>
             <Cart/>
+            </>
+
+            }
+
+
+
+
             <i class="fa-solid fa-bars" onClick={()=>{
                 setnotopeen(!opeen)
             }}></i>

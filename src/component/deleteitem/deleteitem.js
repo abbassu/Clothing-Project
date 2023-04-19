@@ -101,6 +101,8 @@ function DeleteItem(){
                         Search On
                     </span> 
                     <select name="" id="" className="inin kk" onChange={selectOn}  > 
+                        
+                    <option value=""></option>
                         <option value="hats">Hats</option>
                         <option value="baby">Baby</option>
                         <option value="kids">Kids</option>
@@ -135,6 +137,10 @@ function DeleteItem(){
                         </div>
                         <div className="e22">
                             <button onClick={()=>{Deleteitem(element.id)}}>Delete</button>
+                        </div>
+                        <div className="eieim">
+                            
+                        <img src={element.imageUrl} alt="" />
                         </div>
                     </div>
                     )

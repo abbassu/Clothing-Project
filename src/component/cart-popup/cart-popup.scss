@@ -38,6 +38,9 @@
             max-height: 425px;
         }
         .name-of-product{
+            img{
+                user-select: none;
+            }
             display: flex;
             flex-direction: column;
         }
