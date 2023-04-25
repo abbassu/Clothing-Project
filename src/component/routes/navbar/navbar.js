@@ -65,7 +65,7 @@ function Navbar(){
 
 
 
-            <i class="fa-solid fa-bars" onClick={()=>{
+            <i className="fa-solid fa-bars" onClick={()=>{
                 setnotopeen(!opeen)
             }}></i>
             </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { CartContext } from "../../contexte/cart";
 import { useContext } from "react";
 import CheckoutItem from "../../checkout-item/checkout-item";
@@ -11,6 +11,8 @@ import TESTDAT from "../../../shop_data/testdata";
 import { Global } from "../../contexte/usercontext";
 import { gettalabat } from "../../../utils/firebase/firebase";
 import FormInput from "../../fom-input/form-input";
+import { useLocation } from "react-router-dom";
+
 
 
 const defaultFields={
@@ -21,6 +23,10 @@ const defaultFields={
 }
 
 function Checkout(){
+    const { pathname } = useLocation();
+    useEffect(()=>{
+            window.scrollTo(0, 0);
+    },[pathname])
     const {currentUser,setCurrentUser}=useContext(Global)
     const [view,setview]=useState(false)
     const {cartItems,cartTotal,clearItemCart}=useContext(CartContext)

@@ -6,13 +6,14 @@ import { ProductContext } from "../contexte/product";
 
 
 function SubCategory(){
-    const { pathname } = useLocation();
     const location = useLocation()
     const {product}=useContext(ProductContext)
     const [pp,spp]=useState(product)
     const param=useParams()
     const titlee=param.title
     const [arr,setarr]=useState(product[titlee.toLowerCase()])
+
+    const { pathname } = useLocation();
     useEffect(()=>{
             window.scrollTo(0, 0);
     },[pathname])

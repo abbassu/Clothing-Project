@@ -105,7 +105,6 @@ function DeleteItem(){
                     <option value=""></option>
                         <option value="hats">Hats</option>
                         <option value="baby">Baby</option>
-                        <option value="kids">Kids</option>
                         <option value="perfume">Perfume</option>
                         <option value="sneakers">Sneakers</option>
                         <option value="jackets">Jackets</option>

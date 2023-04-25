@@ -7,6 +7,7 @@ import TestFire from "../testfire/tesfire";
 import AddItem from "../additem/additem";
 import EditItem from "../edititem/edititem";
 import DeleteItem from "../deleteitem/deleteitem";
+import HomePage from "../homepage/HomePage";
 function Layout(){
     return(
         <div className="layout">
@@ -15,7 +16,7 @@ function Layout(){
             
          {/* <AddItem/>  */}
              
-
+<HomePage/>
 {/* <TestFire/> */}
         {/* <DeleteItem/> */}
             <Outlet/>

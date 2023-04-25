@@ -66,7 +66,7 @@ function TestFire({fun}) {
                 <div className="ioio">
                     <div className="choose">
                        <input type="file" onChange={handleChange} accept="/image/*" id="filephoto" />
-                    <label htmlFor="filephoto">Choose Photo  <i class="fa-sharp fa-solid fa-image"></i>  <span className="pluss">+</span>   </label>
+                    <label htmlFor="filephoto">Choose Photo  <i className="fa-sharp fa-solid fa-image"></i>  <span className="pluss">+</span>   </label>
                     </div>
                     <Button onClick={handleUpload}>Upload to Storage</Button>
                     <p className="donepre">{percent} % done  </p>

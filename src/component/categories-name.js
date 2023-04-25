@@ -16,19 +16,9 @@ export const categories=[
         image:"https://firebasestorage.googleapis.com/v0/b/clothing-app-7b41e.appspot.com/o/files%2Fadobe1.png?alt=media&token=58fc5b4d-a368-4b64-aadc-20a7722b410f"
       },
       {
-        id:4,
-        title : 'Kids',
-        image:"https://firebasestorage.googleapis.com/v0/b/clothing-app-7b41e.appspot.com/o/files%2Flittle-girl-g6bc4f2b99_1920.jpg?alt=media&token=1936b483-d17c-4a12-8a41-d145982daab5"
-      },
-      {
         id:5,
         title : 'Mens',
         image:"https://firebasestorage.googleapis.com/v0/b/clothing-app-7b41e.appspot.com/o/files%2F78d037c9-2432-435f-a2eb-d254075c182a.jpg?alt=media&token=c27572bd-e77d-4d62-819b-d139b7240e8b"
-      },
-      {
-        id:6,
-        title : 'Glasses',
-        image:"https://firebasestorage.googleapis.com/v0/b/clothing-app-7b41e.appspot.com/o/files%2Fglasses-g522c0e9b6_1920.jpg?alt=media&token=658c9059-67b9-43b8-a743-b43c28566bf7"
       },
       {
         id:7,
