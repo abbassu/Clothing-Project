@@ -23,6 +23,7 @@ const defaultFields={
 }
 
 function Checkout(){
+    console.log("44444444444444",process.env.REACT_APP_FIREBASE_API_KEY)
     const { pathname } = useLocation();
     useEffect(()=>{
             window.scrollTo(0, 0);
