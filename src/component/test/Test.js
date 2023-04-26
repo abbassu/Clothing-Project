@@ -2,9 +2,9 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Carousel from 'react-bootstrap/Carousel';
-import logo1 from "./../../imageee/a1.png";
-import logo2 from "./../../imageee/a2.png";
-import logo3 from "./../../imageee/a3.png";
+import logo1 from "./../../imageee/a11.png";
+import logo2 from "./../../imageee/a22.png";
+import logo3 from "./../../imageee/a33.png";
 import HomePage from '../homepage/HomePage';
 
 import "./tt.scss"
