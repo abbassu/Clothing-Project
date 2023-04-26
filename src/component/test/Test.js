@@ -2,9 +2,11 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Carousel from 'react-bootstrap/Carousel';
-import logo1 from "./../../imageee/a11.png";
-import logo2 from "./../../imageee/a22.png";
-import logo3 from "./../../imageee/a33.png";
+import logo1 from "./../../imageee/a11.jpg";
+import logo2 from "./../../imageee/a22.jpg";
+import logo3 from "./../../imageee/a33.jpg";
+
+
 import HomePage from '../homepage/HomePage';
 
 import "./tt.scss"
@@ -39,17 +41,16 @@ function Test() {
       </Carousel.Item>
       <Carousel.Item className='fafaibn'>
         <img
-          className="d-block w-100"
-          src={logo3}
-          alt="Third slide"
+            className="d-block w-100"
+            src={logo3}
+            alt="Third slide"
         />
-
         <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p className='tete'>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
+            <h3>Third slide label</h3>
+            <p className='tete'>
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            </p>
+        </Carousel.Caption> 
       </Carousel.Item>
     </Carousel>
 

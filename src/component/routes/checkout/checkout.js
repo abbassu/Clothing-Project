@@ -23,6 +23,7 @@ const defaultFields={
 }
 
 function Checkout(){
+    const  [tt,settt]=useState(false)
     console.log("44444444444444",process.env.REACT_APP_FIREBASE_API_KEY)
     const { pathname } = useLocation();
     useEffect(()=>{
@@ -54,6 +55,7 @@ function Checkout(){
                 let currentDate = new Date().toJSON().slice(0, 10);
                 addtalabat("orders",cartItems,currentUser?.uid,cartTotal,city,phone,street,name,currentDate)
                 clear()
+                settt(true)
             }
             else{
                 alert("please enter all information")
@@ -143,10 +145,11 @@ function Checkout(){
                 />
 
         </div>
+        {tt ? <><div className="totalee"> The Request Was Successful </div></>: <></> }
+
         <div className="lastc">
 
-
-
+        
             <span className="total"> Total : {cartTotal}$</span>
             {cartTotal >0 ? <Button buttonType="google" onClick={ff} >Confirm</Button>: ""}
             
