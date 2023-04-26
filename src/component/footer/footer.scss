@@ -1,9 +1,10 @@
 .footerfooter{
-
+    font-family:Aboreto;
     height: 120px;
     padding: 20px 30px 20px;
-    // margin-top: 30px;
-    width: calc(100% );
+    // width: calc(100% );
+    width: 100%;
+    font-size: 16px;
     background-color: #19A7CE;
     border-top: 1px solid #146C94;
     display: flex;
@@ -33,7 +34,7 @@
             list-style: none;
             display: flex;
             flex-direction: row;
-            width: 460px;
+            width: 600px;
             font-size: 14px;
             justify-content: space-between;
             color: #F6F1F1;

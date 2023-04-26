@@ -1,0 +1,90 @@
+.homepage{
+    padding: 20px 30px 20px;
+    width: calc(100% );
+    // background-color: #19A7CE;
+    // border-top: 1px solid #146C94;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    .oneoneone{
+
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        .textoneone{
+            padding-left: 20px;
+            width: 50%;
+            .oop{
+                font-size: 40px;
+                padding: 20px;
+                padding-left: 0;
+            }
+            font-size: 20px;
+            padding-right: 20px;
+        }
+
+        .imageinoneone{
+            width: 50%; 
+                transition: 0.3s;
+            img{
+                transition: 0.3s;
+                width: 100%;
+                object-fit: cover;
+            }
+
+        }
+        transition: 0.3s;
+
+    }
+    .oneoneone:hover{
+        transition: 0.3s;
+        background-color: white;
+        color: #19A7CE;
+        img{
+            transition: 0.3s;
+            scale: 0.9;
+        }
+    }
+
+    @media (max-width:920px) {
+        .oneoneone{
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            .textoneone{
+                width: 100%;
+                .oop{
+            font-weight: 600;
+                    font-size: 40px;
+                    padding: 20px;
+                    padding-left: 0;
+                }
+                font-size: 20px;
+                padding-right: 20px;
+            }
+            .imageinoneone{
+                width: 100%; 
+                img{
+                   width: 100%;
+                    object-fit: cover;
+                }
+            }
+
+        }
+        .kkl{
+            flex-direction: column-reverse;
+        }
+        
+    }
+    @media (max-width:500px) {
+    .oneoneone .textoneone .oop{
+            font-size: 30px;
+            padding: 20px;
+            padding-left: 0;
+        }
+    }
+}

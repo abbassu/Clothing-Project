@@ -1,5 +1,5 @@
-.navigation {
-    height: 90px;
+.navigationn {
+    height: 90px;font-family:Aboreto;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -17,7 +17,7 @@
       };
       height: 100%;
     }
-    .nav-links-container {
+    .nav-links-containerrr {
       .fa-bars{
         padding-top: 8px;
         font-size: 24px;
@@ -32,7 +32,8 @@
       align-items: center;
       justify-content: flex-end;
       gap: 2px;
-      .nav-link {
+      .nav-linkk {
+        text-decoration: none;
         padding: 10px 15px;
         cursor: pointer;
       }
@@ -58,7 +59,8 @@
           border-radius: 7px;
           right: 40px;
           overflow: hidden;
-          .nav-link {
+          .nav-linkk {
+            text-decoration: none;
             color: white;
             font-size: 18px;
             background-color: #146C94;
@@ -73,7 +75,7 @@
           z-index: 1900;
         }
 
-        .nav-links-container .fa-bars{
+        .nav-links-containerrr .fa-bars{
           display: block;
         }
       }

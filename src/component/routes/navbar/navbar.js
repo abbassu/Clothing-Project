@@ -23,22 +23,22 @@ function Navbar(){
     console.log("now now ",currentUser)
     return(
     <>
-          <div className="navigation">
+          <div className="navigationn">
             <Link className="logo-container" to={"/"}>
              <img src={logo} alt="" />
             </Link>
-            <div className="nav-links-container" >
+            <div className="nav-links-containerrr" >
             <div className={`linkss  ${opeen ? "":"jal" } `} onClick={()=>{
                 setnotopeen(!opeen)
             }}  >
 
             {currentUser?.uid==="upCC9gHfwcQQFN2ObsYXgHKg6193"? <>
-            <Link className="nav-link" to={"operation"}> Operation</Link>
-            <Link className="nav-link" to={"orders"}>Orders </Link>
+            <Link className="nav-linkk" to={"operation"}> Operation</Link>
+            <Link className="nav-linkk" to={"orders"}>Orders </Link>
             </> :
             <>
-            <Link className="nav-link" to={"/"}> HOME </Link>
-            <Link className="nav-link" to={"shop"}> SHOP</Link>
+            <Link className="nav-linkk" to={"/"}> HOME </Link>
+            <Link className="nav-linkk" to={"shop"}> SHOP</Link>
             </>
 
             }
@@ -49,7 +49,7 @@ function Navbar(){
 
 
             {!currentUser?
-            <Link className="nav-link" to={"auth"}> SIGN IN</Link>:<span className="nav-link" onClick={handleSignOut}> SIGN OUT</span>
+            <Link className="nav-linkk" to={"auth"}> SIGN IN</Link>:<span className="nav-link" onClick={handleSignOut}> SIGN OUT</span>
             }
             </div>
 

@@ -8,19 +8,17 @@ import AddItem from "../additem/additem";
 import EditItem from "../edititem/edititem";
 import DeleteItem from "../deleteitem/deleteitem";
 import HomePage from "../homepage/HomePage";
+import Test from "../test/Test";
 function Layout(){
     return(
         <div className="layout">
             <Navbar/>
+            {/* <Test/> */}
+
             <div className="sublay">
-            
-         {/* <AddItem/>  */}
-             
-<HomePage/>
-{/* <TestFire/> */}
-        {/* <DeleteItem/> */}
-            <Outlet/>
-            {/* <EditItem/> */}
+                {/* <HomePage/> */}
+                
+                <Outlet/>
             </div>
             <Footer/>
         </div>

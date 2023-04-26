@@ -16,6 +16,8 @@ import Orders from './component/talabat/talabat';
 import Operation from './component/operation/Operation';
 import OrderUser from './component/order/order';
 import DeleteItem from './component/deleteitem/deleteitem';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
 
 function App() {
   return (

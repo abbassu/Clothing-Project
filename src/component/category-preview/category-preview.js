@@ -11,7 +11,7 @@ function Category({title,products}){
         }
     return(
         <div className="category-preview-container" >
-            <h2>
+            <h2 className="parara">
                 <span className="title" onClick={rout}>
                     <span className="left-arrow arr">
                     <i class="fa-solid fa-angles-left "></i>

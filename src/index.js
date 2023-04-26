@@ -9,6 +9,8 @@ import { ProviderContext } from './component/contexte/usercontext';
 import { ProductProvider } from './component/contexte/product';
 import { CartProvider } from './component/contexte/cart';
 import Popup from './component/popup/popup';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
 
 import { PopupProvider } from './component/contexte/popup';
 const root = ReactDOM.createRoot(document.getElementById('root'));
