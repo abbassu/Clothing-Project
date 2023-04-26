@@ -49,7 +49,7 @@ function Navbar(){
 
 
             {!currentUser?
-            <Link className="nav-linkk" to={"auth"}> SIGN IN</Link>:<span className="nav-link" onClick={handleSignOut}> SIGN OUT</span>
+            <Link className="nav-linkk" to={"auth"}> SIGN IN</Link>:<span className="nav-linkk" onClick={handleSignOut}> SIGN OUT</span>
             }
             </div>
 
