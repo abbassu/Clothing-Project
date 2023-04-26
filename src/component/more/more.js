@@ -3,9 +3,7 @@ import "./more.scss"
 function More(){
 
     return(
-        <div className="more" onClick={()=>{
-           
-        }}>
+        <div className="more" onClick={()=>{}}>
             More...
         </div>
     )
