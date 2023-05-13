@@ -26,7 +26,7 @@ function TestFire({fun}) {
         const comp=async ()=>{
                 // console.log("before",file)
       await new Compressor(file, {
-                quality: 0.4, // 0.6 can also be used, but its not recommended to go below.
+                quality: 0.65, // 0.6 can also be used, but its not recommended to go below.
                 success: (compressedResult) => {
 
                   seteditFile(compressedResult)

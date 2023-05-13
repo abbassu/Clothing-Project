@@ -22,12 +22,27 @@ import {getFirestore
 
 
 const firebaseConfig = {
+
+
+  // apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  // authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  // projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  // storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  // messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  // appId: process.env.REACT_APP_FIREBASE_APP_ID,
+
   apiKey:`AIzaSyC4IHDAnYYcnLRlIbMqiqp5uviFP4q5HsE`,
   authDomain: `clothing-app-7b41e.firebaseapp.com`,
   projectId: `clothing-app-7b41e`,
   storageBucket: "clothing-app-7b41e.appspot.com",
   messagingSenderId: "10137768965",
   appId: "1:10137768965:web:5bb0e8ee741e9a7c76b86c"
+
+
+
+
+
+
 };
 
 const app = initializeApp(firebaseConfig);

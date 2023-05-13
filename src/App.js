@@ -20,6 +20,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 
 function App() {
+
+  // console.log("----",process.env.REACT_APP_MY_ENVIRONMENT_VARIABLE);
+
   return (
       <BrowserRouter>
         <Routes>
