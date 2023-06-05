@@ -4,6 +4,16 @@
     left: 0px;
     width: 100%;
     // margin-bottom: 786px;
+    min-height: 190px;
+    .fafa{
+        min-height: 240px;
+    }
+    .fafaibn{
+        min-height: 240px;
+        img{
+            min-height: 240px;
+        }
+    }
     @media (max-width:760px) {
 
         .tete{

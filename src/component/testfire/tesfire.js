@@ -15,6 +15,8 @@ function TestFire({fun}) {
 
         const [percent, setPercent] = useState(0);
       async  function handleChange(event) {
+
+
              
           console.log("photot",event.target.files[0].name)
           setii(event.target.files[0].name)
@@ -23,10 +25,15 @@ function TestFire({fun}) {
 
         }
 
+        function addfromamazon(value){
+          console.log("amazon")
+          fun(value,"ddd")
+        }
+
         const comp=async ()=>{
                 // console.log("before",file)
       await new Compressor(file, {
-                quality: 0.65, // 0.6 can also be used, but its not recommended to go below.
+                quality: 0.8, // 0.6 can also be used, but its not recommended to go below.
                 success: (compressedResult) => {
 
                   seteditFile(compressedResult)
@@ -58,6 +65,7 @@ function TestFire({fun}) {
                         getDownloadURL(uploadTask.snapshot.ref).then((url) => {
           console.log("urlll",url)
                         fun(url,ii)
+                        // fun("https://www.amazon.com/photos/album/A19RR9XJ22TIX8:uKjIBoA-Q9KA69HZQPh-mA/gallery/uGRCs9GERtGvAQ8HTzSLDw","ddd")
                         });
                     }
                 );
@@ -70,6 +78,9 @@ function TestFire({fun}) {
                     </div>
                     <Button onClick={handleUpload}>Upload to Storage</Button>
                     <p className="donepre">{percent} % done  </p>
+
+
+                    <input type="text" onChange={addfromamazon}  />
                 </div>
         );
 }

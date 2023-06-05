@@ -39,6 +39,7 @@ function Navbar(){
             <>
             <Link className="nav-linkk" to={"/"}> HOME </Link>
             <Link className="nav-linkk" to={"shop"}> SHOP</Link>
+
             </>
 
             }

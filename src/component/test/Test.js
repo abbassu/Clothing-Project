@@ -18,7 +18,7 @@ function Test() {
     <Carousel className='fafa'>
       <Carousel.Item className='fafaibn'>
         <img
-          className="d-block w-100"
+          className="d-block w-90 "
           src={logo1}
           alt="First slide"
         />
@@ -29,7 +29,7 @@ function Test() {
       </Carousel.Item>
       <Carousel.Item className='fafaibn'>
         <img
-          className="d-block w-100"
+          className="d-block w-90"
           src={logo2}
           alt="Second slide"
         />
@@ -41,7 +41,7 @@ function Test() {
       </Carousel.Item>
       <Carousel.Item className='fafaibn'>
         <img
-            className="d-block w-100"
+            className="d-block w-90"
             src={logo3}
             alt="Third slide"
         />

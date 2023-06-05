@@ -8,6 +8,7 @@ function HomePage() {
 
   return(
     <div className='homepage'>
+
       <div className="oneoneone">
         <div className="textoneone">
           <div className='oop'>
@@ -30,13 +31,8 @@ function HomePage() {
           </div>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia maxime provident deserunt nostrum delectus blanditiis vel earum optio! Ratione deleniti neque commodi sunt earum inventore quia cupiditate animi vitae totam.
         </div>
-
       </div>
 
-
-
-      
-      
     </div>
   )
 }

@@ -24,7 +24,7 @@ function Category({title,products}){
                 </span>
             </h2>
             <div className="preview">
-            {products.filter((_,idx)=>idx<5).map((item)=>{
+            {products.filter((_,idx)=>idx<6).map((item)=>{
                 return(
                     <ProductCard key={item.id} product={item} tite={title} />
                 )
@@ -32,7 +32,7 @@ function Category({title,products}){
             <Link to={`/subcategory/${title}`}
             //  onClick={rout}
              >
-            <More  />
+            {/* <More  /> */}
             </Link>
             
             </div>

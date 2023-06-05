@@ -20,24 +20,37 @@ function ProductCard({product,tite}){
                                 <Link to={`/clicked/${tite}`} state={product}>
                                 <img src={imageUrl} alt="" />
                                 </Link>
+                                
                                 <div className="footer">
+                                
+                                    
                                     <div className="ti">
                                     <span className="name">{name}</span>
                                     <span className="cost">{price}$</span>
-                                    </div>
-                                    <div className="rere">
-                                    <div className="starrating">
-                                    <ReactStars
-                                        count={5}
-                                        size={20}
-                                        value={reate}
-                                        activeColor="#ffd700"
-                                    />
-                    </div>
+                                    
                                     </div>
 
+                                    <div className="staring">
+                                        <span className="">
+                                            <ReactStars
+                                                count={5}
+                                                size={20}
+                                                value={reate}
+                                                activeColor="#ffd700"
+                                            />
+                                        </span>
+                                        <span className="ffl">
+                                        {/* <Link to={`/clicked/${tite}`} state={product}> */}
+                                        {/* <i class="fa-solid fa-eye fa-lg" ></i> */}
+                                        {/* </Link> */}
+                                        
+                                        {/* <i class="fa-solid fa-cart-shopping fa-lg" ></i> */}
+                                        <i class="fa-solid fa-cart-plus fa-lg " onClick={()=>addItemToCard(product)} >   </i> 
+                                        </span>
+
+                                    </div>
                                 </div>
-                            <Button buttonType="inverted" onClick={()=>addItemToCard(product)}>ADD TO CARD</Button>
+                            {/* <Button buttonType="inverted" onClick={()=>addItemToCard(product)}>ADD TO CARD</Button> */}
                         </div>
                
 
