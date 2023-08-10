@@ -36,8 +36,6 @@ const addCartItemAllFromStorage=(allcartItems,value)=>{
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 const addCartItemAll=(cartItems,productToAdd,value)=>{
-  // console.log("iiiiiiiiiiiiiii")
-    //find if cartitems contains product items
     const existingCartItem= cartItems.find((item)=>item.id===productToAdd.id)
     // if found increment quantity 
     if (existingCartItem) {
@@ -58,9 +56,8 @@ const addCartItemAll=(cartItems,productToAdd,value)=>{
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const removeCartItem=(cartItems,cartItemToRemove)=>{
-  //find hte cart item to remove
   const existingCartItem= cartItems.find((item)=>item.id===cartItemToRemove.id)
-  //check if quantity is equal to 1 if it is remove that tem from cart
+  //check if  is equal to 1 if it is remove that tem from cart
       if(existingCartItem.quantity===1){
         const removeCartItem=(cartItems,cartItemToRemove)=>{
           return cartItems.filter(cartItem => cartItem.id !== cartItemToRemove.id)
@@ -136,11 +133,8 @@ export const CartProvider=({children})=>{
     useEffect(() => {
 
       const items = JSON.parse(localStorage.getItem('items'));
-      // console.log("pppppppppp2------------",items)
       if (cartItems.length>=1) {
         localStorage.setItem('items', JSON.stringify(cartItems));
-        // console.log("ssssssssssssssssssssssssssssssssssssssssss",items)
-        
       }
     }, [cartItems]);
 
@@ -149,7 +143,6 @@ export const CartProvider=({children})=>{
 
       const items = JSON.parse(localStorage.getItem('items'));
       if (items) {
-        // console.log("ssssssssssssssssssssssssssssssssssssssssss111",items)
         addAllItemToCardStorage(items) 
       }
     }, []);
@@ -161,11 +154,8 @@ export const CartProvider=({children})=>{
     }
 
     const updateCartItemsReducer= (newCartItems)=>{
-      // console.log("llllllllllll")
       const newCartCount = newCartItems.reduce((total,item)=> total+item.quantity,0 )
-
       const newTotalCount = newCartItems.reduce((total,item)=> total+item.quantity* item.price,0 )
-
       dispatch({type:"SET_CART_ITEMS",payload :{ cartItems:newCartItems,cartCount:newCartCount,cartTotal:newTotalCount }})
     }
 
@@ -178,16 +168,11 @@ export const CartProvider=({children})=>{
       const newCartItems = addCartItemAll(cartItems,productToAdd,value)
       updateCartItemsReducer(newCartItems)
     }
-
-
     const addAllItemToCardStorage=(productToAdd)=>{
-      console.log("111")
       const newCartItems = addCartItemAllFromStorage(productToAdd)
       updateCartItemsReducer(newCartItems)
     }
-
     const removeItemfromCart=(cartItemToRemove)=>{
-
       const newCartItems= removeCartItem(cartItems,cartItemToRemove)
       updateCartItemsReducer(newCartItems)
     }

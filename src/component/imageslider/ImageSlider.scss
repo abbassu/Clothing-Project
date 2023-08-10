@@ -1,0 +1,123 @@
+// ImageSlider.scss
+
+.slider-container {
+  max-width: 165px; // Adjust this value as needed
+  // margin: 0 auto;
+  margin-bottom: 30px;
+  // padding: 5px;
+  border: 1px solid rgb(169, 166, 160);
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+  /* ImageSlider.scss */
+
+  @media (max-width: 720px) {
+    & {
+      width: 165px;
+    }
+  }
+
+  @media (max-width: 380px) {
+    & {
+      width: 160px;
+    }
+  }
+}
+
+.slider {
+  .slick-list {
+    overflow: hidden;
+    // margin: 0 20px;
+  }
+
+  .slick-slide img {
+    width: 100%;
+    height: auto;
+    max-height: 400px; // Limit the image height
+  }
+
+  .slick-prev::before,
+  .slick-next::before {
+    // content: none !important; /* Hide the default text */
+    font-size: 0; /* Hide any remaining space */
+  }
+
+  .slick-prev,
+  .slick-next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+    // content: none !important;
+    box-sizing: border-box;
+    font-size: 10px; // Adjust the font size to make the buttons larger
+    // padding: 14px;
+    // width: 40px;
+    // height: 40px;
+    width: 30px;
+    height: 30px;
+    // border: 1px solid;
+    text-align: center;
+
+    color: #4f9caf; // Adjust the color as needed
+    background-color: #b7ea1d; // Add a background color if desired
+
+    &:hover {
+      color: #224ec8; // Change color on hover
+      background-color: #b8e21f; // Change background color on hover
+    }
+    visibility: hidden;
+    background-color: #e31dea; // Add a background color if desired
+  }
+}
+
+.slick-dots {
+  // background-color: rebeccapurple;
+  bottom: -22px;
+  li {
+    margin: 0;
+    width: 15px;
+    color: rgb(223, 223, 16) !important;
+    // background-color: tan;
+    list-style: none;
+  }
+}
+.slick-active {
+  color: rgb(87, 84, 226);
+  // background-color: #b7ea1d;
+}
+.slick-dots li button:before {
+  // content: "0";
+  width: 15px;
+  font-size: 8px;
+}
+.slick-dots .slick-active button::before {
+}
+@media (max-width: 1024px) {
+  .slick-slide img {
+    width: 100%;
+    height: auto;
+    max-height: 400px; // Limit the image height
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 420px) {
+  .slick-slide img {
+    // width: 160px;
+    height: auto;
+    // max-height: 400px; // Limit the image height
+  }
+  .slick-dots {
+    li {
+      width: 12px;
+      color: rgb(223, 223, 16) !important;
+    }
+  }
+  .slick-dots li button:before {
+    // content: "0";
+    width: 10px;
+    font-size: 7px;
+  }
+}

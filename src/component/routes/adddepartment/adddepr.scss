@@ -1,0 +1,21 @@
+.testdepart {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  @media (max-width: 420px) {
+    & {
+      gap: 7px;
+    }
+  }
+
+  .pproductcard {
+    max-width: 165px;
+    .addtioninformation {
+      padding: 1px 5% 0;
+      word-wrap: break-word;
+    }
+  }
+}

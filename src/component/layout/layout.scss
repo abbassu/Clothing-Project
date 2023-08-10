@@ -1,14 +1,14 @@
-.layout{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    .sublay{
-        background-color: #F6F1F1;
-        padding: 130px 30px 40px 30px;
+.layout {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  .sublay {
+    background-color: #f0f0f0;
+    padding: 130px 30px 40px 30px;
+  }
+  @media (max-width: 420px) {
+    .sublay {
+      padding: 130px 20px 30px 20px;
     }
-    @media (max-width:420px) {
-        .sublay{
-            padding: 130px 20px 30px 20px;
-        }
-    }
+  }
 }

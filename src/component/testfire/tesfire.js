@@ -4,85 +4,86 @@ import storage from "../../utils/firebase/firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { DeleteProduct } from "../../utils/firebase/firebase";
 import Button from "../button/button";
-import "./fire.scss"
-import Compressor from 'compressorjs';
+import "./fire.scss";
+import Compressor from "compressorjs";
 import Resizer from "react-image-file-resizer";
 
-function TestFire({fun}) {
-        const [file, setFile] = useState("");
-        const [editfile, seteditFile] = useState("");
-        const [ii,setii]=useState("") 
+function TestFire({ fun }) {
+  const [file, setFile] = useState("");
+  const [editfile, seteditFile] = useState("");
+  const [ii, setii] = useState("");
 
-        const [percent, setPercent] = useState(0);
-      async  function handleChange(event) {
+  const [percent, setPercent] = useState(0);
+  async function handleChange(event) {
+    console.log("photot", event.target.files[0].name);
+    setii(event.target.files[0].name);
+    await setFile(event.target.files[0]);
+  }
 
+  function addfromamazon(value) {
+    console.log("amazon");
+    fun(value, "ddd");
+  }
 
-             
-          console.log("photot",event.target.files[0].name)
-          setii(event.target.files[0].name)
-        await setFile(event.target.files[0])
+  const comp = async () => {
+    // console.log("before",file)
+    await new Compressor(file, {
+      quality: 0.8, // 0.6 can also be used, but its not recommended to go below.
+      success: (compressedResult) => {
+        seteditFile(compressedResult);
+      },
+    });
+  };
 
+  useEffect(() => {
+    comp();
+  }, [file]);
 
-        }
-
-        function addfromamazon(value){
-          console.log("amazon")
-          fun(value,"ddd")
-        }
-
-        const comp=async ()=>{
-                // console.log("before",file)
-      await new Compressor(file, {
-                quality: 0.8, // 0.6 can also be used, but its not recommended to go below.
-                success: (compressedResult) => {
-
-                  seteditFile(compressedResult)
-                },
-              });
-        }
-
-        useEffect(()=>{
-                comp()
-        },[file])
-        
-        const handleUpload = async () => {
-
-                if (!editfile) {
-                    alert("Please upload an image first!");
-                }
-                const storageRef = ref(storage, `/files/${file.name}`);
-                const uploadTask = uploadBytesResumable(storageRef, editfile);
-                uploadTask.on(
-                    "state_changed",
-                    (snapshot) => {
-                        const percent = Math.round(
-                            (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-                        );
-                        setPercent(percent);
-                    },
-                    (err) => console.log(err),
-                    () => {
-                        getDownloadURL(uploadTask.snapshot.ref).then((url) => {
-          console.log("urlll",url)
-                        fun(url,ii)
-                        // fun("https://www.amazon.com/photos/album/A19RR9XJ22TIX8:uKjIBoA-Q9KA69HZQPh-mA/gallery/uGRCs9GERtGvAQ8HTzSLDw","ddd")
-                        });
-                    }
-                );
-            };
-            return (
-                <div className="ioio">
-                    <div className="choose">
-                       <input type="file" onChange={handleChange} accept="/image/*" id="filephoto" />
-                    <label htmlFor="filephoto">Choose Photo  <i className="fa-sharp fa-solid fa-image"></i>  <span className="pluss">+</span>   </label>
-                    </div>
-                    <Button onClick={handleUpload}>Upload to Storage</Button>
-                    <p className="donepre">{percent} % done  </p>
-
-
-                    <input type="text" onChange={addfromamazon}  />
-                </div>
+  const handleUpload = async () => {
+    if (!editfile) {
+      alert("Please upload an image first!");
+    }
+    const storageRef = ref(storage, `/files/${file.name}`);
+    const uploadTask = uploadBytesResumable(storageRef, editfile);
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        const percent = Math.round(
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
         );
+        setPercent(percent);
+      },
+      (err) => console.log(err),
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+          console.log("urlll", url);
+          fun(url, ii);
+          // fun("https://www.amazon.com/photos/album/A19RR9XJ22TIX8:uKjIBoA-Q9KA69HZQPh-mA/gallery/uGRCs9GERtGvAQ8HTzSLDw","ddd")
+        });
+      }
+    );
+  };
+  return (
+    <div className="ioio">
+      <div className="choose">
+           
+        <input
+          type="file"
+          onChange={handleChange}
+          accept="/image/*"
+          id="filephoto"
+        />
+        <label htmlFor="filephoto">
+          Choose M Photo <i className="fa-sharp fa-solid fa-image"></i>{" "}
+          <span className="pluss">+</span>{" "}
+        </label>
+      </div>
+                  <Button onClick={handleUpload}>Upload to Storage</Button>
+                  <p className="donepre">{percent} % done </p>
+      {/* <input type="text" onChange={addfromamazon}  /> */}
+              
+    </div>
+  );
 }
 
 export default TestFire;

@@ -1,127 +1,127 @@
-
-  .product-card-container {
-    max-width: 180px;
-    display: flex;
-    flex-direction: column;
-    height: 280px;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    margin-bottom: 10px;
-    overflow: hidden;
+.product-card-container {
+  max-width: 170px;
+  display: flex;
+  flex-direction: column;
+  height: 265px;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 10px;
+  overflow: hidden;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border: 1px solid #f4c8c8;
+  background-color: white;
+  border-radius: 8px;
+  transition: 0.3s;
+  img {
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-    border: 1px solid #f4c8c8 ;
-    border-radius:8px ;
-    img {
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      transition: 0.3;
-      transition: .5s ease all;
-      &:hover{
-        transform: scale(1.1);
-        transition: 0.3;
-      }
-    }
-    button {
-      outline: none;
-      width: 80%;
-      opacity: 1;
-      position: absolute;
-      top: 170px;
-      display: none;
-    }
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    transition: 0.3;
+    transition: 0.5s ease all;
     &:hover {
-      img {
-        transform: scale(1.1);
-        opacity: 0.8;
-      }
-      button {
-        opacity: 1;
-        display: block;
-        outline: none;
-      }
-      .footer{
-        color: rgb(78, 78, 225);
-      }
-
-    }
-    .footer {
-      width: 90%;
-      margin: 7px auto 0;
-      // height: 60px;
-      // display: flex;
-      // justify-content: center;
-      font-size: 17px;
-      font-weight: 500;
-      color: rgb(57, 58, 61);
-      .name {
-        width: 80%;
-        color: rgb(98, 98, 192);
-        overflow: hidden; /* Hide any overflow */
-        white-space: nowrap;
-      }
-      .price {
-        width: 10%;
-      }
-      .ti{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-      .staring{
-        display: flex;
-        justify-content: space-between;
-        a{
-          text-decoration: none;
-          color: #000;
-        }
-        .ffl{
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          
-          // text-align: center;
-        }
-      }
-      .fa-eye,.fa-cart-shopping{
-        cursor: pointer;
-        margin: 0 2px;
-        transition: 0.3s;
-        &:hover{
-          transition: 0.3s;
-          color: rgb(76, 76, 203);
-        }
-      }
-      user-select: none;
-
-    }
-
-    @media (max-width:450px) {
-      &{
-        width: 155px;
-        height: 225px;
-        img{
-          width: 155px;
-          height: 145px;
-        }
-        button{
-          top:100px
-        }
-        .footer{
-          margin: 14px auto 0;
-          font-size: 12px;
-          .carsgopping{
-            margin: 0;
-          }
-        }
-      }
-      
+      transform: scale(1.05);
+      transition: 0.3;
     }
   }
+  button {
+    outline: none;
+    width: 80%;
+    opacity: 1;
+    position: absolute;
+    top: 170px;
+    display: none;
+  }
+  &:hover {
+    img {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+    button {
+      opacity: 1;
+      display: block;
+      outline: none;
+    }
+    .footer {
+      color: rgb(78, 78, 225);
+    }
+    & {
+      transition: 0.3s;
+      border: 1px solid #8f9289;
+    }
+  }
+  .footer {
+    width: 90%;
+    margin: 7px auto 0;
+    // height: 60px;
+    // display: flex;
+    // justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(57, 58, 61);
+    .name {
+      width: 80%;
+      color: rgb(98, 98, 192);
+      overflow: hidden; /* Hide any overflow */
+      white-space: nowrap;
+    }
+    .price {
+      width: 10%;
+    }
+    .ti {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .staring {
+      display: flex;
+      justify-content: space-between;
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+      .ffl {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
 
+        // text-align: center;
+      }
+    }
+    .fa-eye,
+    .fa-cart-shopping {
+      cursor: pointer;
+      margin: 0 2px;
+      transition: 0.3s;
+      &:hover {
+        transition: 0.3s;
+        color: rgb(76, 76, 203);
+      }
+    }
+    user-select: none;
+  }
 
-
+  @media (max-width: 450px) {
+    & {
+      width: 155px;
+      height: 225px;
+      img {
+        width: 155px;
+        height: 145px;
+      }
+      button {
+        top: 100px;
+      }
+      .footer {
+        margin: 10px auto 0;
+        font-size: 12px;
+        .carsgopping {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

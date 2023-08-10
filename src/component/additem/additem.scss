@@ -1,58 +1,101 @@
-
-h1{
-    text-align: center;
-    font-size: 35px;
+h1 {
+  text-align: center;
+  font-size: 35px;
 }
 
-.trtr{
-    .additem{
-        padding: 20px 10px;
+.trtr {
+  .additem {
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: rgb(239, 233, 233);
+    // width: 800px;
+    margin: 20px auto;
+    border-radius: 10px;
+    .fromee {
+      width: 100%;
+      display: flex;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-bottom: 10px;
+
+      .feildtoadd {
         display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
         justify-content: center;
-        align-items: center;
-        gap: 120px;
-        background-color: rgb(239, 233, 233);
-        // width: 800px;
-        margin: 20px auto;
-        border-radius: 10px;
-        form{
-            position: relative;
-            width: 300px;
-            padding-bottom: 30px;
-            Button{
-                position: absolute;
-                right: 0;
-                bottom: 0;
-            }
+        flex-direction: row;
+        padding: 5px;
+        width: 100%;
+        .flexoo {
+          display: flex;
+          flex-direction: row;
+          gap: 40px;
         }
-        .imim{
-            display: flex;
-            justify-content: space-around;
-            flex-direction: column;
-            align-items: center;
-            .fff{
-                height: 280px;
-            }
-            img{
-                width: 260px;
-                border-radius: 50%;
-                margin-bottom: 20px;
-            }
-        }
-        @media (max-width:700px) {
-            &{
-                // background-color: red;
-                flex-direction: column-reverse;
-                gap: 20px;
-                form{
-                    Button{
-                        // position: absolute;
-                        right:23%;
-                        // bottom: 0;
-                    }
-                }
-            }
-        }
+      }
     }
+    .imim {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      align-items: center;
+      .fff {
+        border: 1px solid rgb(234, 153, 153);
+        height: 260px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        min-width: 260px;
+        max-width: 260px;
+      }
+      img {
+        width: 260px;
+        border-radius: 50%;
+        // margin-bottom: 20px;
+      }
+    }
+    @media (max-width: 700px) {
+      & {
+        // background-color: red;
+        flex-direction: column;
+        gap: 20px;
+        form {
+          Button {
+            // position: absolute;
+            right: 23%;
+            // bottom: 0;
+          }
+        }
+      }
+    }
+    .checkbox-label {
+      font-size: 20px;
+      margin: 10px;
+    }
+    .checkbox-input {
+      /* Increase the scale to make the checkbox larger */
+      transform: scale(2); /* Adjust the value as needed */
+      margin-right: 8px; /* Add some spacing between the checkbox and the label */
+    }
+  }
+}
+.flexo {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
 }
 
+@media (max-width: 700px) {
+  .feildtoadd {
+    gap: 20px;
+  }
+  .flexoo {
+    gap: 0px;
+    flex-direction: column;
+  }
+}
