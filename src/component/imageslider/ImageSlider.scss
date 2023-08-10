@@ -3,9 +3,10 @@
 .slider-container {
   max-width: 165px; // Adjust this value as needed
   // margin: 0 auto;
-  margin-bottom: 30px;
+  border-radius: 7px;
+  margin-bottom: 18px;
   // padding: 5px;
-  border: 1px solid rgb(169, 166, 160);
+  // border: 1px solid rgb(169, 166, 160);
   box-sizing: border-box;
   background-color: rgb(255, 255, 255);
   /* ImageSlider.scss */
@@ -30,6 +31,8 @@
   }
 
   .slick-slide img {
+    border-radius: 7px;
+
     width: 100%;
     height: auto;
     max-height: 400px; // Limit the image height
