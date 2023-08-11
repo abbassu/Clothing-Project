@@ -1,0 +1,39 @@
+.pproductcard {
+  max-width: 165px;
+  .addtioninformation {
+    height: 75px;
+    font-size: 14px;
+    padding: 1px 6px 0;
+    word-wrap: break-word;
+    div {
+      margin: 2px 0px;
+    }
+    .afteroffer {
+      font-size: 17px;
+      color: rgb(25, 25, 142);
+      margin-left: 5px;
+    }
+    .beforeoffer {
+      color: gray;
+      margin: 0 0 0 5px;
+      text-decoration: line-through;
+      padding: 2px 0px;
+    }
+    .inoffer {
+      padding: 2px 2px;
+      // background-color: rgb(226, 226, 128);
+      color: rgb(56, 174, 4);
+      font-weight: bold;
+      border-radius: 2px;
+      text-transform: uppercase;
+    }
+    .textname {
+      white-space: nowrap; /* Prevent text from wrapping */
+      overflow: hidden; /* Hide overflowed content */
+      text-overflow: ellipsis; /* Show ellipsis for overflowed content */
+      width: 150px;
+      background-color: rd;
+      padding: 0;
+    }
+  }
+}
