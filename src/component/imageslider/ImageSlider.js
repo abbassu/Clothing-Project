@@ -41,14 +41,24 @@ function ImageSlider(props) {
     // ],
   };
   const [arrayOfImage, setArrayOfImage] = useState(props.arrayOfImage);
-
+  const [percent, setPercent] = useState(0);
+  const [makesalary, setmakesalary] = useState(0);
   useEffect(() => {
-    // setArrayOfImage(props.arrayOfImage);
-  }, []);
-  // console.log("arrararar", arrayOfImage);
+    setmakesalary(props.makesalary);
+    setPercent(props.percent);
+  }, [props.makesalary]);
 
   return (
     <div className="slider-container">
+      {makesalary ? (
+        <>
+          <div className="salo">
+            خصم <br /> %{percent}{" "}
+          </div>
+        </>
+      ) : (
+        <></>
+      )}
       <Slider {...settings} className="slider">
         {arrayOfImage?.map((element) => {
           return (

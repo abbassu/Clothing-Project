@@ -23,7 +23,15 @@ function SliderProduct(props) {
   return (
     <div>
       <div className="pproductcard">
-        <ImageSlider arrayOfImage={props.im} />
+        {/* <div className="salesPercent">خصم %{info1.percent} </div> */}
+
+        <div className="imgslider">
+          <ImageSlider
+            arrayOfImage={props.im}
+            percent={info1.percent}
+            makesalary={info1.makesalary}
+          />
+        </div>
         <div className="addtioninformation">
           <div dir="rtl">
             <div className="textname">

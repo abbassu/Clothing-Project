@@ -2,14 +2,25 @@
 
 .slider-container {
   max-width: 165px; // Adjust this value as needed
-  // margin: 0 auto;
   border-radius: 7px;
   margin-bottom: 22px;
-  // padding: 5px;
-  // border: 1px solid rgb(169, 166, 160);
   box-sizing: border-box;
   background-color: rgb(255, 255, 255);
-  /* ImageSlider.scss */
+  position: relative;
+  .salo {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    z-index: 1000;
+    font-size: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 37px;
+    background-color: #e8f010;
+    border-radius: 27px;
+    padding: 1px 4px 1px;
+  }
 
   @media (max-width: 720px) {
     & {
@@ -27,7 +38,6 @@
 .slider {
   .slick-list {
     overflow: hidden;
-    // margin: 0 20px;
   }
 
   .slick-slide img {
