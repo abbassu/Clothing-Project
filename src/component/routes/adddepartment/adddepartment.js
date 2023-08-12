@@ -7,7 +7,6 @@ function Adddepartment() {
   const [images1, setImages1] = useState([
     "https://scontent.fjrs10-1.fna.fbcdn.net/v/t39.30808-6/365152480_6424126254289395_5724773236817374115_n.png?_nc_cat=100&cb=99be929b-59f725be&ccb=1-7&_nc_sid=730e14&_nc_ohc=jLvbD2S3a0UAX8Lkv-5&_nc_ht=scontent.fjrs10-1.fna&oh=00_AfBz2IL4quSnnWJ5LXKY5Tf2lAezKlClvXNX-RRvni150g&oe=64D7F7EE",
     "https://scontent.fjrs10-1.fna.fbcdn.net/v/t39.30808-6/365256085_6424126297622724_4360210348240752766_n.png?_nc_cat=103&cb=99be929b-59f725be&ccb=1-7&_nc_sid=730e14&_nc_ohc=WWUvj8ufuxIAX9w1ubP&_nc_ht=scontent.fjrs10-1.fna&oh=00_AfBtOvKjKDqYYqohyYsjavW8-Afw_VFqT2m47IIIYAnWlA&oe=64D7EFA0",
-    "https://scontent.fjrs10-1.fna.fbcdn.net/v/t39.30808-6/365036010_6424126417622712_899384674464093156_n.png?_nc_cat=103&cb=99be929b-59f725be&ccb=1-7&_nc_sid=730e14&_nc_ohc=bGi6bRwmJMMAX-kNrHk&_nc_ht=scontent.fjrs10-1.fna&oh=00_AfA980-sNry1Uue0K3HEk_0I5qL2KhDVNFW2qH6oybhhEA&oe=64D7D23F",
     "https://scontent.fjrs10-1.fna.fbcdn.net/v/t39.30808-6/364075902_6427486693953351_5613735654206660303_n.jpg?_nc_cat=105&cb=99be929b-59f725be&ccb=1-7&_nc_sid=730e14&_nc_ohc=6GHLCxxIUisAX_IgMMe&_nc_ht=scontent.fjrs10-1.fna&oh=00_AfBBfKUEkFPkbwpiKxeTJn_TcNsYBDZ9x1ojjhOifqJfsw&oe=64D8E8FD",
     "https://scontent.fjrs10-1.fna.fbcdn.net/v/t39.30808-6/365094027_6424126294289391_2211168095409642893_n.png?_nc_cat=101&cb=99be929b-59f725be&ccb=1-7&_nc_sid=730e14&_nc_ohc=gkCxkOSAdJUAX_GugUf&_nc_ht=scontent.fjrs10-1.fna&oh=00_AfCYw15zLjO7EiJLCQc0ITwgsNvzFxLR5C9NEmbJHqTApw&oe=64D81B89",
   ]);
