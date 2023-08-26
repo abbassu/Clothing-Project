@@ -1,7 +1,7 @@
 import React from "react";
 
-function Deletedepartment() {
-  return <div>Deletedepartment</div>;
+function deletedepartment() {
+  return <div>deletedepartment</div>;
 }
 
-export default Deletedepartment;
+export default deletedepartment;

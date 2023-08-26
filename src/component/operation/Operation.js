@@ -98,6 +98,19 @@ function Operation() {
             <i class="fa-solid fa-poo-storm"></i>
           </span>{" "}
         </button>
+
+        <button
+          className="uuu"
+          onClick={() => {
+            nav("/testing");
+          }}
+        >
+          testing
+          <br />
+          <span className="ffff">
+            <i class="fa-solid fa-poo-storm"></i>
+          </span>{" "}
+        </button>
       </div>
     </div>
   );

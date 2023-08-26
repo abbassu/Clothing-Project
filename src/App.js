@@ -24,6 +24,8 @@ import MakeSales from "./component/makesales/makeSales";
 import Deletedepartment from "./component/routes/deletedepartment/deletedepartment";
 import Adddepartment from "./component/routes/adddepartment/adddepartment";
 import Updatedepartment from "./component/routes/updatedepartment/updatedepartment";
+import Testing from "./component/routes/testroute/testroute";
+
 function App() {
   return (
     <BrowserRouter>
@@ -48,6 +50,10 @@ function App() {
           <Route path="orders" element={<Orders />} />
           <Route path="orderuser" element={<OrderUser />} />
           <Route path="Subitem" element={<Subitem />}></Route>
+
+          <Route path="testing" element={<Testing />}>
+            {" "}
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>

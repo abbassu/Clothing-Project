@@ -11,11 +11,12 @@ import Button from "../button/button";
 import FormInput from "../fom-input/form-input";
 import "./additem.scss";
 import ImageSlider from "../imageslider/ImageSlider";
+import AddMultiplePhoto from "../addMultiplePhoto/addMultiplePhoto";
 function AddItem() {
   const query = collection(db, "categories");
   const [docs, loading, error] = useCollectionData(query);
   console.log("docs ------------ ", docs);
-
+  const [detailsNum, setDetailsNum] = useState([3, 2, 2]);
   const defaultformFields = {
     id: "",
     department: "",
@@ -23,10 +24,6 @@ function AddItem() {
     price: "",
     brand: "",
     quantity: "",
-    // numberOfSales:'',
-    // isEmpty:'',
-    // remain5Product:'',
-    // percent:'',
     view: "",
     detail: "",
     url: "",
@@ -53,6 +50,11 @@ function AddItem() {
   function handleChange(event) {
     const { name, value } = event.target;
     setformfields({ ...formFields, [name]: value });
+  }
+
+  function addMoredetailspush() {
+    const randomNumber = Math.floor(Math.random() * 100); // Generate a random number
+    setDetailsNum([...detailsNum, randomNumber]);
   }
 
   async function add(e) {
@@ -146,7 +148,7 @@ function AddItem() {
                       type: "number",
                       onChange: handleChange,
                       required: true,
-                      value: "",
+                      value: "25",
                       name: "quantity",
                     }}
                   />
@@ -157,7 +159,7 @@ function AddItem() {
                       type: "text",
                       onChange: handleChange,
                       required: true,
-                      value: "",
+                      value: "GEOX",
                       name: "brand",
                     }}
                   />
@@ -166,16 +168,21 @@ function AddItem() {
             </div>
 
             <div className="imim">
-              <div className="fff">
+              {/* <div className="fff">
                 <img src={url} alt="" />
-              </div>
+              </div> */}
 
               <TestFire fun={putUrl} type="button" />
             </div>
           </div>
-          <Button buttonType="google" onClick={add}>
-            ---- Submit init ----
-          </Button>
+          <div>
+            <AddMultiplePhoto />
+          </div>
+          <div>
+            <Button buttonType="google" onClick={add}>
+              ---- Submit init ----
+            </Button>
+          </div>
         </form>
 
         <div className="checkbox-label">
@@ -189,56 +196,66 @@ function AddItem() {
             Have More Details!
           </label>
         </div>
-        {isChecked ? (
-          <form action="">
-            <div className="feildtoadd">
-              <div className="flexo">
-                <div className="flexooo">
-                  <FormInput
-                    labelName="Size"
-                    optionInput={{
-                      type: "text",
-                      onChange: handleChange,
-                      required: true,
-                      value: "xl",
-                      name: "size",
-                    }}
-                  />
-                  <FormInput
-                    labelName="Color"
-                    optionInput={{
-                      type: "text",
-                      onChange: handleChange,
-                      required: true,
-                      value: "blue",
-                      name: "color",
-                    }}
-                  />
-                  <FormInput
-                    labelName="Quantity"
-                    optionInput={{
-                      type: "number",
-                      onChange: handleChange,
-                      required: true,
-                      value: "50",
-                      name: "quantity",
-                    }}
-                  />
-                </div>
+        {detailsNum.map((number, index) => (
+          <div key={index}>{number}</div>
+        ))}
 
-                <div className="imim">
-                  <div className="fff">
-                    <img src={url} alt="" />
-                  </div>
+        {isChecked
+          ? detailsNum.map(() => {
+              return (
+                <>
+                  <form action="">
+                    <div className="feildtoadd">
+                      <div className="flexo">
+                        <div className="flexooo">
+                          <FormInput
+                            labelName="Size"
+                            optionInput={{
+                              type: "text",
+                              onChange: handleChange,
+                              required: true,
+                              value: "xl",
+                              name: "size",
+                            }}
+                          />
+                          <FormInput
+                            labelName="Color"
+                            optionInput={{
+                              type: "text",
+                              onChange: handleChange,
+                              required: true,
+                              value: "blue",
+                              name: "color",
+                            }}
+                          />
+                          <FormInput
+                            labelName="Quantity"
+                            optionInput={{
+                              type: "number",
+                              onChange: handleChange,
+                              required: true,
+                              value: "50",
+                              name: "quantity",
+                            }}
+                          />
+                        </div>
+                        <div className="imim">
+                          <TestFire fun={putUrl} type="button" />
+                        </div>
+                      </div>
+                      <div>
+                        <AddMultiplePhoto />
+                      </div>
+                    </div>
+                  </form>
+                </>
+              );
+            })
+          : ""}
 
-                  <TestFire fun={putUrl} type="button" />
-                </div>
-              </div>
-            </div>
-          </form>
-        ) : (
-          ""
-        )}
+        <Button buttonType="google" onClick={addMoredetailspush}>
+          Add More
+        </Button>
 
         <Button buttonType="google" onClick={add}>
           Submit
