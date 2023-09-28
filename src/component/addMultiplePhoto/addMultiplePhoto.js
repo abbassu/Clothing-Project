@@ -50,8 +50,7 @@ const AddMultiplePhoto = () => {
     <section>
       <label className="labelin">
         + Add Images
-        <br />
-        <span>up to 6 images</span>
+        {/* <span>up to 6 images</span> */}
         <input
           className="opopop"
           type="file"
@@ -61,7 +60,6 @@ const AddMultiplePhoto = () => {
           accept="image/png , image/jpeg, image/webp"
         />
       </label>
-      <br />
 
       <div className="images_dd">
         {selectedImages &&

@@ -36,7 +36,33 @@
 // export default Testing;
 
 import React, { useState } from "react";
+import axios from "axios";
+
 function Testing() {
+  const [formData, setFormData] = useState({
+    color: "blue",
+    photo_url: "htp///YellowRed",
+    size_Quantity: [
+      { size: "S", quantity: 10 },
+      { size: "M", quantity: 11 },
+      { size: "L", quantity: 12 },
+    ],
+    images: [],
+  });
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await axios.post(
+        "http://localhost:9999/product/details/39",
+        { productDetails: formData }
+      );
+      console.log("Product details added:", response.data);
+    } catch (error) {
+      console.error("Error adding product details:", error);
+    }
+  };
   const [numberArray, setNumberArray] = useState([]);
   const addNumber = () => {
     const randomNumber = Math.floor(Math.random() * 100); // Generate a random number
@@ -44,6 +70,7 @@ function Testing() {
   };
   return (
     <div>
+      <button onClick={handleSubmit}>ggg</button>
       <button onClick={addNumber}>Add Number</button>
       <ul>
         {numberArray.map((number, index) => (

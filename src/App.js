@@ -18,6 +18,7 @@ import DeleteItem from "./component/deleteitem/deleteitem";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import Subitem from "./component/subitem/Subitem";
+import ParentComponent from "./component/test/Test";
 import CateBar from "./component/cateBar/cateBar";
 import Updateitem from "./component/updateitem/Updateitem";
 import MakeSales from "./component/makesales/makeSales";
@@ -50,8 +51,7 @@ function App() {
           <Route path="orders" element={<Orders />} />
           <Route path="orderuser" element={<OrderUser />} />
           <Route path="Subitem" element={<Subitem />}></Route>
-
-          <Route path="testing" element={<Testing />}>
+          <Route path="testing" element={<ParentComponent />}>
             {" "}
           </Route>
         </Route>

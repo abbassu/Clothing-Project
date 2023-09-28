@@ -1,52 +1,67 @@
-.calcolater{
+.calcolater {
   font-size: 39px;
   width: 100%;
   text-align: center;
-  
 }
 .checkout-container {
-    width: 700px;
-    min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 50px auto 0;
-    .total {
-      font-size: 36px;
-    }
-    .lastc{
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 40px;
-    }
-    @media (max-width:1066px) {
-      .checkout-container{
-        width: 55%;
-      }
-    }
-    @media (max-width:800px){
-      width: 600px;
-      .checkout-heade{
-background-color: rgb(157, 128, 185);      }
-    }
-    @media (max-width:700px) {
-      width: 100%;
-    }
-
-
-    .moreinfo{
-      font-family:Aboreto;
-      width: 100%;
-    }
-  }
-
-  .totalee{
+  width: 630px;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px auto 0;
+  .total {
     font-size: 30px;
-    font-family:Aboreto;
-    background-color: rgb(243, 198, 138);
-    padding: 5px;
-    border-radius: 7px;
   }
+  .lastc {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  .moreinfo {
+    h2 {
+      padding-right: 5px;
+      border: 2px solid rgb(98, 98, 206);
+      padding: 4px 8px;
+      border-radius: 7px;
+    }
+    margin-top: 20px;
+    font-family: Aboreto;
+    width: 100%;
+    .fa-car {
+      margin-left: 10px;
+      color: rgb(98, 98, 206);
+    }
+  }
+  @media (max-width: 1066px) {
+    .checkout-container {
+      width: 55%;
+    }
+  }
+  @media (max-width: 800px) {
+    width: 600px;
+    .checkout-heade {
+      background-color: rgb(157, 128, 185);
+    }
+  }
+  @media (max-width: 700px) {
+    width: 100%;
+    .moreinfo {
+      width: 90%;
+    }
+    .lastc {
+      width: 90%;
+    }
+  }
+}
+
+.totalee {
+  font-size: 30px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: rgb(243, 198, 138);
+  padding: 5px;
+  border-radius: 7px;
+}
