@@ -3,7 +3,7 @@ import Size from "./Size";
 import axios from "axios";
 function ArrayColor() {
   const initObject = {
-    color: "No Color",
+    color: 1,
     photo_url: "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
     size_Quantity: [{ size: "", quantity: 0 }],
     images: [],
@@ -101,7 +101,7 @@ function ArrayColor() {
     event.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:9999/product/details/125",
+        "http://localhost:9999/product/details/40",
         { productDetails: objectData }
       );
       console.log("Product details added:", response.data);

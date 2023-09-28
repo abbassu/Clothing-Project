@@ -29,15 +29,12 @@ function AddItem() {
     quantity: "",
     view: "",
     detail: "",
+
     url: "",
     reate: "4",
     nameurl: "",
   };
   const [formFields, setformfields] = useState(defaultformFields);
-
-  // function setdefault() {
-  //   setformfields(defaultformFields);
-  // }
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -57,42 +54,75 @@ function AddItem() {
 
     // setisProductDetails({ ...isProductDetails, name });
   }, [formFields]);
-  const [productData, setProductData] = useState({
-    department_id: "",
-    name: "",
-    cost: "",
-    quantity: "",
-    percent: "",
-    view: false,
-    url_primary_image: "",
-    // "https://scontent.fjrs9-1.fna.fbcdn.net/v/t39.30808-6/366337295_6450978648270822_3158556925808717953_n.png?stp=dst-png_p960x960&_nc_cat=107&cb=99be929b-59f725be&ccb=1-7&_nc_sid=7f8c78&_nc_ohc=eRqUQgJr1sEAX8kvtkO&_nc_ht=scontent.fjrs9-1.fna&oh=00_AfCwj2XxnZA76bh3kZqF0UjxI7HDv2qc8Wz285Tmlynfgg&oe=64DD9424",
-    isProductDetails: false,
-    images: [
-      // {
-      //   url: "https://scontent.fjrs9-1.fna.fbcdn.net/v/t39.30808-6/366682437_6450978694937484_9140068944129346078_n.png?stp=dst-png_p960x960&_nc_cat=104&cb=99be929b-59f725be&ccb=1-7&_nc_sid=7f8c78&_nc_ohc=IdraevgCwhwAX-8yprj&_nc_ht=scontent.fjrs9-1.fna&oh=00_AfBxTcDtO1t9NQRbA4bvKP2lPfux_S9zje5Ridq4e_BXmQ&oe=64DC08A7",
-      // },
-      // {
-      //   url: "https://scontent.fjrs9-1.fna.fbcdn.net/v/t39.30808-6/366326819_6450978761604144_6648500924145443100_n.png?stp=dst-png_p960x960&_nc_cat=111&cb=99be929b-59f725be&ccb=1-7&_nc_sid=7f8c78&_nc_ohc=3nUfldOSvbkAX8UlAD4&_nc_ht=scontent.fjrs9-1.fna&oh=00_AfAl7S1fBzdLKEypqXEXOxq4XEq4SfYBHDK7n5mwVt-Oag&oe=64DD0C4D",
-      // },
-      // {
-      //   url: "https://scontent.fjrs9-1.fna.fbcdn.net/v/t39.30808-6/366374367_6450978834937470_352421823217449159_n.png?_nc_cat=111&cb=99be929b-59f725be&ccb=1-7&_nc_sid=7f8c78&_nc_ohc=WM1zajsy-JMAX90B1xA&_nc_ht=scontent.fjrs9-1.fna&oh=00_AfCRFNwdqG9bTfVQSXn7TVtB2DN4czqC5A3Z3g7tW_RZlA&oe=64DC2390",
-      // },
-    ],
-  });
+  const [productData, setProductData] = useState(
+    {
+      productIDAdmin: "#456AB3C11111",
+      department_id: 9,
+      name: "Horrrrrrdie",
+      cost: 419,
+      quantity: 104,
+      percent: 21.17, // Default 0
+      view: false,
+      url_primary_image: "https//Hoodie9/9/2023",
+      isProductDetails: true,
+      BrandName: "AADD",
+      images: [
+        {
+          url: "https://Image_Hoodie_1.jpg",
+        },
+        {
+          url: "https://Image_Hoodie_2.jpg",
+        },
+        {
+          url: "https://Image_Hoodie_3.jpg",
+        },
+      ],
+    }
+    // department_id: "",
+    // name: "",
+    // cost: "",
+    // quantity: "",
+    // percent: "",
+    // view: false,
+    // url_primary_image: "",
+    // // "https://scontent.fjrs9-1.fna.fbcdn.net/v/t39.30808-6/366337295_6450978648270822_3158556925808717953_n.png?stp=dst-png_p960x960&_nc_cat=107&cb=99be929b-59f725be&ccb=1-7&_nc_sid=7f8c78&_nc_ohc=eRqUQgJr1sEAX8kvtkO&_nc_ht=scontent.fjrs9-1.fna&oh=00_AfCwj2XxnZA76bh3kZqF0UjxI7HDv2qc8Wz285Tmlynfgg&oe=64DD9424",
+    // isProductDetails: false,
+    // images: [
+    //   // {
+    //   //   url: "https://scontent.fjrs9-1.fna.fbcdn.net/v/t39.30808-6/366682437_6450978694937484_9140068944129346078_n.png?stp=dst-png_p960x960&_nc_cat=104&cb=99be929b-59f725be&ccb=1-7&_nc_sid=7f8c78&_nc_ohc=IdraevgCwhwAX-8yprj&_nc_ht=scontent.fjrs9-1.fna&oh=00_AfBxTcDtO1t9NQRbA4bvKP2lPfux_S9zje5Ridq4e_BXmQ&oe=64DC08A7",
+    //   // },
+    //   // {
+    //   //   url: "https://scontent.fjrs9-1.fna.fbcdn.net/v/t39.30808-6/366326819_6450978761604144_6648500924145443100_n.png?stp=dst-png_p960x960&_nc_cat=111&cb=99be929b-59f725be&ccb=1-7&_nc_sid=7f8c78&_nc_ohc=3nUfldOSvbkAX8UlAD4&_nc_ht=scontent.fjrs9-1.fna&oh=00_AfAl7S1fBzdLKEypqXEXOxq4XEq4SfYBHDK7n5mwVt-Oag&oe=64DD0C4D",
+    //   // },
+    //   // {
+    //   //   url: "https://scontent.fjrs9-1.fna.fbcdn.net/v/t39.30808-6/366374367_6450978834937470_352421823217449159_n.png?_nc_cat=111&cb=99be929b-59f725be&ccb=1-7&_nc_sid=7f8c78&_nc_ohc=WM1zajsy-JMAX90B1xA&_nc_ht=scontent.fjrs9-1.fna&oh=00_AfCRFNwdqG9bTfVQSXn7TVtB2DN4czqC5A3Z3g7tW_RZlA&oe=64DC2390",
+    //   // },
+    // ],
+  );
   const {
-    name,
-    id,
-    cost,
+    // name,
+    // productIDAdmin,
+    // cost,
+    // department_id,
+    // quantity,
+    // url_primary_image,
+    // images,
+    // brand,
+
+    productIDAdmin,
     department_id,
+    name,
+    cost,
     quantity,
+    percent, // Default 0
+    view,
     url_primary_image,
+    // isProductDetails,
+    BrandName,
     images,
-    brand,
   } = productData;
 
-  useEffect(() => {
-    sendToDatabase();
-  }, [productData]);
+  useEffect(() => {}, [productData]);
 
   const sendToDatabase = async (event) => {
     try {
@@ -127,11 +157,27 @@ function AddItem() {
   async function fromUserToDataForm() {
     await setProductData({
       ...productData,
+      productIDAdmin,
+      department_id,
       name,
       cost,
       quantity,
-      department_id,
+      percent: 0,
+      view: false,
+      url_primary_image: "ffffffffffffffffffffffff",
       isProductDetails,
+      BrandName,
+      images: [
+        {
+          url: "https://Image_Hoodie_1.jpg",
+        },
+        {
+          url: "https://Image_Hoodie_2.jpg",
+        },
+        {
+          url: "https://Image_Hoodie_3.jpg",
+        },
+      ],
     });
   }
   const handleMainPhoto = () => {};
@@ -166,8 +212,8 @@ function AddItem() {
                       // type:"number",
                       onChange: handleChange,
                       required: true,
-                      value: id,
-                      name: "id",
+                      value: productIDAdmin,
+                      name: "productIDAdmin",
                     }}
                   />
                   <FormInput
@@ -230,7 +276,7 @@ function AddItem() {
                       type: "text",
                       onChange: handleChange,
                       required: true,
-                      value: brand,
+                      value: BrandName,
                       name: "brand",
                     }}
                   />
@@ -262,6 +308,10 @@ function AddItem() {
 
         <Button buttonType="google" onClick={handleSubmit}>
           Submit
+        </Button>
+
+        <Button buttonType="google" onClick={sendToDatabase}>
+          Submitlast
         </Button>
       </div>
     </div>

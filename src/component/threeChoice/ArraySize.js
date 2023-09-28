@@ -5,7 +5,7 @@ function ArraySize() {
   const [fontSize, setFontSize] = useState([1]);
 
   const initObject = {
-    color: "No Color",
+    color: 1,
     photo_url: "",
     size_Quantity: [{ size: "", quantity: 0 }],
     images: [],
@@ -27,7 +27,7 @@ function ArraySize() {
     event.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:9999/product/details/125",
+        "http://localhost:9999/product/details/40",
         { productDetails: objectData }
       );
       console.log("Product details added:", response.data);
