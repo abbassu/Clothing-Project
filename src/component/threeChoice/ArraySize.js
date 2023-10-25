@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Size from "./Size";
 import axios from "axios";
-function ArraySize() {
+import "./arraysize.scss";
+function ArraySize(props) {
   const [fontSize, setFontSize] = useState([1]);
 
   const initObject = {
@@ -12,29 +13,29 @@ function ArraySize() {
   };
   const [objectData, setObjectData] = useState(initObject);
 
-  // const [formData, setFormData] = useState({
-  //   color: "blue",
-  //   photo_url: "htp///YellowRed",
-  //   size_Quantity: [
-  //     { size: "S", quantity: 10 },
-  //     { size: "M", quantity: 11 },
-  //     { size: "L", quantity: 12 },
-  //   ],
-  //   images: [],
-  // });
+  useEffect(() => {
+    if (props.myObject) {
+      console.log("hava proooops");
+      setObjectData(props.myObject);
+    } else {
+      console.log("not hava proooops");
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      const response = await axios.post(
-        "http://localhost:9999/product/details/40",
-        { productDetails: objectData }
-      );
-      console.log("Product details added:", response.data);
-    } catch (error) {
-      console.error("Error adding product details:", error);
+      setObjectData(initObject);
     }
-  };
+  }, []);
+
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+  //   try {
+  //     const response = await axios.post(
+  //       "http://localhost:9999/product/details/49",
+  //       { productDetails: objectData }
+  //     );
+  //     console.log("Product details added:", response.data);
+  //   } catch (error) {
+  //     console.error("Error adding product details:", error);
+  //   }
+  // };
 
   const [groupOfSize, setGroupOfSize] = useState([
     "XXS",
@@ -44,17 +45,17 @@ function ArraySize() {
     "L",
     "XL",
     "XXL",
-    "XXXL",
+    "3XL",
     "4XL",
     "5XL",
   ]);
 
   useEffect(() => {
-    console.log("000000", groupOfSize);
+    // console.log("000000", groupOfSize);
   }, [groupOfSize]);
 
   const returnSelectedSize = (newSize) => {
-    console.log("---- ------", newSize);
+    // console.log("---- ------", newSize);
     let y = groupOfSize;
     y.push(newSize);
     console.log("yyyy", y);
@@ -62,12 +63,13 @@ function ArraySize() {
   };
 
   const deleteSelectedSize = (newSize) => {
-    console.log("newsize", newSize);
+    // console.log("newsize", newSize);
     setGroupOfSize((prevSizes) => prevSizes.filter((size) => size !== newSize));
   };
 
   useEffect(() => {
-    console.log("objectdata", objectData);
+    // console.log("objectdata", objectData);
+    props.changeStateDetails(objectData);
   }, [objectData]);
 
   const [quantity, setQuantity] = useState(1);
@@ -76,7 +78,7 @@ function ArraySize() {
   ]);
 
   const deleteSize = (newSize) => {
-    console.log("fffffffff");
+    // console.log("fffffffff");
     setGroupOfSize((prevSizes) => prevSizes.filter((size) => size !== newSize));
   };
 
@@ -122,12 +124,10 @@ function ArraySize() {
 
   return (
     <div>
-      <button onClick={increaseQuantity}> + </button>
-      <button onClick={decreaseQuantity}> - </button>
-
       {size_Quantity?.map((ele, index) => {
         return (
           <Size
+            fromsize={true}
             fontSizes={fontSize}
             index={index}
             update={updateObject}
@@ -138,7 +138,18 @@ function ArraySize() {
         );
       })}
 
-      <button onClick={handleSubmit}> submit now </button>
+      <div className="towbutton">
+        <button onClick={increaseQuantity}>
+          {" "}
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <button onClick={decreaseQuantity}>
+          {" "}
+          <i class="fa-solid fa-minus"></i>
+        </button>
+      </div>
+
+      {/* <button onClick={handleSubmit}> submit now </button> */}
     </div>
   );
 }

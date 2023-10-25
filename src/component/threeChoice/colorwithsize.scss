@@ -1,0 +1,16 @@
+.feildtoadd {
+  border: 1px solid yellow;
+  width: 480px;
+  .sectioninin {
+    border: 1px solid forestgreen;
+    label {
+      font-size: 19px;
+      margin-bottom: 5px;
+    }
+  }
+  select {
+    padding: 2px;
+    width: 100px;
+    border-radius: 5px;
+  }
+}

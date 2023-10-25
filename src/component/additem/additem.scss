@@ -27,6 +27,7 @@ h1 {
       flex-direction: column;
 
       .feildtoadd {
+        border: 1px solid yellow;
         display: flex;
         flex-wrap: wrap;
         gap: 40px;
@@ -38,14 +39,16 @@ h1 {
           display: flex;
           flex-direction: row;
           gap: 40px;
+          border: 1px solid;
         }
       }
     }
     .imim {
       display: flex;
-      justify-content: space-around;
+      justify-content: start;
       flex-direction: column;
-      align-items: center;
+      align-items: start;
+      border: 1px solid blue;
       .fff {
         border: 1px solid rgb(234, 153, 153);
         height: 260px;
@@ -77,6 +80,7 @@ h1 {
       /* Increase the scale to make the checkbox larger */
       transform: scale(2); /* Adjust the value as needed */
       margin-right: 8px; /* Add some spacing between the checkbox and the label */
+      margin-left: 15px;
     }
   }
 }
@@ -91,6 +95,7 @@ h1 {
     gap: 20px;
   }
   .flexoo {
+    border: 1px solid;
     gap: 0px;
     flex-direction: column;
   }

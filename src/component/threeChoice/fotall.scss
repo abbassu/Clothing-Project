@@ -5,6 +5,13 @@
   justify-content: center !important;
   align-items: center !important;
   margin-bottom: 20px;
+  label {
+    font-size: 19px;
+  }
+  input[type="radio"] {
+    transform: scale(1.8);
+    margin: 13px;
+  }
 }
 .radioarray {
   // height: 30px;

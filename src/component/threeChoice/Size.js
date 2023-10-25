@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import "./size.scss";
 const Size = (props) => {
   const [selectedSize, setSelectedSize] = useState("");
   const [quantity, setQuantity] = useState(1);
@@ -26,7 +26,6 @@ const Size = (props) => {
   useEffect(() => {
     props.update({ size: selectedSize, quantity: 1 }, props.index);
     props.deleteSelectedSize(selectedSize);
-    console.log("1111111111111111111111111", selectedSize);
   }, [selectedSize]);
 
   useEffect(() => {
@@ -51,30 +50,68 @@ const Size = (props) => {
     <>
       {up?.map(() => {
         return (
-          <div>
-            <label htmlFor="fontSize">Select Font Size:</label>
-            <select id="fontSize" value={"kkkkkkk"} onChange={handleSizeChange}>
-              <option value={selectedSize}>{selectedSize}</option>
-              {props.groupOfSize?.map((size, index) => (
-                <option value={size}>{size}</option>
-              ))}
-            </select>
-            <label htmlFor="quantity"> &nbsp; Quantity: &nbsp;</label>
-            <input
-              type="number"
-              id="quantity"
-              value={quantity}
-              onChange={handleQuantityChange}
-              min="1"
-            />
-            &nbsp;
-            <button onClick={increaseQuantity}>+</button> &nbsp;
-            <button onClick={decreaseQuantity}> - </button>
-            <ul>
-              {props.groupOfSize.map((item, index) => (
-                <span key={index}>{item} </span>
-              ))}
-            </ul>
+          <div className="sizes">
+            <div>
+              <label htmlFor="fontSize">
+                {props.fromsize ? (
+                  <>اختر الحجم المناسب :&nbsp;</>
+                ) : (
+                  <>اختر اللون المناسب : &nbsp;</>
+                )}
+              </label>
+              <select
+                id="fontSize"
+                value={"kkkkkkk"}
+                onChange={handleSizeChange}
+              >
+                <option value={selectedSize}>{selectedSize}</option>
+                {props.groupOfSize?.map((size, index) => (
+                  <option value={size}>{size}</option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+              <label htmlFor="quantity"> الكمية : &nbsp; </label>
+              <button onClick={increaseQuantity}>
+                <i class="fa-solid fa-plus"></i>
+              </button>{" "}
+              &nbsp;
+              <button onClick={decreaseQuantity}>
+                {" "}
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              &nbsp; &nbsp; &nbsp; &nbsp;
+              <input
+                type="number"
+                id="quantity"
+                value={quantity}
+                onChange={handleQuantityChange}
+                min="1"
+              />
+            </div>
+
+            {/* <ul>
+              <span className="listsizes">
+                {props.fromsize ? (
+                  <>الأحجام المتبقية :&nbsp;</>
+                ) : (
+                  <> الألوان المتبقية : &nbsp;</>
+                )}
+              </span>
+              {props.groupOfSize.map((item, index) => {
+                return (
+                  <span key={index}>
+                    {item}{" "}
+                    {index < props.groupOfSize.length - 1 ? (
+                      <i class="fa-solid fa-minus"></i>
+                    ) : (
+                      ""
+                    )}
+                  </span>
+                );
+              })}
+            </ul> */}
           </div>
         );
       })}

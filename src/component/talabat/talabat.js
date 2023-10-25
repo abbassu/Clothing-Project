@@ -6,14 +6,11 @@ import "./talabat.scss";
 import { Link } from "react-router-dom";
 import { GetOrder } from "../../utils/firebase/firebase";
 import { DeleteOrder } from "../../utils/firebase/firebase";
+
+import Order_OrderList from "../Order_OrderList/Order_OrderList";
 function Orders() {
   const [orders, setorders] = useState([]);
-  const [stateOrder, setStateOrder] = useState([
-    "الطلب",
-    "التحضير",
-    "الإرسال",
-    "الاستلام",
-  ]);
+
   const navigate = useNavigate();
   const [arrayOfTalabat, setarrOfTalabat] = useState([]);
   const [textSearch, setTextSearch] = useState();
@@ -35,14 +32,14 @@ function Orders() {
 
   const DeleteData = async (element) => {
     await DeleteOrder(element);
-    setdata();
+    // setdata();
   };
   async function getget() {
     console.log("data form order", await GetOrder());
   }
 
   useEffect(() => {
-    setdata();
+    // setdata();
   }, []);
 
   function searchFilter(event) {
@@ -61,6 +58,18 @@ function Orders() {
   function selectType(event) {
     setTextSearch(event.target.value);
   }
+  useEffect(() => {
+    console.log("/admin/orders", arrayOfTalabat);
+  }, [arrayOfTalabat]);
+
+  const [jsonData, setJsonData] = useState(null);
+
+  useEffect(() => {
+    fetch("http://localhost:9999/admin/orders") // Replace with your API endpoint
+      .then((response) => response.json())
+      .then((data) => setarrOfTalabat(data.Orders))
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
 
   return (
     <div>
@@ -88,78 +97,22 @@ function Orders() {
           </select>
         </div>
       </div>
-      {/* <button onClick={setdata}>fffffffffffffffffffff</button> */}
+
       {arrayOfTalabat.map((Element, index) => {
         return (
-          <div className={`pack   ${index % 2 === 0 ? "red" : "blue"}`}>
-            <div className="back">
-              <div className="indexnow"> رقم الطلب {index + 1} </div>
-
-              <div className="order">
-                <span className="phone talab">
-                  {" "}
-                  <span className="frow">الأسم </span> :
-                  {Element.name ? Element.name : "ahamd"}{" "}
-                </span>
-                <span className="phone talab">
-                  {" "}
-                  <span className="frow">الجوال </span> : {Element.phone}{" "}
-                </span>
-                <span className="address talab">
-                  {" "}
-                  <span className="frow">العنوان </span> : {Element.city} -{" "}
-                  {Element.street}{" "}
-                </span>
-                <span className="mony talab">
-                  {" "}
-                  <span className="frow"> المبلغ للدفع </span> :{" "}
-                  {Element.cartTotal}${" "}
-                </span>
-                <span className="date talab">
-                  {" "}
-                  <span className="frow"> تاريخ الشراء</span> :{" "}
-                  {Element.currentDate}{" "}
-                </span>
-                <button
-                  className="seeOrder gg"
-                  onClick={() => {
-                    DeleteData(Element.info);
-                  }}
-                >
-                  حذف{" "}
-                  <span>
-                    {" "}
-                    {/* <i class="fa-solid fa-trash gfd"></i>{" "} */}
-                  </span>
-                </button>
-                <Link to="/orderuser" state={{ data: Element }}>
-                  <button className="seeOrder lll">
-                    عرض{" "}
-                    <span>
-                      {" "}
-                      {/* <i class="fa-solid fa-arrow-right gfd"></i>{" "} */}
-                    </span>
-                  </button>
-                </Link>
-              </div>
-            </div>
-            <div className="state">
-              {stateOrder.map((item, index) => {
-                console.log(index, "---", num_clicked);
-                return (
-                  <div
-                    className={`index greeno ${`index === num_clicked ? "greeno" : "greeno"`}
-                      
-
-                    `}
-                    onClick={() => toggleClicked(index)}
-                  >
-                    {" "}
-                    {item}
-                  </div>
-                );
-              })}
-            </div>
+          <div className={`pack `}>
+            <Order_OrderList
+              index={index}
+              city={Element.city}
+              order_id={Element.order_id}
+              name={Element.name}
+              phone={Element.phone_number}
+              currentDate={new Date(Element.date).toLocaleString()}
+              cartTotal={Element.total_price}
+              location_address={Element.location_address}
+              status={Element.status}
+              notice={Element.notice}
+            />
           </div>
         );
       })}

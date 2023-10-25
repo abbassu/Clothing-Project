@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ColorWithSize from "./ColorWithSize";
-function ArrayColorWithSize() {
+import "./arraycolosize.scss";
+function ArrayColorWithSize(props) {
   const initObject = {
     color: "",
     photo_url: "",
@@ -8,7 +9,16 @@ function ArrayColorWithSize() {
     images: [],
   };
   const [quantity, setQuantity] = useState(1);
-  const [array_CS, setArrayOfCS] = useState([1]);
+  const [array_CS, setArrayOfCS] = useState([]);
+
+  useEffect(() => {
+    console.log("changeee");
+    props.setArrayOfCS(array_CS);
+  }, [array_CS]);
+  const fffff = () => {
+    console.log("changeee", array_CS);
+    // props.setArrayOfCS(array_CS);
+  };
 
   const increaseQuantity = () => {
     if (quantity < 10) {
@@ -17,6 +27,7 @@ function ArrayColorWithSize() {
       const objectCS = initObject;
       array_CS_temp.push(objectCS);
       setArrayOfCS(array_CS_temp);
+      props.editarray(array_CS_temp);
     }
   };
 
@@ -26,16 +37,41 @@ function ArrayColorWithSize() {
       const array_CS_temp = array_CS;
       array_CS_temp.pop();
       setArrayOfCS(array_CS_temp);
+      props.editarray(array_CS_temp);
     }
   };
 
   return (
     <div>
-      <button onClick={increaseQuantity}> + </button>
-      <button onClick={decreaseQuantity}> - </button>
-      {array_CS?.map((ele, index) => {
-        return <ColorWithSize />;
-      })}
+      <div className="allcolorwithsize">
+        {array_CS?.map((ele, index) => {
+          return (
+            <ColorWithSize
+              indexnum={index}
+              initObject={array_CS[index]}
+              changeStateDetails={props.changeStateDetails}
+              array_CS={props.array_CS}
+              editarray={props.editarray}
+            />
+          );
+        })}
+      </div>
+
+      <div className="towbuttonincolorsize">
+        <button onClick={increaseQuantity}>
+          {" "}
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <button onClick={decreaseQuantity}>
+          {" "}
+          <i class="fa-solid fa-minus"></i>
+        </button>
+
+        <button onClick={fffff}>
+          {" "}
+          <i class="fa-solid fa-minus">fffff</i>
+        </button>
+      </div>
     </div>
   );
 }

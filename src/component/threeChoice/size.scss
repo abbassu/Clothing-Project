@@ -1,0 +1,42 @@
+.sizes {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 20px;
+  border-top: 1px solid rgb(109, 107, 102);
+  padding-top: 10px;
+  label {
+    font-size: 19px;
+  }
+  button {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 18px;
+    align-items: center;
+    background-color: wheat;
+    border: 1px solid rgb(109, 107, 102);
+  }
+
+  input[type="number"] {
+    border-radius: 7px;
+    padding: 2px 4px;
+    border: 1px solid rgb(109, 107, 102);
+    font-size: 18px;
+    width: 100px;
+  }
+  select {
+    padding: 2px;
+    width: 100px;
+    border-radius: 5px;
+  }
+  ul {
+    // background-color: red;
+    padding: 0px;
+    font-size: 18px;
+    span {
+      font-size: 18px;
+      margin: 2px;
+    }
+  }
+}

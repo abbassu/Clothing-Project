@@ -7,7 +7,7 @@ import Size from "./Size";
 import "./fotall.scss";
 import ArrayColor from "./ArrayColor";
 import ArrayColorWithSize from "./ArrayColorWithSize";
-function RadioButtonExample() {
+function RadioButtonExample(props) {
   const [selectedRadio, setSelectedRadio] = useState("");
   const [visibility, setVisibility] = useState(false);
   const [fontSize, setFontSize] = useState([1]);
@@ -15,6 +15,7 @@ function RadioButtonExample() {
   const handleRadioChange = (event) => {
     setSelectedRadio(event.target.value);
     setVisibility(true);
+    props.changeStateRequest(event.target.value);
   };
 
   return (
@@ -24,39 +25,51 @@ function RadioButtonExample() {
           <label>
             <input
               type="radio"
-              value="radio1"
+              value="1"
               checked={selectedRadio === "radio1"}
               onChange={handleRadioChange}
             />
-            Size With Color
+            الوان وأحجام
           </label>
           <br />
           <label>
             <input
               type="radio"
-              value="radio2"
+              value="2"
               checked={selectedRadio === "radio2"}
               onChange={handleRadioChange}
             />
-            Size
+            احجام
           </label>
           <br />
           <label>
             <input
               type="radio"
-              value="radio3"
+              value="3"
               checked={selectedRadio === "radio3"}
               onChange={handleRadioChange}
             />
-            Color
+            الوان
           </label>
         </div>
       </div>
 
       <div className="radioarray">
-        {selectedRadio === "radio1" && <ArrayColorWithSize />}
-        {selectedRadio === "radio2" && <ArraySize />}
-        {selectedRadio === "radio3" && <ArrayColor />}
+        {selectedRadio === "1" && (
+          <ArrayColorWithSize
+            editarray={props.editarray}
+            initObjectState={props.initObjectState}
+            changeStateDetails={props.changeStateDetails}
+            array_CS={props.array_CS}
+            setArrayOfCS={props.setArrayOfCS}
+          />
+        )}
+        {selectedRadio === "2" && (
+          <ArraySize changeStateDetails={props.changeStateDetails} />
+        )}
+        {selectedRadio === "3" && (
+          <ArrayColor changeStateDetails={props.changeStateDetails} />
+        )}
       </div>
     </div>
   );

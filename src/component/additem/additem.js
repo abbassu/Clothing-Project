@@ -18,8 +18,47 @@ import AddMultiplePhoto from "../addMultiplePhoto/addMultiplePhoto";
 function AddItem() {
   const query = collection(db, "categories");
   const [docs, loading, error] = useCollectionData(query);
-  console.log("docs ------------ ", docs);
+  // console.log("docs ------------ ", docs);
   const [detailsNum, setDetailsNum] = useState([3]);
+
+  // retuen new array with midified cartitems  new cart item
+  const initObject = {
+    color: 1,
+    photo_url: "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
+    size_Quantity: [{ size: "", quantity: 0 }],
+    images: [],
+  };
+
+  const [initObjectState, setinitObjectState] = useState(initObject);
+  const [array_CS, setArrayOfCS] = useState([]);
+
+  const [typeradio, settyperadio] = useState(1);
+
+  const editarray = (ee) => {
+    setArrayOfCS(ee);
+    console.log("edit parent now now now now111111111111");
+    console.log(array_CS);
+  };
+
+  useEffect(() => {
+    console.log("edit parent now now now now");
+    console.log(array_CS);
+  }, [array_CS]);
+
+  const changeStateDetails = (value) => {
+    setinitObjectState(value);
+  };
+
+  useEffect(() => {
+    console.log("state object in parent ", initObjectState);
+  }, [initObjectState]);
+
+  const [stateForRequest, setStateForRequest] = useState(1);
+  const changeStateRequest = (value) => {
+    console.log("valeeeee", value);
+    setStateForRequest(value);
+  };
+
   const defaultformFields = {
     id: "",
     department_id: "",
@@ -29,7 +68,6 @@ function AddItem() {
     quantity: "",
     view: "",
     detail: "",
-
     url: "",
     reate: "4",
     nameurl: "",
@@ -49,66 +87,35 @@ function AddItem() {
   let f = 4;
 
   useEffect(() => {
-    console.log("form", formFields);
+    // console.log("form", formFields);
     let name = formFields.name;
 
     // setisProductDetails({ ...isProductDetails, name });
   }, [formFields]);
-  const [productData, setProductData] = useState(
-    {
-      productIDAdmin: "#456AB3C11111",
-      department_id: 9,
-      name: "Horrrrrrdie",
-      cost: 419,
-      quantity: 104,
-      percent: 21.17, // Default 0
-      view: false,
-      url_primary_image: "https//Hoodie9/9/2023",
-      isProductDetails: true,
-      BrandName: "AADD",
-      images: [
-        {
-          url: "https://Image_Hoodie_1.jpg",
-        },
-        {
-          url: "https://Image_Hoodie_2.jpg",
-        },
-        {
-          url: "https://Image_Hoodie_3.jpg",
-        },
-      ],
-    }
-    // department_id: "",
-    // name: "",
-    // cost: "",
-    // quantity: "",
-    // percent: "",
-    // view: false,
-    // url_primary_image: "",
-    // // "https://scontent.fjrs9-1.fna.fbcdn.net/v/t39.30808-6/366337295_6450978648270822_3158556925808717953_n.png?stp=dst-png_p960x960&_nc_cat=107&cb=99be929b-59f725be&ccb=1-7&_nc_sid=7f8c78&_nc_ohc=eRqUQgJr1sEAX8kvtkO&_nc_ht=scontent.fjrs9-1.fna&oh=00_AfCwj2XxnZA76bh3kZqF0UjxI7HDv2qc8Wz285Tmlynfgg&oe=64DD9424",
-    // isProductDetails: false,
-    // images: [
-    //   // {
-    //   //   url: "https://scontent.fjrs9-1.fna.fbcdn.net/v/t39.30808-6/366682437_6450978694937484_9140068944129346078_n.png?stp=dst-png_p960x960&_nc_cat=104&cb=99be929b-59f725be&ccb=1-7&_nc_sid=7f8c78&_nc_ohc=IdraevgCwhwAX-8yprj&_nc_ht=scontent.fjrs9-1.fna&oh=00_AfBxTcDtO1t9NQRbA4bvKP2lPfux_S9zje5Ridq4e_BXmQ&oe=64DC08A7",
-    //   // },
-    //   // {
-    //   //   url: "https://scontent.fjrs9-1.fna.fbcdn.net/v/t39.30808-6/366326819_6450978761604144_6648500924145443100_n.png?stp=dst-png_p960x960&_nc_cat=111&cb=99be929b-59f725be&ccb=1-7&_nc_sid=7f8c78&_nc_ohc=3nUfldOSvbkAX8UlAD4&_nc_ht=scontent.fjrs9-1.fna&oh=00_AfAl7S1fBzdLKEypqXEXOxq4XEq4SfYBHDK7n5mwVt-Oag&oe=64DD0C4D",
-    //   // },
-    //   // {
-    //   //   url: "https://scontent.fjrs9-1.fna.fbcdn.net/v/t39.30808-6/366374367_6450978834937470_352421823217449159_n.png?_nc_cat=111&cb=99be929b-59f725be&ccb=1-7&_nc_sid=7f8c78&_nc_ohc=WM1zajsy-JMAX90B1xA&_nc_ht=scontent.fjrs9-1.fna&oh=00_AfCRFNwdqG9bTfVQSXn7TVtB2DN4czqC5A3Z3g7tW_RZlA&oe=64DC2390",
-    //   // },
-    // ],
-  );
+  const [productData, setProductData] = useState({
+    productIDAdmin: "",
+    department_id: "",
+    name: "",
+    cost: "",
+    quantity: "",
+    percent: 0, // Default 0
+    view: false,
+    url_primary_image: "https//Hoodie9/9/2023",
+    isProductDetails: true,
+    BrandName: "",
+    images: [
+      {
+        url: "https://Image_Hoodie_1.jpg",
+      },
+      {
+        url: "https://Image_Hoodie_2.jpg",
+      },
+      {
+        url: "https://Image_Hoodie_3.jpg",
+      },
+    ],
+  });
   const {
-    // name,
-    // productIDAdmin,
-    // cost,
-    // department_id,
-    // quantity,
-    // url_primary_image,
-    // images,
-    // brand,
-
     productIDAdmin,
     department_id,
     name,
@@ -125,14 +132,55 @@ function AddItem() {
   useEffect(() => {}, [productData]);
 
   const sendToDatabase = async (event) => {
+    if (isProductDetails === true) {
+      // console.log("hava details");
+      try {
+        // console.log("dddddddd", productData);
+        const response = await axios.post("http://localhost:9999/product/", {
+          product: productData,
+        });
+        console.log("Product added:", response.data);
+        console.log(response.data.productId);
+        await handleSubmitArraySize(response.data.productId);
+      } catch (error) {
+        console.error("Error adding product:", error);
+      }
+    } else {
+      // console.log("no detailsd");
+      try {
+        // console.log("dddddddd", productData);
+        const response = await axios.post("http://localhost:9999/product/", {
+          product: productData,
+        });
+        console.log("Product added:", response.data);
+        console.log(response.data.productId);
+      } catch (error) {
+        console.error("Error adding product:", error);
+      }
+    }
+
+    // try {
+    //   // console.log("dddddddd", productData);
+    //   const response = await axios.post("http://localhost:9999/product/", {
+    //     product: productData,
+    //   });
+    //   console.log("Product added:", response.data);
+    //   console.log(response.data.productId);
+    //   await handleSubmitArraySize(response.data.productId);
+    // } catch (error) {
+    //   console.error("Error adding product:", error);
+    // }
+  };
+
+  const handleSubmitArraySize = async (id) => {
     try {
-      console.log("dddddddd", productData);
-      const response = await axios.post("http://localhost:9999/product/", {
-        product: productData,
-      });
-      console.log("Product added:", response.data);
+      const response = await axios.post(
+        `http://localhost:9999/product/details/${id}`,
+        { productDetails: initObjectState }
+      );
+      console.log("Product details added:", response.data);
     } catch (error) {
-      console.error("Error adding product:", error);
+      console.error("Error adding product details:", error);
     }
   };
 
@@ -146,7 +194,7 @@ function AddItem() {
       let lala = [];
       lala = images;
       lala.push(value);
-      console.log("jjjjjjjj");
+      // console.log("jjjjjjjj");
 
       setProductData({ ...productData, images: lala });
     }
@@ -193,94 +241,72 @@ function AddItem() {
       <div className="additem">
         <form action="" className="fromee">
           <div className="feildtoadd">
-            <div>
-              <div className="flexoo">
-                <div>
-                  <FormInput
-                    labelName="Name"
-                    optionInput={{
-                      onChange: handleChange,
-                      type: "text",
-                      required: true,
-                      value: name,
-                      name: "name",
-                    }}
-                  />
-                  <FormInput
-                    labelName="ID"
-                    optionInput={{
-                      // type:"number",
-                      onChange: handleChange,
-                      required: true,
-                      value: productIDAdmin,
-                      name: "productIDAdmin",
-                    }}
-                  />
-                  <FormInput
-                    labelName="Price"
-                    optionInput={{
-                      type: "number",
-                      onChange: handleChange,
-                      required: true,
-                      value: cost,
-                      name: "cost",
-                    }}
-                  />
-                </div>
+            <div className="flexoo">
+              <div>
+                <FormInput
+                  labelName="اسم المنتج"
+                  optionInput={{
+                    onChange: handleChange,
+                    type: "text",
+                    required: true,
+                    value: name,
+                    name: "name",
+                  }}
+                />
+                <FormInput
+                  labelName="الباركود"
+                  optionInput={{
+                    // type:"number",
+                    onChange: handleChange,
+                    required: true,
+                    value: productIDAdmin,
+                    name: "productIDAdmin",
+                  }}
+                />
+                <FormInput
+                  labelName="السعر"
+                  optionInput={{
+                    type: "number",
+                    onChange: handleChange,
+                    required: true,
+                    value: cost,
+                    name: "cost",
+                  }}
+                />
+              </div>
 
-                <div>
-                  <FormInput
-                    labelName="Department"
-                    optionInput={{
-                      type: "number",
-                      onChange: handleChange,
-                      required: true,
-                      value: department_id,
-                      name: "department_id",
-                    }}
-                  />
+              <div>
+                <FormInput
+                  labelName="القسم"
+                  optionInput={{
+                    type: "text",
+                    onChange: handleChange,
+                    required: true,
+                    value: department_id,
+                    name: "department_id",
+                  }}
+                />
 
-                  <FormInput
-                    labelName="Quantity"
-                    optionInput={{
-                      type: "number",
-                      onChange: handleChange,
-                      required: true,
-                      value: quantity,
-                      name: "quantity",
-                    }}
-                  />
-                  <FormInput
-                    labelName="Quantity22222"
-                    optionInput={{
-                      type: "text",
-                      onChange: handleMainImageInChild,
-                      required: true,
-                      value: url_primary_image,
-                      name: "url_primary_image",
-                    }}
-                  />
-
-                  <button
-                    onClick={handleMainImageInChild}
-                    name="images"
-                    value={"ssssssssssssssssssssssssssssssssssssssssssssssssss"}
-                  >
-                    {" "}
-                    add to main in
-                  </button>
-
-                  <FormInput
-                    labelName="Brand Name"
-                    optionInput={{
-                      type: "text",
-                      onChange: handleChange,
-                      required: true,
-                      value: BrandName,
-                      name: "brand",
-                    }}
-                  />
-                </div>
+                <FormInput
+                  labelName="الكمية"
+                  optionInput={{
+                    type: "text",
+                    onChange: handleChange,
+                    required: true,
+                    value: quantity,
+                    name: "quantity",
+                  }}
+                />
+                <FormInput
+                  labelName="الماركة"
+                  optionInput={{
+                    type: "text",
+                    onChange: handleChange,
+                    required: true,
+                    value: BrandName,
+                    name: "BrandName",
+                  }}
+                />
               </div>
             </div>
 
@@ -299,16 +325,24 @@ function AddItem() {
                 className="checkbox-input"
                 onChange={handleCheckboxChange}
               />
-              Have More Details!
+              اضافة تفاصيل
             </label>
           </div>
         </form>
 
-        {isProductDetails ? <RadioButtonExample /> : ""}
-
-        <Button buttonType="google" onClick={handleSubmit}>
-          Submit
-        </Button>
+        {isProductDetails ? (
+          <RadioButtonExample
+            changeStateRequest={changeStateRequest}
+            changeStateDetails={changeStateDetails}
+            initObjectState={initObjectState}
+            array_CS={array_CS}
+            settyperadio={settyperadio}
+            setArrayOfCS={setArrayOfCS}
+            editarray={editarray}
+          />
+        ) : (
+          ""
+        )}
 
         <Button buttonType="google" onClick={sendToDatabase}>
           Submitlast

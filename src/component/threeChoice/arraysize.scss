@@ -1,0 +1,35 @@
+.towbutton {
+  button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(55, 154, 230);
+    margin: 2px 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(109, 107, 102);
+  }
+  width: 100%;
+  // background-color: red;
+  display: flex;
+  justify-content: center;
+}
+
+.towbuttonincolorsize {
+  width: 100%;
+  // background-color: red;
+  display: flex;
+  justify-content: center;
+  button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(230, 55, 140);
+    margin: 2px 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(109, 107, 102);
+  }
+}

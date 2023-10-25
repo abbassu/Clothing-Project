@@ -156,29 +156,6 @@
     padding-right: 10px;
   }
 }
-.state {
-  padding: 0 10px;
-  height: 85px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  column-gap: 20px;
-  .index {
-    font-size: 13px;
-    height: 53px;
-    background-color: #d4cece;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 53px;
-    border: 1px solid;
-  }
-  .greeno {
-    background: rgb(54, 239, 54);
-  }
-}
 
 .blue {
   border: 5px dashed rgb(22, 92, 214);

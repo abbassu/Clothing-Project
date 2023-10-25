@@ -49,7 +49,7 @@ const AddMultiplePhoto = () => {
   return (
     <section>
       <label className="labelin">
-        + Add Images
+        اضافة المزيد من الصور+
         {/* <span>up to 6 images</span> */}
         <input
           className="opopop"

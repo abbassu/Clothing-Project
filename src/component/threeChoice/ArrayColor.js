@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Size from "./Size";
 import axios from "axios";
-function ArrayColor() {
+function ArrayColor(props) {
   const initObject = {
     color: 1,
     photo_url: "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
@@ -24,26 +24,27 @@ function ArrayColor() {
   ]);
 
   useEffect(() => {
-    console.log("groupOfColor : ", groupOfColor);
+    // console.log("groupOfColor : ", groupOfColor);
   }, [groupOfColor]);
 
   const returnSelectedSize = (newSize) => {
-    console.log("---- ------", newSize);
+    // console.log("---- ------", newSize);
     let y = groupOfColor;
     y.push(newSize);
-    console.log("yyyy", y);
+    // console.log("yyyy", y);
     setgroupOfColor(y);
   };
 
   const deleteSelectedColor = (newSize) => {
-    console.log("newsize", newSize);
+    // console.log("newsize", newSize);
     setgroupOfColor((prevSizes) =>
       prevSizes.filter((size) => size !== newSize)
     );
   };
 
   useEffect(() => {
-    console.log("objectdata", objectData);
+    // console.log("objectdata", objectData);
+    props.changeStateDetails(objectData);
   }, [objectData]);
 
   const [quantity, setQuantity] = useState(1);
@@ -52,7 +53,7 @@ function ArrayColor() {
   ]);
 
   const deleteSize = (newSize) => {
-    console.log("fffffffff");
+    // console.log("fffffffff");
     setgroupOfColor((prevSizes) =>
       prevSizes.filter((size) => size !== newSize)
     );
@@ -97,11 +98,12 @@ function ArrayColor() {
 
     setObjectData({ ...objectData, size_Quantity });
   };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:9999/product/details/40",
+        "http://localhost:9999/product/details/61",
         { productDetails: objectData }
       );
       console.log("Product details added:", response.data);
@@ -112,12 +114,10 @@ function ArrayColor() {
 
   return (
     <div>
-      <button onClick={increaseQuantity}> + </button>
-      <button onClick={decreaseQuantity}> - </button>
-
       {size_Quantity?.map((ele, index) => {
         return (
           <Size
+            fromsize={false}
             fontSizes={fontSize}
             index={index}
             update={updateObject}
@@ -127,7 +127,18 @@ function ArrayColor() {
           />
         );
       })}
-      <button onClick={handleSubmit}> submit now </button>
+      <div className="towbutton">
+        <button onClick={increaseQuantity}>
+          {" "}
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <button onClick={decreaseQuantity}>
+          {" "}
+          <i class="fa-solid fa-minus"></i>
+        </button>
+      </div>
+
+      {/* <button onClick={handleSubmit}> submit now </button> */}
     </div>
   );
 }

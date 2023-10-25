@@ -6,17 +6,19 @@ section {
   margin: 0 auto;
   display: flex;
   margin-bottom: 5px;
-
+  justify-content: center;
+  text-align: center;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
   border-radius: 20px;
   width: 10rem;
   max-height: 7rem;
   padding: 10px;
   cursor: pointer;
   transition: 0.3s;
+  border: 1px solid rgb(109, 107, 102);
+
   font-size: 18px;
   span {
     font-weight: lighter;
@@ -26,6 +28,8 @@ section {
   &:hover {
     transition: 0.3s;
     font-size: 18px;
+    color: white;
+
     background-color: rgb(97, 183, 233);
   }
 }
