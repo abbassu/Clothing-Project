@@ -1,151 +1,145 @@
-import React, { useEffect, useState,useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { ProductContext } from "../contexte/product";
-import "./delete.scss"
+import "./delete.scss";
 import { DeleteProduct } from "../../utils/firebase/firebase";
-function DeleteItem(){
-    const [textSearch,setTextSearch]=useState("")
-    const [rr,setrr]=useState("")
-    const [SearchOn,setSearchOn]=useState("")
-    const [arr,setarr]=useState([])
+import axios from "axios";
+import FormInput from "../fom-input/form-input";
+function DeleteItem() {
+  const [textSearch, setTextSearch] = useState("");
+  const [rr, setrr] = useState("");
+  const [SearchOn, setSearchOn] = useState("");
+  const [arr, setarr] = useState([]);
 
-    const [orders,setorders]=  useState ([])
-    const [arrayOfTalabat,setarrOfTalabat]=useState([])
-    const {product}=useContext(ProductContext)
+  const [orders, setorders] = useState([]);
+  const [arrayOfTalabat, setarrOfTalabat] = useState([]);
+  const { product } = useContext(ProductContext);
 
-    const [uu,setuu]=useState("")
+  const [uu, setuu] = useState("");
+  const [product11, setProduct11] = useState(null);
 
+  function selectType(event) {
+    setTextSearch(event.target.value);
+    console.log("search by ", event.target.value);
+    setrr("");
+  }
+  function selectOn(event) {
+    setSearchOn(event.target.value);
+    console.log("search on ", event.target.value);
+    console.log("search onnnnn ", product);
+    let updatedList = [];
+    Object.keys(product).filter((element) => {
+      if (element.toLowerCase() === event.target.value.toLowerCase()) {
+        updatedList = product[element];
+      } else {
+      }
+    });
+    console.log("items ", updatedList);
+    setarr(updatedList);
+    setarrOfTalabat(updatedList);
+    setrr("");
+  }
 
-    function selectType(event){
-        setTextSearch(event.target.value)
-        console.log("search by ",event.target.value)
-        setrr("")
+  const deleteProduct = async (product_id) => {
+    console.log("orderid", product_id);
+    try {
+      const response = await axios.delete(
+        `http://localhost:9999/admin/product?product_id=${product_id}`
+      );
+      console.log(`Order with order_id ${product_id} deleted successfully.`);
+      // You can update your UI or perform other actions here.
+      handleReload();
+    } catch (error) {
+      console.error(
+        `Failed to delete order with order_id ${product_id}. Error:`,
+        error
+      );
     }
-    function selectOn(event){
-        setSearchOn(event.target.value)
-        console.log("search on ",event.target.value)
-        console.log("search onnnnn ",product)
-        let updatedList=[];
-        Object.keys(product).filter((element) =>{ 
-            if(element.toLowerCase()===event.target.value.toLowerCase()){
-                updatedList=product[element]
-            }
-            else{
-            }
-        });
-        console.log("items ",updatedList);
-        setarr(updatedList)
-        setarrOfTalabat(updatedList);
-        setrr("")
+  };
+
+  function searchFilter(event) {
+    console.log(event.target.value);
+  }
+
+  function Deleteitem(iddd) {}
+  function Save() {
+    console.log("searcj on", SearchOn);
+    DeleteProduct(SearchOn, arr, uu);
+  }
+  const [name_product, setProduct] = useState("");
+  function handleChange(event) {
+    const text = event.target.value;
+    setProduct(text);
+  }
+  const fetchProductDetails = async () => {
+    try {
+      const response = await fetch(
+        `http://localhost:9999/product/productDetails?id=${name_product}&isDetail=0`
+      );
+      if (!response.ok) {
+        throw new Error("Network response was not ok.");
+      }
+      const data = await response.json();
+      setProduct11(data.Product[0]); // Update state with fetched product details
+      console.log("Product Details:", data.Product[0]);
+    } catch (error) {
+      console.error("Error fetching product details:", error);
     }
-    function searchFilter(event){
-        console.log(event.target.value);
-        setrr(event.target.value)
-        let updatedList=[];
-        updatedList = arrayOfTalabat.filter((element) =>{ 
-            if(textSearch==="name"){
-                console.log("textsearch ",textSearch)
-                return element[textSearch].toLowerCase().includes(event.target.value.toLowerCase())
-                
+  };
 
-            }
-            else if (textSearch ==="id" ||textSearch ==="price" ){
-                console.log("id ",event.target.value.toString())
-                return element[textSearch].toString().includes(event.target.value.toString());
-            }
-        });
-        setarr(updatedList);
-    }
-    
+  const handleReload = () => {
+    window.location.reload(); // Reload the page
+  };
 
-    function Deleteitem(iddd){
-        let updatedList=[];
-        updatedList = arr.filter((element) =>{ 
-            if(element.id ===iddd){
-            setuu(element.nameurl)
-            }
-          return  (element.id ===iddd) ? false :true;
-        });
-        setarr(updatedList);
-    }
-    function Save(){
-        console.log("searcj on",SearchOn)
-        DeleteProduct(SearchOn,arr,uu)
-    }
+  return (
+    <div className="fffa">
+      <h1 className="lable">Delete Item</h1>
+      <div className="searchFilter ddd">
+        <div className="boxing uu"></div>
+      </div>
+      <div>
+        <FormInput
+          labelName="ID for product "
+          optionInput={{
+            type: "text",
+            required: true,
+            onChange: handleChange,
+            name: "id",
+            value: name_product,
+          }}
+        />{" "}
+        <button onClick={fetchProductDetails}>بحث</button>{" "}
+      </div>
 
+      <div className="product-details">
+        {product11 ? (
+          <>
+            <div className="In_delete">
+              <h2> Name: {product11.name}</h2>
+              <img src={product11.url_primary_image} alt="Product Image" />
 
-
-    return(
-        <div className="fffa">
-
-<h1 className="lable">Delete Item</h1>
-            <div className="searchFilter ddd">
-                
-                <div className="boxing uu">
-                    <span className="search"> 
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        </span> 
-                    <input type="text" name="" value={rr} className="inin inputClass" id="" onChange={searchFilter}/>
-                </div>
-                <div className="boxing">
-                    <span className="search"> 
-                        Search By
-                        </span> 
-                    <select name="" id="" className="inin kk" onChange={selectType}  >
-                        <option value="id">ID</option>
-                        <option value="name">Name</option>
-                        <option value="price">Price</option>
-                    </select>
-                </div>
-                <div className="boxing">
-                    <span className="search"> 
-                        Search On
-                    </span> 
-                    <select name="" id="" className="inin kk" onChange={selectOn}  > 
-                        
-                    <option value=""></option>
-                        <option value="hats">Hats</option>
-                        <option value="baby">Baby</option>
-                        <option value="perfume">Perfume</option>
-                        <option value="sneakers">Sneakers</option>
-                        <option value="jackets">Jackets</option>
-                        <option value="glasses">Glasses</option>
-                        <option value="mens">Mens</option>
-                    </select>
-                </div>
-                <div className="boxing">
-                </div>
+              <p>ID: {product11.id}</p>
+              <p>Cost: ${product11.cost}</p>
+              <p>Quantity: {product11.quantity}</p>
+              <p>Department ID: {product11.department_id}</p>
+              <p>Brand Name: {product11.BrandName}</p>
+              <p>Number of Sales: {product11.number_of_sales}</p>
             </div>
-            <div className="tale">
-                <div className="jojo">
-                    <button  className="saveupdates" onClick={()=>{
-                        Save()
-                    }}> Save Updates </button>
-                </div>
-
-                {arr.map((element)=>{
-                    return(
-                    <div className="opoo ">
-                        <div className="opname e22">
-                         <span className="eie"> Name </span>     {element.name} 
-                        </div>
-                        <div className="oppri e22">
-                        <span className="eie"> Price </span>  {element.price} $
-                        </div>
-                        <div className="opid e22">
-                        <span className="eie"> ID </span>  {element.id}
-                        </div>
-                        <div className="e22">
-                            <button onClick={()=>{Deleteitem(element.id)}}>Delete</button>
-                        </div>
-                        <div className="eieim">
-                            
-                        <img src={element.imageUrl} alt="" />
-                        </div>
-                    </div>
-                    )
-                })}
+            <div>
+              <button
+                onClick={() => {
+                  deleteProduct(product11.id);
+                }}
+              >
+                حذف
+              </button>{" "}
             </div>
-        </div>
-    )
-
-} export default DeleteItem
+          </>
+        ) : (
+          <></>
+          // <p>Loading product details...</p>
+        )}
+      </div>
+    </div>
+  );
+}
+export default DeleteItem;

@@ -15,10 +15,10 @@ function CategoriesContainer() {
 
   return (
     <div className="categories-container">
-      <div className="lolo">
-        <Test />
-      </div>
-      <HomePage />
+      {/* <div className="lolo"> */}
+      {/* <Test /> */}
+      {/* </div> */}
+      {/* <HomePage /> */}
 
       {categories.map((element) => {
         return <Category item={element} />;

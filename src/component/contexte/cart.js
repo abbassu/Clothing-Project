@@ -83,6 +83,8 @@ const clearCart = (cartItems, cartItemToClear) => {
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const cartReducer = (state, action) => {
+  console.log("in cart reducer", state);
+
   const { type, payload } = action;
   switch (type) {
     case "SET_CART_ITEMS":

@@ -1,0 +1,49 @@
+/* YourComponent.scss */
+
+.product-details {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+
+  h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    color: #444;
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .details-list {
+    display: flex;
+    gap: 20px;
+
+    .detail-item {
+      background-color: #fff;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      flex: 1;
+
+      h3 {
+        color: #555;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          font-size: 14px;
+          margin-bottom: 6px;
+        }
+      }
+    }
+  }
+}

@@ -20,42 +20,50 @@ const defaultFields = {
   // phone: "",
   // city: "",
   // name: "",
-  name: "qwqwqw",
-  city: "wwwww",
-  date: "7/13/2023, 12:00:00 AM",
-  location_address: "rrrr",
-  phone_number: "tttttttt",
-  total_price: 100,
+  name: "",
+  city: "",
+  date: "",
+  location_address: "",
+  phone_number: "",
+  total_price: 0,
   status: "1", // default
-  notice: "45454545",
+  notice: "",
 };
 
 function Checkout() {
-  const [tt, settt] = useState(false);
-
   const [done_buying, set_done_buying] = useState(false);
 
   const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+
   const { currentUser, setCurrentUser } = useContext(Global);
-  const [view, setview] = useState(false);
+
   const { cartItems, cartTotal, clearItemCart } = useContext(CartContext);
+
   const { close, changeState, changeStateFalse } = useContext(PopupContext);
 
-  const [fields, setfields] = useState(defaultFields);
+  const [information_user, set_information_user] = useState({
+    name: "",
+    city: "",
+    date: "",
+    location_address: "",
+    phone_number: "",
+    total_price: 0,
+    status: "1",
+    notice: "",
+  });
+
+  let currentDate = new Date().toJSON().slice(0, 10);
 
   const [orderData, setOrderData] = useState({
     order: {
-      name: "ALI33",
-      city: "Nablus3399999",
-      date: "2023-10-9 03:26:35",
-      location_address: "Nablus-Faisal Street",
-      phone_number: "056331234567",
-      total_price: 34100,
+      name: "",
+      city: "",
+      date: currentDate,
+      location_address: "",
+      phone_number: "",
+      total_price: cartTotal,
       status: "1",
-      notice: "Greate Product, sent each product indvidual",
+      notice: "",
     },
     product_for_order: [
       {
@@ -65,33 +73,19 @@ function Checkout() {
         color: "No color",
         size: "L",
       },
-      // Add more products as needed
     ],
   });
 
-  const {
-    notice,
-    status,
-    total_price,
-    phone_number,
-    location_address,
-    date,
-    city,
-    name,
-  } = orderData.order;
+  const { notice, phone_number, location_address, city, name } =
+    orderData.order;
 
   const sendToDatabase = async (event) => {
-    console.log("order ------------------------");
-
+    console.log("before sending to databse", orderData);
     try {
-      // console.log("dddddddd", productData);
       const response = await axios.post("http://localhost:9999/user/order/0", {
         order: orderData,
       });
       console.log("order added:", response.data);
-      // console.log(response.data.productId);
-
-      // await handleSubmitArraySize(response.data.productId);
     } catch (error) {
       console.error("Error adding order:", error);
     }
@@ -99,11 +93,22 @@ function Checkout() {
 
   function handleChange(event) {
     const { name, value } = event.target;
-    setOrderData({ ...orderData, [name]: value });
+    // set_information_user({ ...information_user, [name]: value });
+
+    setOrderData((prevOrderData) => ({
+      ...prevOrderData,
+      order: {
+        ...prevOrderData.order,
+        [name]: value,
+      },
+    }));
   }
+  useEffect(() => {
+    console.log("order data after change ", information_user);
+  }, [information_user]);
 
   function clear() {
-    setfields(defaultFields);
+    set_information_user(defaultFields);
     clearItemCart();
     localStorage.clear();
   }
@@ -130,7 +135,11 @@ function Checkout() {
   //   }
   // }
 
-  console.log("currentUser", currentUser);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    console.log("total", cartTotal);
+  }, [pathname]);
 
   return (
     <>
@@ -191,7 +200,7 @@ function Checkout() {
           />
 
           <FormInput
-            labelName="ملاحظات عن الطلبية"
+            labelName=" ملاحظات عن الطلبية - اختياري "
             optionInput={{
               type: "text",
               required: true,
@@ -201,7 +210,7 @@ function Checkout() {
             }}
           />
 
-          <FormInput
+          {/* <FormInput
             labelName="الشارع أو الحي"
             optionInput={{
               type: "text",
@@ -221,7 +230,7 @@ function Checkout() {
               name: "location_address",
               value: location_address,
             }}
-          />
+          /> */}
         </div>
         {done_buying ? (
           <>

@@ -21,6 +21,14 @@ function AddItem() {
   // console.log("docs ------------ ", docs);
   const [detailsNum, setDetailsNum] = useState([3]);
 
+  const [arr_size, set_arr_size] = useState([]);
+
+  useEffect(() => {
+    console.log("sizes array ", arr_size);
+  }, [arr_size]);
+
+  const [id_product, set_id_product] = useState(0);
+
   // retuen new array with midified cartitems  new cart item
   const initObject = {
     color: 1,
@@ -36,8 +44,8 @@ function AddItem() {
 
   const editarray = (ee) => {
     setArrayOfCS(ee);
-    console.log("edit parent now now now now111111111111");
-    console.log(array_CS);
+    console.log("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+    console.log("array_cs", array_CS);
   };
 
   useEffect(() => {
@@ -87,10 +95,7 @@ function AddItem() {
   let f = 4;
 
   useEffect(() => {
-    // console.log("form", formFields);
     let name = formFields.name;
-
-    // setisProductDetails({ ...isProductDetails, name });
   }, [formFields]);
   const [productData, setProductData] = useState({
     productIDAdmin: "",
@@ -133,20 +138,20 @@ function AddItem() {
 
   const sendToDatabase = async (event) => {
     if (isProductDetails === true) {
-      // console.log("hava details");
       try {
-        // console.log("dddddddd", productData);
+        console.log("dddddddd", productData);
         const response = await axios.post("http://localhost:9999/product/", {
           product: productData,
         });
         console.log("Product added:", response.data);
         console.log(response.data.productId);
         await handleSubmitArraySize(response.data.productId);
+        console.log("ppppp");
       } catch (error) {
         console.error("Error adding product:", error);
       }
     } else {
-      // console.log("no detailsd");
+      console.log("no detailsd");
       try {
         // console.log("dddddddd", productData);
         const response = await axios.post("http://localhost:9999/product/", {
@@ -158,27 +163,34 @@ function AddItem() {
         console.error("Error adding product:", error);
       }
     }
-
-    // try {
-    //   // console.log("dddddddd", productData);
-    //   const response = await axios.post("http://localhost:9999/product/", {
-    //     product: productData,
-    //   });
-    //   console.log("Product added:", response.data);
-    //   console.log(response.data.productId);
-    //   await handleSubmitArraySize(response.data.productId);
-    // } catch (error) {
-    //   console.error("Error adding product:", error);
-    // }
   };
 
   const handleSubmitArraySize = async (id) => {
     try {
-      const response = await axios.post(
-        `http://localhost:9999/product/details/${id}`,
-        { productDetails: initObjectState }
-      );
-      console.log("Product details added:", response.data);
+      console.log("ppppp444");
+      console.log("init object vvvvvvv", initObjectState);
+      console.log("array_CS", array_CS);
+
+      if (stateForRequest == 1) {
+        console.log("arfffff", array_CS[0]);
+        for (let i = 0; i < array_CS.length; i++) {
+          console.log("ttttt");
+          let jj = array_CS[i];
+          const response = await axios.post(
+            `http://localhost:9999/product/details/${id}`,
+            { productDetails: jj }
+          );
+          console.log("Product details added:", response.data);
+        }
+      } else {
+        const response = await axios.post(
+          `http://localhost:9999/product/details/${id}`,
+          { productDetails: initObjectState }
+        );
+      }
+      console.log("Product details added:");
+
+      // console.log("Product details added:", response.data);
     } catch (error) {
       console.error("Error adding product details:", error);
     }
@@ -234,6 +246,19 @@ function AddItem() {
     event.preventDefault();
     fromUserToDataForm();
   };
+
+  async function take_size_color() {
+    console.log("hhhhhhhhhhhh");
+    const response = await axios.get(`http://localhost:9999/product/sizes`);
+
+    console.log("response with data", response.data.sizes);
+    set_arr_size(response.data.sizes);
+  }
+
+  useEffect(() => {
+    console.log("state object in parent ", initObjectState);
+    take_size_color();
+  }, []);
 
   return (
     <div className="trtr">
@@ -347,6 +372,7 @@ function AddItem() {
         <Button buttonType="google" onClick={sendToDatabase}>
           Submitlast
         </Button>
+        <button onClick={take_size_color}> vvv </button>
       </div>
     </div>
   );

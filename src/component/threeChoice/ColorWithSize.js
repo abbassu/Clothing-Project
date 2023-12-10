@@ -15,13 +15,32 @@ function ColorWithSize(props) {
     "Yellow",
     "Red",
     "Black",
-    "Wight",
+    "White",
     "Gray",
     "Orange",
     "Pink",
     "Brown",
   ]);
 
+  const [sizes, setSizes] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:9999/product/sizes");
+        if (!response.ok) {
+          throw new Error("Network response was not ok.");
+        }
+        const data = await response.json();
+        setSizes(data.sizes); // Update state with fetched data
+        console.log("Sizes:", data.sizes);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData(); // Call the fetchData function inside useEffect
+  }, []);
   const defaultformFields = {
     id: "",
     department: "",
@@ -43,7 +62,16 @@ function ColorWithSize(props) {
   }
 
   const handleSizeChange = async (event) => {
-    const newSize = event.target.value;
+    let newSize = event.target.value;
+    console.log("new size", newSize);
+
+    for (let o = 0; o < 33; o++) {
+      console.log(newSize, sizes[o].name);
+      if (newSize === sizes[o].name) {
+        newSize = sizes[o].id;
+        console.log("new size", newSize);
+      }
+    }
 
     let lal = props.array_CS;
     lal[props.indexnum].color = newSize;

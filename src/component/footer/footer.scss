@@ -1,68 +1,68 @@
-.footerfooter{
-    font-family:Aboreto;
-    height: 120px;
-    padding: 20px 30px 20px;
-    // width: calc(100% );
-    width: 100%;
-    font-size: 16px;
-    background-color: #19A7CE;
-    border-top: 1px solid #146C94;
+.footerfooter {
+  font-family: Noto Kufi Arabic;
+  height: 120px;
+  padding: 20px 30px 20px;
+  width: 100%;
+  font-size: 20px;
+  background-color: #19a7ce;
+  border-top: 1px solid #146c94;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  word-spacing: 3px;
+  gap: 30px;
+
+  .onef {
+    color: #f6f1f1;
+    flex-wrap: nowrap;
+    min-width: 250px;
+  }
+
+  .twof {
+    img {
+      height: 20px;
+    }
+    width: 250px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 30px;
+    justify-content: space-between;
+  }
+  .threef {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      width: 600px;
+      font-size: 14px;
+      justify-content: space-between;
+      color: #f6f1f1;
+      li {
+        cursor: pointer;
+      }
+    }
+  }
 
-    .onef{
-        color: #F6F1F1;
-        flex-wrap: nowrap;
-        min-width: 250px;
+  @media (max-width: 1270px) {
+    & {
+      justify-content: space-around;
     }
-
-    .twof{
-        img{
-            height: 20px;
-        }
-        width: 250px;
-        display: flex;
-        justify-content: space-between;
+    .threef ul {
+      flex-direction: column;
+      gap: 5px;
+      width: 120px;
     }
-    .threef{
-        ul{
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            display: flex;
-            flex-direction: row;
-            width: 600px;
-            font-size: 14px;
-            justify-content: space-between;
-            color: #F6F1F1;
-            li{
-                cursor: pointer;
-            }
-        }
+  }
+  @media (max-width: 750px) {
+    & {
+      flex-direction: column;
+      height: 270px;
     }
-
-    @media (max-width:1270px) {
-        &{
-            justify-content: space-around;
-        }
-        .threef ul{
-            flex-direction: column;
-            gap: 5px;
-            width: 120px;
-        }
+    .threef ul {
+      flex-direction: column;
+      gap: 10px;
+      width: 120px;
     }
-    @media (max-width:750px) {
-        &{
-            flex-direction: column;
-            height: 270px;
-        }
-        .threef ul{
-            flex-direction: column;
-            gap: 10px;
-            width: 120px;
-        }
-    }
+  }
 }

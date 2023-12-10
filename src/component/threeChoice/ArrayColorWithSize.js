@@ -10,10 +10,26 @@ function ArrayColorWithSize(props) {
   };
   const [quantity, setQuantity] = useState(1);
   const [array_CS, setArrayOfCS] = useState([]);
+  const [sizesss, setSizesss] = useState([]);
 
   useEffect(() => {
     console.log("changeee");
     props.setArrayOfCS(array_CS);
+
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:9999/product/sizes");
+        if (!response.ok) {
+          throw new Error("Network response was not ok.");
+        }
+        const data = await response.json();
+        setSizesss(data.sizes); // Update state with fetched data
+        console.log("ffffff", data.sizes);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    fetchData();
   }, [array_CS]);
   const fffff = () => {
     console.log("changeee", array_CS);
@@ -52,6 +68,7 @@ function ArrayColorWithSize(props) {
               changeStateDetails={props.changeStateDetails}
               array_CS={props.array_CS}
               editarray={props.editarray}
+              sizesss={sizesss}
             />
           );
         })}
