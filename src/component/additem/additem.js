@@ -266,77 +266,71 @@ function AddItem() {
       <div className="additem">
         <form action="" className="fromee">
           <div className="feildtoadd">
-            <div className="flexoo">
-              <div>
-                <FormInput
-                  labelName="اسم المنتج"
-                  optionInput={{
-                    onChange: handleChange,
-                    type: "text",
-                    required: true,
-                    value: name,
-                    name: "name",
-                  }}
-                />
-                <FormInput
-                  labelName="الباركود"
-                  optionInput={{
-                    // type:"number",
-                    onChange: handleChange,
-                    required: true,
-                    value: productIDAdmin,
-                    name: "productIDAdmin",
-                  }}
-                />
-                <FormInput
-                  labelName="السعر"
-                  optionInput={{
-                    type: "number",
-                    onChange: handleChange,
-                    required: true,
-                    value: cost,
-                    name: "cost",
-                  }}
-                />
-              </div>
-
-              <div>
-                <FormInput
-                  labelName="القسم"
-                  optionInput={{
-                    type: "text",
-                    onChange: handleChange,
-                    required: true,
-                    value: department_id,
-                    name: "department_id",
-                  }}
-                />
-
-                <FormInput
-                  labelName="الكمية"
-                  optionInput={{
-                    type: "text",
-                    onChange: handleChange,
-                    required: true,
-                    value: quantity,
-                    name: "quantity",
-                  }}
-                />
-                <FormInput
-                  labelName="الماركة"
-                  optionInput={{
-                    type: "text",
-                    onChange: handleChange,
-                    required: true,
-                    value: BrandName,
-                    name: "BrandName",
-                  }}
-                />
-              </div>
-            </div>
-
             <div className="imim">
               <TestFire type="button" />
+            </div>
+            <div className="flexoo">
+              <FormInput
+                labelName="اسم المنتج"
+                optionInput={{
+                  onChange: handleChange,
+                  type: "text",
+                  required: true,
+                  value: name,
+                  name: "name",
+                }}
+              />
+              <FormInput
+                labelName="الباركود"
+                optionInput={{
+                  // type:"number",
+                  onChange: handleChange,
+                  required: true,
+                  value: productIDAdmin,
+                  name: "productIDAdmin",
+                }}
+              />
+              <FormInput
+                labelName="القسم"
+                optionInput={{
+                  type: "text",
+                  onChange: handleChange,
+                  required: true,
+                  value: department_id,
+                  name: "department_id",
+                }}
+              />
+              <FormInput
+                labelName="السعر"
+                optionInput={{
+                  type: "text",
+                  onChange: handleChange,
+                  required: true,
+                  value: cost,
+                  name: "cost",
+                }}
+              />
+
+              <FormInput
+                labelName="الكمية"
+                optionInput={{
+                  type: "text",
+                  onChange: handleChange,
+                  required: true,
+                  value: quantity,
+                  name: "quantity",
+                }}
+              />
+              <FormInput
+                labelName="الماركة"
+                optionInput={{
+                  type: "text",
+                  onChange: handleChange,
+                  required: true,
+                  value: BrandName,
+                  name: "BrandName",
+                }}
+              />
             </div>
           </div>
           <div>

@@ -26,7 +26,6 @@
     width: 100px;
   }
   select {
-    padding: 2px;
     width: 100px;
     border-radius: 5px;
   }
@@ -38,5 +37,12 @@
       font-size: 18px;
       margin: 2px;
     }
+  }
+  .alkammeyah {
+    display: inline-block;
+    padding: 2px;
+    margin-left: 0px;
+    width: 180px;
+    background-color: rgb(255, 255, 255);
   }
 }

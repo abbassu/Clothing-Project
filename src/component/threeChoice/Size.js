@@ -52,13 +52,16 @@ const Size = (props) => {
         return (
           <div className="sizes">
             <div>
-              <label htmlFor="fontSize">
-                {props.fromsize ? (
-                  <>اختر الحجم المناسب :&nbsp;</>
-                ) : (
-                  <>اختر اللون المناسب : &nbsp;</>
-                )}
-              </label>
+              <div className="alkammeyah">
+                <label htmlFor="fontSize">
+                  {props.fromsize ? (
+                    <>اختر الحجم المناسب :</>
+                  ) : (
+                    <>اختر اللون المناسب :</>
+                  )}
+                </label>
+              </div>
+
               <select
                 id="fontSize"
                 value={"kkkkkkk"}
@@ -72,16 +75,18 @@ const Size = (props) => {
             </div>
 
             <div>
-              <label htmlFor="quantity"> الكمية : &nbsp; </label>
-              <button onClick={increaseQuantity}>
-                <i class="fa-solid fa-plus"></i>
-              </button>{" "}
-              &nbsp;
-              <button onClick={decreaseQuantity}>
-                {" "}
-                <i class="fa-solid fa-minus"></i>
-              </button>
-              &nbsp; &nbsp; &nbsp; &nbsp;
+              <div className="alkammeyah">
+                <label htmlFor="quantity"> الكمية : &nbsp; </label>
+                <button onClick={increaseQuantity}>
+                  <i class="fa-solid fa-plus"></i>
+                </button>{" "}
+                &nbsp;
+                <button onClick={decreaseQuantity}>
+                  {" "}
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+              </div>
+
               <input
                 type="number"
                 id="quantity"

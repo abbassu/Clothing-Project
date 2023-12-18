@@ -36,21 +36,21 @@ function Navbar() {
               <>
                 <Link className="nav-linkk" to={"operation"}>
                   {" "}
-                  Operation
+                  عمليات
                 </Link>
                 <Link className="nav-linkk" to={"orders"}>
-                  Orders{" "}
+                  طلبات{" "}
                 </Link>
               </>
             ) : (
               <>
                 <Link className="nav-linkk" to={"/"}>
                   {" "}
-                  HOME{" "}
+                  الرئيسي{" "}
                 </Link>
                 <Link className="nav-linkk" to={"shop/catebar"}>
                   {" "}
-                  SHOP
+                  المنتجات
                 </Link>
               </>
             )}
@@ -58,12 +58,12 @@ function Navbar() {
             {!currentUser ? (
               <Link className="nav-linkk" to={"auth"}>
                 {" "}
-                SIGN IN
+                تسجيل الدخول
               </Link>
             ) : (
               <span className="nav-linkk" onClick={handleSignOut}>
                 {" "}
-                SIGN OUT
+                تسجيل خروج
               </span>
             )}
           </div>
