@@ -1,19 +1,43 @@
 .feildtoadd {
   // border: 1px solid yellow;
   border-bottom: 1px solid gray;
+  border: 2px solid red;
+  border-radius: 7px;
+  padding: 5px;
   margin-bottom: 10px;
   padding-bottom: 20px;
-  width: 480px;
+  width: 660px;
   .sectioninin {
-    border: 1px solid forestgreen;
+    border: 1px solid rgb(102, 177, 243);
+    border-radius: 7px;
+    padding: 5px;
     label {
-      font-size: 19px;
+      font-size: 18px;
       margin-bottom: 5px;
+      padding: 0px 2px;
     }
   }
   select {
     padding: 2px;
     width: 100px;
     border-radius: 5px;
+  }
+  .jemmmi {
+    width: 285px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 5px;
+    align-items: center;
+    background-color: #8fbae9;
+    border-radius: 5px;
+  }
+  .label1212 {
+    width: 180px;
+  }
+
+  @media (max-width: 770px) {
+    & {
+      width: 380px;
+    }
   }
 }

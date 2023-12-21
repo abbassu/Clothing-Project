@@ -51,7 +51,7 @@ const Size = (props) => {
       {up?.map(() => {
         return (
           <div className="sizes">
-            <div>
+            <div className="opopopop">
               <div className="alkammeyah">
                 <label htmlFor="fontSize">
                   {props.fromsize ? (
@@ -74,7 +74,7 @@ const Size = (props) => {
               </select>
             </div>
 
-            <div>
+            <div className="opopopop">
               <div className="alkammeyah">
                 <label htmlFor="quantity"> الكمية : &nbsp; </label>
                 <button onClick={increaseQuantity}>

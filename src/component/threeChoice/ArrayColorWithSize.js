@@ -84,10 +84,10 @@ function ArrayColorWithSize(props) {
           <i class="fa-solid fa-minus"></i>
         </button>
 
-        <button onClick={fffff}>
+        {/* <button onClick={fffff}>
           {" "}
           <i class="fa-solid fa-minus">fffff</i>
-        </button>
+        </button> */}
       </div>
     </div>
   );

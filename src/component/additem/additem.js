@@ -366,7 +366,7 @@ function AddItem() {
         <Button buttonType="google" onClick={sendToDatabase}>
           Submitlast
         </Button>
-        <button onClick={take_size_color}> vvv </button>
+        {/* <button onClick={take_size_color}> vvv </button> */}
       </div>
     </div>
   );

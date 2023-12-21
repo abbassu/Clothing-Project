@@ -39,9 +39,10 @@ section {
 }
 
 .images_dd {
+  margin: 0 10px;
   margin-bottom: 5px;
-  min-height: 230px;
-  min-width: 230px;
+  min-height: 220px;
+  min-width: 220px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

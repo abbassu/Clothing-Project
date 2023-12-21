@@ -4,6 +4,8 @@ import AddMultiplePhoto from "../addMultiplePhoto/addMultiplePhoto";
 import TestFire from "../testfire/tesfire";
 import ArraySize from "./ArraySize";
 import "./colorwithsize.scss";
+import "./size.scss";
+
 function ColorWithSize(props) {
   const [arrayOfSizeWithColor, setArrayOfSizeWithColor] = useState([]);
   const [selectedSize, setSelectedSize] = useState("");
@@ -61,8 +63,10 @@ function ColorWithSize(props) {
     setformfields(defaultformFields);
   }
 
+  const [valueOfColor, setValueOfColor] = useState("");
   const handleSizeChange = async (event) => {
     let newSize = event.target.value;
+    setValueOfColor(newSize);
     console.log("new size", newSize);
 
     for (let o = 0; o < 33; o++) {
@@ -82,7 +86,7 @@ function ColorWithSize(props) {
     console.log("lal[props.index].color", props.array_CS);
 
     // props.editarray(lal);
-
+    console.log("selected size", selectedSize, "-", newSize);
     if (selectedSize === "") {
       setSelectedSize(newSize);
     } else {
@@ -115,13 +119,13 @@ function ColorWithSize(props) {
         <div className="feildtoadd">
           <div className="flexo">
             <div className="sectioninin">
-              <div>
-                <label htmlFor="fontSize">
+              <div className="jemmmi">
+                <label htmlFor="fontSize" className="label1212">
                   <>اختر اللون المناسب : &nbsp;</>
                 </label>
                 <select
                   id="fontSize"
-                  value={"kkkkkkk"}
+                  value={valueOfColor}
                   onChange={handleSizeChange}
                 >
                   <option value={selectedSize}>{selectedSize}</option>

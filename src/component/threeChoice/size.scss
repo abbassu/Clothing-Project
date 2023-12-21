@@ -3,8 +3,16 @@
   flex-direction: column;
   gap: 5px;
   margin-bottom: 20px;
-  border-top: 1px solid rgb(109, 107, 102);
-  padding-top: 10px;
+  // border-top: 1px solid rgb(109, 107, 102);
+  padding-top: 6px;
+  .opopopop {
+    padding-right: 5px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+  }
   label {
     font-size: 19px;
   }
@@ -44,5 +52,8 @@
     margin-left: 0px;
     width: 180px;
     background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: start;
   }
 }

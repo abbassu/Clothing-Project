@@ -33,39 +33,39 @@ function Navbar() {
             }}
           >
             {currentUser?.uid === "upCC9gHfwcQQFN2ObsYXgHKg6193" ? (
-              <>
-                <Link className="nav-linkk" to={"operation"}>
-                  {" "}
-                  عمليات
-                </Link>
-                <Link className="nav-linkk" to={"orders"}>
-                  طلبات{" "}
-                </Link>
-              </>
+              <></>
             ) : (
-              <>
-                <Link className="nav-linkk" to={"/"}>
-                  {" "}
-                  الرئيسي{" "}
-                </Link>
-                <Link className="nav-linkk" to={"shop/catebar"}>
-                  {" "}
-                  المنتجات
-                </Link>
-              </>
+              <></>
             )}
 
-            {!currentUser ? (
-              <Link className="nav-linkk" to={"auth"}>
-                {" "}
-                تسجيل الدخول
-              </Link>
-            ) : (
-              <span className="nav-linkk" onClick={handleSignOut}>
-                {" "}
-                تسجيل خروج
-              </span>
-            )}
+            <Link className="nav-linkk" to={"operation"}>
+              {" "}
+              عمليات
+            </Link>
+            <Link className="nav-linkk" to={"orders"}>
+              طلبات{" "}
+            </Link>
+
+            <Link className="nav-linkk" to={"/"}>
+              {" "}
+              الرئيسي{" "}
+            </Link>
+            <Link className="nav-linkk" to={"shop/catebar"}>
+              {" "}
+              المنتجات
+            </Link>
+
+            <Link className="nav-linkk" to={"auth"}>
+              {" "}
+              تسجيل الدخول
+            </Link>
+
+            <span className="nav-linkk" onClick={handleSignOut}>
+              {" "}
+              تسجيل خروج
+            </span>
+
+            {!currentUser ? "" : ""}
           </div>
 
           {currentUser?.uid === "upCC9gHfwcQQFN2ObsYXgHKg6193" ? (
