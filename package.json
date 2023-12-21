@@ -2,7 +2,7 @@
   "name": "clothing",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://abbassu.github.io/Clothing-Project",
+  "homepage": "http://abbassu.github.io/testdeploy",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
