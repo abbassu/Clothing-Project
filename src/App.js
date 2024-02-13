@@ -18,13 +18,13 @@ import DeleteItem from "./component/deleteitem/deleteitem";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import Subitem from "./component/subitem/Subitem";
-import ParentComponent from "./component/test/Test";
+import ImgbbImageUpload from "./component/test/Test";
 import CateBar from "./component/cateBar/cateBar";
 import Updateitem from "./component/updateitem/Updateitem";
 import MakeSales from "./component/makesales/makeSales";
 import Deletedepartment from "./component/routes/deletedepartment/deletedepartment";
 import Adddepartment from "./component/routes/adddepartment/adddepartment";
-import Updatedepartment from "./component/routes/updatedepartment/updatedepartment";
+import UpdateDepartment from "./component/routes/updatedepartment/updatedepartment";
 import Testing from "./component/routes/testroute/testroute";
 
 function App() {
@@ -37,7 +37,7 @@ function App() {
             <Route path="catebar" index element={<CateBar />} />
             <Route path=":title" element={<SubCategory />} />
           </Route>
-          <Route path="updatedepartment" element={<Updatedepartment />} />
+          <Route path="updatedepartment" element={<UpdateDepartment />} />
           <Route path="deletedepartment" element={<Deletedepartment />} />
           <Route path="adddepartment" element={<Adddepartment />} />
           <Route path="clicked/:prod" element={<Cartpopup />} />
@@ -51,7 +51,7 @@ function App() {
           <Route path="orders" element={<Orders />} />
           <Route path="orderuser" element={<OrderUser />} />
           <Route path="Subitem" element={<Subitem />}></Route>
-          <Route path="testing" element={<ParentComponent />}>
+          <Route path="testing" element={<ImgbbImageUpload />}>
             {" "}
           </Route>
         </Route>

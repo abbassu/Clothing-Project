@@ -56,11 +56,11 @@ function Checkout() {
 
   const [orderData, setOrderData] = useState({
     order: {
-      name: "",
-      city: "",
+      name: information_user.name,
+      city: information_user.city,
       date: currentDate,
-      location_address: "",
-      phone_number: "",
+      location_address: information_user.location_address,
+      phone_number: information_user.phone_number,
       total_price: cartTotal,
       status: "1",
       notice: "",
@@ -112,28 +112,6 @@ function Checkout() {
     clearItemCart();
     localStorage.clear();
   }
-
-  // function ff() {
-  //   if (currentUser) {
-  //     if (
-  //       phone_number !== "" &&
-  //       location_address !== "" &&
-  //       city !== "" &&
-  //       name !== ""
-  //     ) {
-  //       let currentDate = new Date().toJSON().slice(0, 10);
-  //       setfields({ ...fields, date: currentDate });
-
-  //       // clear();
-  //       set_done_buying(true);
-  //     } else {
-  //       alert("please enter all information");
-  //     }
-  //   } else {
-  //     setview(true);
-  //     changeStateFalse();
-  //   }
-  // }
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -209,28 +187,6 @@ function Checkout() {
               value: notice,
             }}
           />
-
-          {/* <FormInput
-            labelName="الشارع أو الحي"
-            optionInput={{
-              type: "text",
-              required: true,
-              onChange: handleChange,
-              name: "location_address",
-              value: location_address,
-            }}
-          />
-
-          <FormInput
-            labelName="الشارع أو الحي"
-            optionInput={{
-              type: "text",
-              required: true,
-              onChange: handleChange,
-              name: "location_address",
-              value: location_address,
-            }}
-          /> */}
         </div>
         {done_buying ? (
           <>

@@ -1,0 +1,21 @@
+.addDepartmentContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .fromAddDepartment {
+    width: 340px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 7px;
+    border: 2px solid rgb(82, 96, 230);
+    padding: 15px;
+    select {
+      border-radius: 7px;
+      padding: 0 5px;
+    }
+  }
+  .DepartmentChoice {
+    margin-bottom: 20px;
+  }
+}

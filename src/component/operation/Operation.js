@@ -22,7 +22,7 @@ function Operation() {
         </button>
 
         <button
-          className="uuu"
+          className="aaa"
           onClick={() => {
             nav("/updateitem");
           }}
@@ -35,7 +35,19 @@ function Operation() {
         </button>
 
         <button
-          className="mmm"
+          className="aaa"
+          onClick={() => {
+            nav("/deleteitem");
+          }}
+        >
+          Delete Item
+          <br />
+          <span className="ffff">
+            <i class="fa-solid fa-trash"></i>
+          </span>{" "}
+        </button>
+        <button
+          className="aaa"
           onClick={() => {
             nav("/makesales");
           }}
@@ -47,18 +59,6 @@ function Operation() {
           </span>{" "}
         </button>
 
-        <button
-          className="ddd"
-          onClick={() => {
-            nav("/deleteitem");
-          }}
-        >
-          Delete Item
-          <br />
-          <span className="ffff">
-            <i class="fa-solid fa-trash"></i>
-          </span>{" "}
-        </button>
         <br />
         <button
           className="aaa"
@@ -74,7 +74,7 @@ function Operation() {
         </button>
 
         <button
-          className="ddd"
+          className="aaa"
           onClick={() => {
             nav("/deletedepartment");
           }}
@@ -87,7 +87,7 @@ function Operation() {
         </button>
 
         <button
-          className="uuu"
+          className="aaa"
           onClick={() => {
             nav("/updatedepartment");
           }}

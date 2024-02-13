@@ -18,45 +18,39 @@ import AddMultiplePhoto from "../addMultiplePhoto/addMultiplePhoto";
 function AddItem() {
   const query = collection(db, "categories");
   const [docs, loading, error] = useCollectionData(query);
-  // console.log("docs ------------ ", docs);
   const [detailsNum, setDetailsNum] = useState([3]);
+  const [array_images, setArrayImages] = useState();
+
+  function setimage(arr) {
+    setArrayImages(arr);
+  }
 
   const [arr_size, set_arr_size] = useState([]);
-
   useEffect(() => {
     console.log("sizes array ", arr_size);
   }, [arr_size]);
-
   const [id_product, set_id_product] = useState(0);
-
-  // retuen new array with midified cartitems  new cart item
   const initObject = {
     color: 1,
     photo_url: "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
     size_Quantity: [{ size: "", quantity: 0 }],
     images: [],
   };
-
   const [initObjectState, setinitObjectState] = useState(initObject);
   const [array_CS, setArrayOfCS] = useState([]);
-
   const [typeradio, settyperadio] = useState(1);
-
   const editarray = (ee) => {
     setArrayOfCS(ee);
     console.log("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
     console.log("array_cs", array_CS);
   };
-
   useEffect(() => {
     console.log("edit parent now now now now");
     console.log(array_CS);
   }, [array_CS]);
-
   const changeStateDetails = (value) => {
     setinitObjectState(value);
   };
-
   useEffect(() => {
     console.log("state object in parent ", initObjectState);
   }, [initObjectState]);
@@ -67,20 +61,20 @@ function AddItem() {
     setStateForRequest(value);
   };
 
-  const defaultformFields = {
-    id: "",
-    department_id: "",
-    name: "",
-    cost: "",
-    brand: "",
-    quantity: "",
-    view: "",
-    detail: "",
-    url: "",
-    reate: "4",
-    nameurl: "",
-  };
-  const [formFields, setformfields] = useState(defaultformFields);
+  // const defaultformFields = {
+  //   id: "",
+  //   department_id: "",
+  //   name: "",
+  //   cost: "",
+  //   brand: "",
+  //   quantity: "",
+  //   view: "",
+  //   detail: "",
+  //   url: "",
+  //   reate: "4",
+  //   nameurl: "",
+  // };
+  // const [formFields, setformfields] = useState(defaultformFields);
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -94,9 +88,9 @@ function AddItem() {
   };
   let f = 4;
 
-  useEffect(() => {
-    let name = formFields.name;
-  }, [formFields]);
+  // useEffect(() => {
+  //   let name = formFields.name;
+  // }, [formFields]);
   const [productData, setProductData] = useState({
     productIDAdmin: "",
     department_id: "",
@@ -105,7 +99,7 @@ function AddItem() {
     quantity: "",
     percent: 0, // Default 0
     view: false,
-    url_primary_image: "https//Hoodie9/9/2023",
+    url_primary_image: "https://i.ibb",
     isProductDetails: true,
     BrandName: "",
     images: [
@@ -134,7 +128,9 @@ function AddItem() {
     images,
   } = productData;
 
-  useEffect(() => {}, [productData]);
+  useEffect(() => {
+    console.log("product data", productData);
+  }, [productData]);
 
   const sendToDatabase = async (event) => {
     if (isProductDetails === true) {
@@ -196,56 +192,63 @@ function AddItem() {
     }
   };
 
-  const handleMainImageInChild = (event) => {
-    const { name, value } = event.target;
-    console.log("event", event);
-    if (name === "url_primary_image") {
-      setProductData({ ...productData, url_primary_image: value });
-      console.log("name", name);
-    } else if (name === "images") {
-      let lala = [];
-      lala = images;
-      lala.push(value);
-      // console.log("jjjjjjjj");
+  // const handleMainImageInChild = (event) => {
+  //   const { name, value } = event.target;
+  //   console.log("event", event);
+  //   if (name === "url_primary_image") {
+  //     setProductData({ ...productData, url_primary_image: value });
+  //     console.log("name", name);
+  //   } else if (name === "images") {
+  //     let lala = [];
+  //     lala = images;
+  //     lala.push(value);
+  //     // console.log("jjjjjjjj");
+  //     setProductData({ ...productData, images: lala });
+  //   }
+  // };
 
-      setProductData({ ...productData, images: lala });
-    }
+  const handleAllImagesInChild = (url) => {
+    console.log("urlllll", url);
+    setProductData({ ...productData, url_primary_image: url });
   };
 
-  const handleAllImagesInChild = () => {};
+  // async function fromUserToDataForm() {
+  //   await setProductData({
+  //     ...productData,
+  //     productIDAdmin,
+  //     department_id,
+  //     name,
+  //     cost,
+  //     quantity,
+  //     percent: 0,
+  //     view: false,
+  //     isProductDetails,
+  //     BrandName,
+  //     images: [
+  //       {
+  //         url: "https://Image_Hoodie_1.jpg",
+  //       },
+  //       {
+  //         url: "https://Image_Hoodie_2.jpg",
+  //       },
+  //       {
+  //         url: "https://Image_Hoodie_3.jpg",
+  //       },
+  //     ],
+  //   });
+  // }
 
-  async function fromUserToDataForm() {
-    await setProductData({
-      ...productData,
-      productIDAdmin,
-      department_id,
-      name,
-      cost,
-      quantity,
-      percent: 0,
-      view: false,
-      url_primary_image: "ffffffffffffffffffffffff",
-      isProductDetails,
-      BrandName,
-      images: [
-        {
-          url: "https://Image_Hoodie_1.jpg",
-        },
-        {
-          url: "https://Image_Hoodie_2.jpg",
-        },
-        {
-          url: "https://Image_Hoodie_3.jpg",
-        },
-      ],
-    });
-  }
-  const handleMainPhoto = () => {};
+  // const handleMainPhoto = () => {};
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    fromUserToDataForm();
-  };
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+  //   fromUserToDataForm();
+  // };
+
+  // const handlePraimeryImage = async (event) => {
+  //   event.preventDefault();
+  //   fromUserToDataForm();
+  // };
 
   async function take_size_color() {
     console.log("hhhhhhhhhhhh");
@@ -267,7 +270,10 @@ function AddItem() {
         <form action="" className="fromee">
           <div className="feildtoadd">
             <div className="imim">
-              <TestFire type="button" />
+              <TestFire
+                type="button"
+                handleAllImagesInChild={handleAllImagesInChild}
+              />
             </div>
             <div className="flexoo">
               <FormInput

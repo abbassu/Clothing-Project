@@ -20,7 +20,7 @@ function Updateitem() {
   return (
     <div>
       <FormInput
-        labelName="Email"
+        labelName="رقم المنتج"
         optionInput={{
           type: "text",
           required: true,

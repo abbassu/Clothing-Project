@@ -1,16 +1,19 @@
-.fffa {
+.delete_page {
   min-height: 439px;
-
-  .tale {
-    .jojo {
-      height: 100px;
-      display: flex;
-      justify-content: right;
-    }
+  .lable {
+    padding-bottom: 30px;
+    border-bottom: 15px solid gray;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
   }
-  .ddd {
-    // margin-bottom: 50px;
-    margin-top: 40px;
+  .input_id_product {
+    border: 2px solid rgb(115, 134, 228);
+    max-width: 400px;
+    padding: 8px 16px;
+    border-radius: 7px;
+  }
+  .button_search {
+    padding: 10px 8px;
   }
   .saveupdates {
     background-color: rgb(115, 134, 228);
@@ -25,8 +28,6 @@
   .opoo {
     display: flex;
     gap: 10px;
-    // width: 90%;
-    // margin: 10px auto;
     min-height: 60px;
     justify-content: center;
     align-items: center;
@@ -59,16 +60,9 @@
         border-radius: 5px;
       }
     }
-    .opid,
-    .oppri {
-      // width: 150px;
-    }
     flex-wrap: wrap;
-
     .eieim {
       width: 100px;
-      // background-color: red;
-      // height: 100%;
       img {
         width: 80px;
         height: 80px;
@@ -78,12 +72,59 @@
   }
 
   .In_delete {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 150px 150px; /* Two columns with equal width */
+    gap: 20px; /* Gap between grid items */
     gap: 10px;
+    div {
+      border-bottom: 1px solid;
+    }
     p {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      min-width: 100px;
+      max-width: 400px;
       background-color: rgb(166, 166, 250);
       padding: 4px 8px;
+    }
+  }
+  .alert-before-delete {
+    border-radius: 7px;
+    border: 2px solid white;
+    width: 40%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(211, 202, 203, 0.95);
+    padding: 20px;
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    .delete-post {
+      background-color: red;
+      padding: 8px 13px;
+      border-radius: 50%;
+      border: 3px solid white;
+      color: white;
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .text-delete {
+      font-size: 20px;
+      padding-bottom: 20px;
+    }
+    @media (max-width: 600px) {
+      left: 10%;
+      top: 20%;
+
+      width: 80%;
+      height: 40%;
     }
   }
 }

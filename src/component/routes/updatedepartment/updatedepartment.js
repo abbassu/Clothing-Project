@@ -1,36 +1,79 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
-function Updatedepartment() {
-  const [all_product, set_all_product] = useState([]);
-  useEffect(() => {
-    fetch(
-      "http://localhost:9999/product/DepartmentID?departmentId=2&currentPage=0"
-    ) // Replace with your API endpoint
-      .then((response) => response.json())
-      .then((data) => console.log("data", set_all_product(data[0].products)))
-      .catch((error) => console.error("Error fetching data:", error));
-  }, []);
+const UpdateDepartment = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    ParentDepartmentID: "",
+    Image: "",
+    // Add other fields as needed
+  });
 
-  useEffect(() => {
-    console.log("jjjjj", all_product);
-  }, [all_product]);
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handlePutRequest = async (event) => {
+    const depID = 3; // Replace with the department ID you want to update
+
+    try {
+      const response = await axios.put(
+        `http://localhost:9999/department?depID=${depID}`,
+        formData
+      );
+
+      if (response.status === 200) {
+        console.log("Department data updated successfully");
+      } else {
+        console.error("Failed to update department data");
+      }
+    } catch (error) {
+      console.error("Error updating department data:", error);
+    }
+  };
 
   return (
     <div>
-      lllllllllllllllllllllll
-      {all_product.map((item, index) => {
-        return (
-          <>
-            <div>name: {item.name} </div>
-            <div>id: {item.id} </div>
-            <div>
-              <hr />{" "}
-            </div>
-          </>
-        );
-      })}
+      <h2>Update Department</h2>
+      <label>
+        Name:
+        <input
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleInputChange}
+        />
+      </label>
+      <br />
+      <label>
+        Parent Department ID:
+        <input
+          type="text"
+          name="ParentDepartmentID"
+          value={formData.ParentDepartmentID}
+          onChange={handleInputChange}
+        />
+      </label>
+      <br />
+      <label>
+        Image URL:
+        <input
+          type="text"
+          name="Image"
+          value={formData.Image}
+          onChange={handleInputChange}
+        />
+      </label>
+      <br />
+      <button type="submit" onClick={handlePutRequest}>
+        Update Department
+      </button>
     </div>
   );
-}
+};
 
-export default Updatedepartment;
+export default UpdateDepartment;

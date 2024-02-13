@@ -1,94 +1,93 @@
-import "./tt.scss";
-import React, { useState } from "react";
+// import React, { useState } from "react";
+// import axios from "axios";
 
-function ParentComponent() {
-  const [dataArray, setDataArray] = useState(["apple", "banana", "cherry"]);
+// const ImgbbImageUpload = () => {
+//   const [selectedFile, setSelectedFile] = useState(null);
+//   const [imageUrl, setImageUrl] = useState("");
+//   const albumId = "zageer-sport"; // Replace with your album ID
 
-  const handleArrayChange = () => {
-    // Simulate changing the array
-    setDataArray(["grape", "kiwi", "orange"]);
+//   const handleFileInputChange = (event) => {
+//     setSelectedFile(event.target.files[0]);
+//   };
+
+//   const handleImageUpload = async () => {
+//     if (!selectedFile) {
+//       alert("Please select an image file.");
+//       return;
+//     }
+
+//     const formData = new FormData();
+//     formData.append("image", selectedFile);
+//     // formData.append("album", albumId);
+
+//     try {
+//       const response = await axios.post(
+//         "https://api.imgbb.com/1/upload?key=beba7d00948fa46fd76a23e6b3582d84",
+//         formData
+//       );
+
+//       if (response.status === 200) {
+//         const uploadedImageUrl = response.data.data.url; // Extract the uploaded image URL
+//         setImageUrl(uploadedImageUrl);
+//         console.log("Image uploaded successfully:", uploadedImageUrl);
+//       }
+//     } catch (error) {
+//       console.error("Error uploading image:", error);
+//     }
+//   };
+//   return (
+//     <div>
+//       <h2>ImgBB Image Upload</h2>
+//       <input type="file" onChange={handleFileInputChange} />
+//       <button onClick={handleImageUpload}>Upload Image</button>
+//       {imageUrl && (
+//         <div>
+//           <h3>Uploaded Image:</h3>
+//           <img src={imageUrl} alt="Uploaded" />
+//           <p>Image URL: {imageUrl}</p>
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default ImgbbImageUpload;
+
+import React from "react";
+import Tool_compress from "../testfire/tool_compress/tool_compress";
+import ImageCompressor from "image-compressor.js";
+
+const ImageUploader = () => {
+  const handleFileChange = async (event) => {
+    const file = event.target.files[0];
+
+    const options = {
+      quality: 0.6, // Set quality (0 to 1)
+      maxWidth: 800, // Set max width
+      maxHeight: 800, // Set max height
+    };
+
+    try {
+      const compressedFile = await new ImageCompressor(
+        file,
+        options
+      ).compress();
+
+      console.log("Original File:", file.size);
+      console.log("Compressed File:", compressedFile.size);
+
+      // Handle the compressed file (e.g., upload or display)
+    } catch (error) {
+      console.error("Error compressing image:", error);
+    }
   };
 
   return (
     <div>
-      <button onClick={handleArrayChange}>Change Array</button>
-      <ChildComponent
-        dataProp={dataArray}
-        handleArrayChange={handleArrayChange}
-      />
-      <ChildComponent
-        dataProp={dataArray}
-        handleArrayChange={handleArrayChange}
-      />
-      <ChildComponent
-        dataProp={dataArray}
-        handleArrayChange={handleArrayChange}
-      />
+      {/* <input type="file" onChange={handleFileChange} accept="image/*" /> */}
+      <Tool_compress />
     </div>
   );
-}
+};
 
-function ChildComponent(props) {
-  return (
-    <div>
-      <h2>Child Component</h2>
-      <button onClick={props.handleArrayChange}>handlerddd</button>
-      <ul>
-        {props.dataProp.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-export default ParentComponent;
-
-// function Test() {
-//   return (
-//     <div className='sllidebarr'>
-
-//     <Carousel className='fafa'>
-//       <Carousel.Item className='fafaibn'>
-//         <img
-//           className="d-block w-90 "
-//           src={logo1}
-//           alt="First slide"
-//         />
-//         <Carousel.Caption>
-//           <h3>First slide label</h3>
-//           <p className='tete'>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-//         </Carousel.Caption>
-//       </Carousel.Item>
-//       <Carousel.Item className='fafaibn'>
-//         <img
-//           className="d-block w-90"
-//           src={logo2}
-//           alt="Second slide"
-//         />
-
-//         <Carousel.Caption>
-//           <h3>Second slide label</h3>
-//           <p className='tete'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-//         </Carousel.Caption>
-//       </Carousel.Item>
-//       <Carousel.Item className='fafaibn'>
-//         <img
-//             className="d-block w-90"
-//             src={logo3}
-//             alt="Third slide"
-//         />
-//         <Carousel.Caption>
-//             <h3>Third slide label</h3>
-//             <p className='tete'>
-//                 Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-//             </p>
-//         </Carousel.Caption>
-//       </Carousel.Item>
-//     </Carousel>
-
-//     </div>
-//   )
-// }
-
-// export default Test
+export default ImageUploader;
