@@ -15,7 +15,7 @@ const YourComponent = (props) => {
     console.log("fgggg");
     const fetchData = async () => {
       try {
-        console.log("try");
+        console.log("try", props.id_product);
 
         const response = await axios.get(
           `http://localhost:9999/product/productDetails?id=${props.id_product}&isDetail=1`
@@ -34,7 +34,7 @@ const YourComponent = (props) => {
 
   return (
     <div className="product-details">
-      <h1>Product Details</h1>
+      <h1>تفاصيل المنتج</h1>
 
       {error ? (
         <p>Error: {error}</p>
