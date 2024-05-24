@@ -38,7 +38,7 @@ function Navbar() {
               <></>
             )}
 
-            <Link className="nav-linkk" to={"operation"}>
+            {/* <Link className="nav-linkk" to={"operation"}>
               {" "}
               عمليات
             </Link>
@@ -53,7 +53,7 @@ function Navbar() {
             <Link className="nav-linkk" to={"shop/catebar"}>
               {" "}
               المنتجات
-            </Link>
+            </Link> */}
 
             {/* <Link className="nav-linkk" to={"auth"}>
               {" "}
@@ -68,13 +68,13 @@ function Navbar() {
             {!currentUser ? "" : ""}
           </div>
 
-          {/* {currentUser?.uid === "upCC9gHfwcQQFN2ObsYXgHKg6193" ? (
+          {currentUser?.uid === "upCC9gHfwcQQFN2ObsYXgHKg6193" ? (
             <></>
           ) : (
             <>
               <Cart />
             </>
-          )} */}
+          )}
 
           <i
             className="fa-solid fa-bars"

@@ -186,7 +186,7 @@ function MakeSales() {
 
   return (
     <div className="delete_page">
-      <h1 className="lable">Delete Item</h1>
+      <h1 className="lable"> Make Sales</h1>
       <div className="input_id_product">
         <FormInput
           labelName="رقم المنتج للعرض "

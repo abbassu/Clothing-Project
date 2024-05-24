@@ -2,7 +2,7 @@
 
 Welcome to our full-stack eCommerce web application! This project utilizes React for the front end, Node.js and Express for the back end, and MySQL for the database.
 
-![Home Page](<[https://example.com/images/homepage.png](https://www.digitaltrends.com/wp-content/uploads/2021/07/galaxy-s21-ultra-july-2021.jpg?fit=2000%2C1333&p=1)>)
+![Home Page](public/image/screencapture-localhost-3000-2024-05-24-18_31_28.png)
 
 ## 🚀 Features
 
@@ -11,8 +11,7 @@ Welcome to our full-stack eCommerce web application! This project utilizes React
 - Secure user authentication system with signup, login, and logout functionalities.
 - Encrypted password storage for enhanced security.
 
-![Login Page](public/image/screencapture-localhost-3000-2024-05-24-18_31_28.png)
-![Signup Page](https://example.com/images/signup.png)
+![Login & SignUp Page](public/image/signup.png)
 
 ### Product Catalog
 
@@ -20,8 +19,10 @@ Welcome to our full-stack eCommerce web application! This project utilizes React
 - Search, filter, and sort products by categories, price, and popularity.
 - Detailed product pages with images, descriptions, and reviews.
 
-![Product Catalog](https://example.com/images/product-catalog.png)
-![Product Details](https://example.com/images/product-details.png)
+![Product Catalog](public/image/screencapture-localhost-3000-shop-jackets-2024-05-24-18_32_43.png)
+![Product Catalog](public/image/screencapture-localhost-3000-shop-Baby-2024-05-24-18_31_56.png)
+
+![Product Details](public/image/imagedetais2.png)
 
 ### Shopping Cart
 
@@ -29,23 +30,17 @@ Welcome to our full-stack eCommerce web application! This project utilizes React
 - Update quantities or remove items from the cart.
 - Persistent cart state across sessions.
 
-![Shopping Cart](https://example.com/images/shopping-cart.png)
+![Shopping Cart](public/image/cart.png)
 
-### Order Management
+### Order Management for User an Admin
 
 - Seamless checkout process with order summary.
 - Order history tracking for users.
 - Admin interface for viewing and managing all orders.
 
-![Checkout Page](https://example.com/images/checkout.png)
-![Order History](https://example.com/images/order-history.png)
-
-### User Profile
-
-- Manage personal details and view order history.
-- Securely update password and personal information.
-
-![User Profile](https://example.com/images/user-profile.png)
+![Cartw Page](public/image/Screenshot20240524183421.png)
+![Cart Page](public/image/chaeckout.png)
+![Checkout Page](public/image/allalses.png)
 
 ### Admin Dashboard
 
@@ -53,22 +48,30 @@ Welcome to our full-stack eCommerce web application! This project utilizes React
 - Add, edit, and delete products with ease.
 - Monitor user activities and manage orders.
 
-![Admin Dashboard](https://example.com/images/admin-dashboard.png)
+![Admin Dashboard](public/image/dash.png)
 ![Product Management](https://example.com/images/product-management.png)
+
+#### Add Product with details And Managemet Quantity and Price
+
+![Add Product ](public/image/screencapture-localhost-3000-additem-2024-05-24-18_36_14.png)
+![Add Product ](public/image/screencapture-localhost-3000-additem-2024-05-24-18_37_54.png)
+
+![make salse](public/image/makesalse.png)
+![update quantity ](public/image/screencapture-localhost-3000-updateitem-2024-05-24-18_38_21.png)
+
+#### Department
+
+![Add Department ](public/image/screencapture-localhost-3000-adddepartment-2024-05-24-18_40_05.png)
 
 ### Responsive Design
 
 - Fully responsive design ensuring compatibility across various devices.
 - Optimized for performance on mobile, tablet, and desktop screens.
 
-![Responsive Design](https://example.com/images/responsive-design.png)
-
-### Payment Integration
-
-- Integrated with popular payment gateways (e.g., Stripe, PayPal) for secure transactions.
-- Support for multiple payment methods.
-
-![Payment Integration](https://example.com/images/payment-integration.png)
+![Responsive Design](public/image/RES1.png)
+![Responsive Design](public/image/RES2.png)
+![Responsive Design](public/image/RES3.png)
+![Responsive Design](public/image/RES4.png)
 
 ## 🛠️ Technologies Used
 

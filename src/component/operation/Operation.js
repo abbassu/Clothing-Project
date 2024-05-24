@@ -125,7 +125,7 @@ function Operation() {
           </span>{" "}
         </button> */}
 
-        <button
+        {/* <button
           className="uuu"
           onClick={() => {
             nav("/testing");
@@ -136,7 +136,7 @@ function Operation() {
           <span className="ffff">
             <i class="fa-solid fa-poo-storm"></i>
           </span>{" "}
-        </button>
+        </button> */}
       </div>
     </div>
   );
