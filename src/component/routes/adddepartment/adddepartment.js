@@ -17,6 +17,10 @@ function Adddepartment() {
     setAllDepartment(response.data.departments);
     console.log("fff", response.data.departments);
   }
+
+  useEffect(() => {
+    getAllDepartment();
+  }, []);
   async function AddNewDepartment(event) {
     event.preventDefault();
 
@@ -34,9 +38,6 @@ function Adddepartment() {
       console.error("Error Adding Department:", error);
     }
   }
-  useEffect(() => {
-    getAllDepartment();
-  }, []);
 
   const handleChange = (event) => {
     console.log("adding parent name to child", event.target.value);

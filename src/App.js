@@ -11,6 +11,7 @@ import SubCategory from "./component/sub-category/sub-category";
 import Layout from "./component/layout/layout";
 import Cartpopup from "./component/cart-popup/cart-popup";
 import AddItem from "./component/additem/additem";
+import Departmentproduct from "./component/routes/departmentproduct/departmentproduct";
 import Orders from "./component/talabat/talabat";
 import Operation from "./component/operation/Operation";
 import OrderUser from "./component/order/order";
@@ -25,8 +26,8 @@ import MakeSales from "./component/makesales/makeSales";
 import Deletedepartment from "./component/routes/deletedepartment/deletedepartment";
 import Adddepartment from "./component/routes/adddepartment/adddepartment";
 import UpdateDepartment from "./component/routes/updatedepartment/updatedepartment";
-import Testing from "./component/routes/testroute/testroute";
-
+import UploadImage from "./component/routes/testroute/testroute";
+import NewViewProduct from "./component/routes/newproductview/NewViewProduct";
 function App() {
   return (
     <BrowserRouter>
@@ -47,13 +48,18 @@ function App() {
           <Route path="updateitem" element={<Updateitem />} />
           <Route path="makesales" element={<MakeSales />} />
           <Route path="deleteitem" element={<DeleteItem />} />
+          <Route path="testing" element={<UploadImage />} />
           <Route path="operation" element={<Operation />}></Route>
           <Route path="orders" element={<Orders />} />
           <Route path="orderuser" element={<OrderUser />} />
           <Route path="Subitem" element={<Subitem />}></Route>
-          <Route path="testing" element={<ImgbbImageUpload />}>
-            {" "}
-          </Route>
+          <Route path="testing" element={<ImgbbImageUpload />}></Route>
+
+          <Route path="newview" element={<NewViewProduct />}></Route>
+          <Route
+            path="departmentproduct"
+            element={<Departmentproduct />}
+          ></Route>
         </Route>
       </Routes>
     </BrowserRouter>

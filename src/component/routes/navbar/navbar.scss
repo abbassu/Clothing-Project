@@ -6,9 +6,10 @@
   justify-content: space-between;
   padding: 10px 30px;
   border-bottom: 1px rgb(210, 201, 201) solid;
+  border-radius: 5px;
   position: fixed;
   z-index: 31234;
-  background-color: rgb(132, 51, 51);
+  background-color: rgb(255, 255, 255);
   .logo-container {
     img {
       width: 200px;
@@ -19,6 +20,8 @@
     // height: 100%;
   }
   .nav-links-containerrr {
+    margin-top: 10px;
+    border-radius: 5px;
     background-color: wheat;
     .fa-bars {
       padding-top: 8px;
@@ -26,7 +29,7 @@
       margin: 0px 10px;
       display: none;
     }
-    height: 100%;
+    height: 76%;
     display: flex;
     align-items: center;
 
@@ -48,7 +51,7 @@
     }
 
     .linkss {
-      background-color: gold;
+      // background-color: gold;
       display: flex;
       row-gap: 50px;
     }

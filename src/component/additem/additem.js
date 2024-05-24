@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { collection, setDoc, doc, addDoc } from "firebase/firestore";
 import { db } from "../../utils/firebase/firebase";
 import axios from "axios";
+import Compressor from "compressorjs";
+
 import RadioButtonExample from "../threeChoice/ThreeChoice";
 
 import {
@@ -13,13 +15,24 @@ import TestFire from "../testfire/tesfire";
 import Button from "../button/button";
 import FormInput from "../fom-input/form-input";
 import "./additem.scss";
+import Tool_compress from "../testfire/tool_compress/tool_compress";
 import ImageSlider from "../imageslider/ImageSlider";
 import AddMultiplePhoto from "../addMultiplePhoto/addMultiplePhoto";
 function AddItem() {
   const query = collection(db, "categories");
   const [docs, loading, error] = useCollectionData(query);
   const [detailsNum, setDetailsNum] = useState([3]);
+  const [mainImage, setmainimage] = useState("");
+
+  const [showForm, setShowFormt] = useState(false);
+
   const [array_images, setArrayImages] = useState();
+  const [allImagesformchaild, setallimagesfromchid] = useState([]);
+
+  const [name_primary_image, set_name_primary_image] = useState("");
+
+  const [parentName, setParentName] = useState(0);
+  const [allDepartment, setAllDepartment] = useState([]);
 
   function setimage(arr) {
     setArrayImages(arr);
@@ -61,21 +74,6 @@ function AddItem() {
     setStateForRequest(value);
   };
 
-  // const defaultformFields = {
-  //   id: "",
-  //   department_id: "",
-  //   name: "",
-  //   cost: "",
-  //   brand: "",
-  //   quantity: "",
-  //   view: "",
-  //   detail: "",
-  //   url: "",
-  //   reate: "4",
-  //   nameurl: "",
-  // };
-  // const [formFields, setformfields] = useState(defaultformFields);
-
   function handleChange(event) {
     const { name, value } = event.target;
     setProductData({ ...productData, [name]: value });
@@ -86,11 +84,7 @@ function AddItem() {
   const handleCheckboxChange = () => {
     setisProductDetails(!isProductDetails);
   };
-  let f = 4;
 
-  // useEffect(() => {
-  //   let name = formFields.name;
-  // }, [formFields]);
   const [productData, setProductData] = useState({
     productIDAdmin: "",
     department_id: "",
@@ -100,7 +94,7 @@ function AddItem() {
     percent: 0, // Default 0
     view: false,
     url_primary_image: "https://i.ibb",
-    isProductDetails: true,
+    isProductDetails: false,
     BrandName: "",
     images: [
       {
@@ -147,7 +141,7 @@ function AddItem() {
         console.error("Error adding product:", error);
       }
     } else {
-      console.log("no detailsd");
+      console.log("no detailsd", productData);
       try {
         // console.log("dddddddd", productData);
         const response = await axios.post("http://localhost:9999/product/", {
@@ -185,89 +179,176 @@ function AddItem() {
         );
       }
       console.log("Product details added:");
-
-      // console.log("Product details added:", response.data);
     } catch (error) {
       console.error("Error adding product details:", error);
     }
   };
 
-  // const handleMainImageInChild = (event) => {
-  //   const { name, value } = event.target;
-  //   console.log("event", event);
-  //   if (name === "url_primary_image") {
-  //     setProductData({ ...productData, url_primary_image: value });
-  //     console.log("name", name);
-  //   } else if (name === "images") {
-  //     let lala = [];
-  //     lala = images;
-  //     lala.push(value);
-  //     // console.log("jjjjjjjj");
-  //     setProductData({ ...productData, images: lala });
-  //   }
-  // };
-
-  const handleAllImagesInChild = (url) => {
-    console.log("urlllll", url);
-    setProductData({ ...productData, url_primary_image: url });
+  const handleUploadmain = async (v_array) => {
+    try {
+      console.log("filse", mainImage);
+      const compressedFiles = await Promise.all(
+        v_array.map(async (file) => {
+          return new Promise((resolve, reject) => {
+            new Compressor(file, {
+              quality: 0.9,
+              maxWidth: 500,
+              // maxHeight: 200,
+              mimeType: "image/jpeg",
+              success(result) {
+                console.log("success", result);
+                const compressedFile = new File([result], file.name, {
+                  type: result.type,
+                });
+                resolve(compressedFile);
+              },
+              error(error) {
+                reject(error);
+              },
+            });
+          });
+        })
+      );
+      const formData = new FormData();
+      compressedFiles.forEach((compressedFile) => {
+        formData.append("file", compressedFile);
+      });
+      console.log("formdata in compress", formData);
+      const d = new Date();
+      const response = await axios.post(
+        "http://localhost:9999/user/upload-b2",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      const d2 = new Date();
+      setmainimage(response.data.downloadUrl[0]);
+      console.log(response);
+      console.log(d2 - d);
+    } catch (error) {
+      console.error("Error uploading files", error);
+    } finally {
+      // setIsLoading(false);
+    }
   };
 
-  // async function fromUserToDataForm() {
-  //   await setProductData({
-  //     ...productData,
-  //     productIDAdmin,
-  //     department_id,
-  //     name,
-  //     cost,
-  //     quantity,
-  //     percent: 0,
-  //     view: false,
-  //     isProductDetails,
-  //     BrandName,
-  //     images: [
-  //       {
-  //         url: "https://Image_Hoodie_1.jpg",
-  //       },
-  //       {
-  //         url: "https://Image_Hoodie_2.jpg",
-  //       },
-  //       {
-  //         url: "https://Image_Hoodie_3.jpg",
-  //       },
-  //     ],
-  //   });
-  // }
+  const handleAllImagesInChild = (url) => {
+    console.log("rrrrrrrrrrrrrrrrrrrrrr");
+    let v_array = [];
+    v_array.push(url);
+    handleUploadmain(v_array);
+  };
+  useEffect(() => {
+    console.log("mainImage", mainImage);
+    setProductData({ ...productData, url_primary_image: mainImage });
+  }, [mainImage]);
 
-  // const handleMainPhoto = () => {};
+  useEffect(() => {
+    console.log("allImagesformchaild", allImagesformchaild);
+  }, [allImagesformchaild]);
 
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-  //   fromUserToDataForm();
-  // };
+  const handleAllImagesInAllChild = (url) => {
+    setallimagesfromchid(url);
+  };
 
-  // const handlePraimeryImage = async (event) => {
-  //   event.preventDefault();
-  //   fromUserToDataForm();
-  // };
+  useEffect(() => {
+    console.log("now name image", name_primary_image);
+  }, [name_primary_image]);
+
+  const handleUpload = async () => {
+    try {
+      console.log("allImagesformchaild", allImagesformchaild);
+      const compressedFiles = await Promise.all(
+        allImagesformchaild.map(async (file) => {
+          return new Promise((resolve, reject) => {
+            new Compressor(file, {
+              quality: 0.9,
+              maxWidth: 500,
+              // maxHeight: 200,
+              mimeType: "image/jpeg",
+              success(result) {
+                console.log("success", result);
+                const compressedFile = new File([result], file.name, {
+                  type: result.type,
+                });
+                resolve(compressedFile);
+              },
+              error(error) {
+                reject(error);
+              },
+            });
+          });
+        })
+      );
+
+      const formData = new FormData();
+      compressedFiles.forEach((compressedFile) => {
+        formData.append("file", compressedFile);
+      });
+
+      console.log("formdata in add item", formData);
+      const d = new Date();
+      const response = await axios.post(
+        "http://localhost:9999/user/upload-b2",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      const arr_object = response.data.downloadUrl.map((item) => {
+        return { url: item };
+      });
+
+      setProductData({ ...productData, images: arr_object });
+      const d2 = new Date();
+      console.log("arr_object", arr_object);
+      console.log(response);
+      // setProductData
+      console.log(d2 - d);
+    } catch (error) {
+      console.error("Error uploading files", error);
+    } finally {
+      console.log("dddd");
+      // setIsLoading(false);
+    }
+  };
 
   async function take_size_color() {
-    console.log("hhhhhhhhhhhh");
     const response = await axios.get(`http://localhost:9999/product/sizes`);
-
     console.log("response with data", response.data.sizes);
     set_arr_size(response.data.sizes);
   }
+  const handleChangeSelected = (id) => {
+    setProductData({ ...productData, department_id: id.target.value });
+    console.log("id", id.target.value);
+    setParentName(id.target.value);
+  };
 
   useEffect(() => {
     console.log("state object in parent ", initObjectState);
     take_size_color();
   }, []);
 
+  async function getAllDepartment() {
+    const response = await axios.get(`http://localhost:9999/department/`);
+    setAllDepartment(response.data.departments);
+    console.log("fff", response.data.departments);
+  }
+
+  useEffect(() => {
+    getAllDepartment();
+  }, []);
+
   return (
     <div className="trtr">
       <h1 className="lablee">Add Item</h1>
       <div className="additem">
-        <form action="" className="fromee">
+        <div action="" className="fromee">
           <div className="feildtoadd">
             <div className="imim">
               <TestFire
@@ -275,73 +356,95 @@ function AddItem() {
                 handleAllImagesInChild={handleAllImagesInChild}
               />
             </div>
-            <div className="flexoo">
-              <FormInput
-                labelName="اسم المنتج"
-                optionInput={{
-                  onChange: handleChange,
-                  type: "text",
-                  required: true,
-                  value: name,
-                  name: "name",
-                }}
-              />
-              <FormInput
-                labelName="الباركود"
-                optionInput={{
-                  // type:"number",
-                  onChange: handleChange,
-                  required: true,
-                  value: productIDAdmin,
-                  name: "productIDAdmin",
-                }}
-              />
-              <FormInput
-                labelName="القسم"
-                optionInput={{
-                  type: "text",
-                  onChange: handleChange,
-                  required: true,
-                  value: department_id,
-                  name: "department_id",
-                }}
-              />
-              <FormInput
-                labelName="السعر"
-                optionInput={{
-                  type: "text",
-                  onChange: handleChange,
-                  required: true,
-                  value: cost,
-                  name: "cost",
-                }}
-              />
 
-              <FormInput
-                labelName="الكمية"
-                optionInput={{
-                  type: "text",
-                  onChange: handleChange,
-                  required: true,
-                  value: quantity,
-                  name: "quantity",
-                }}
-              />
-              <FormInput
-                labelName="الماركة"
-                optionInput={{
-                  type: "text",
-                  onChange: handleChange,
-                  required: true,
-                  value: BrandName,
-                  name: "BrandName",
-                }}
+            <div>
+              <AddMultiplePhoto
+                handleAllImagesInAllChild={handleAllImagesInAllChild}
               />
             </div>
+
+            <Button
+              onClick={() => {
+                setShowFormt(true);
+              }}
+            >
+              {" "}
+              كتابة تفاصيل المنتج{" "}
+            </Button>
+
+            {showForm ? (
+              <>
+                {" "}
+                <div className="flexoo">
+                  <FormInput
+                    labelName="اسم المنتج"
+                    optionInput={{
+                      onChange: handleChange,
+                      type: "text",
+                      required: true,
+                      value: name,
+                      name: "name",
+                    }}
+                  />
+                  <FormInput
+                    labelName="الباركود"
+                    optionInput={{
+                      // type:"number",
+                      onChange: handleChange,
+                      required: true,
+                      value: productIDAdmin,
+                      name: "productIDAdmin",
+                    }}
+                  />
+
+                  <div className="DepartmentChoice">
+                    <h5>اختر القسم التابع له :</h5>
+                    <select value={parentName} onChange={handleChangeSelected}>
+                      <option value="0">رئيسي </option>
+                      {allDepartment.map((item) => {
+                        return <option value={item.id}>{item.name} </option>;
+                      })}
+                    </select>
+                  </div>
+
+                  <FormInput
+                    labelName="السعر"
+                    optionInput={{
+                      type: "text",
+                      onChange: handleChange,
+                      required: true,
+                      value: cost,
+                      name: "cost",
+                    }}
+                  />
+
+                  <FormInput
+                    labelName="الكمية"
+                    optionInput={{
+                      type: "text",
+                      onChange: handleChange,
+                      required: true,
+                      value: quantity,
+                      name: "quantity",
+                    }}
+                  />
+                  <FormInput
+                    labelName="الماركة"
+                    optionInput={{
+                      type: "text",
+                      onChange: handleChange,
+                      required: true,
+                      value: BrandName,
+                      name: "BrandName",
+                    }}
+                  />
+                </div>{" "}
+              </>
+            ) : (
+              <></>
+            )}
           </div>
-          <div>
-            <AddMultiplePhoto />
-          </div>
+
           <div className="checkbox-label">
             <label>
               <input
@@ -353,10 +456,11 @@ function AddItem() {
               اضافة تفاصيل
             </label>
           </div>
-        </form>
+        </div>
 
         {isProductDetails ? (
           <RadioButtonExample
+            handleAllImagesInAllChild={handleAllImagesInAllChild}
             changeStateRequest={changeStateRequest}
             changeStateDetails={changeStateDetails}
             initObjectState={initObjectState}
@@ -369,11 +473,14 @@ function AddItem() {
           ""
         )}
 
+        {/* <Tool_compress /> */}
+
         <Button buttonType="google" onClick={sendToDatabase}>
           Submitlast
         </Button>
         {/* <button onClick={take_size_color}> vvv </button> */}
       </div>
+      {/* <button onClick={handleUpload}> allflflflflflflff</button> */}
     </div>
   );
 }

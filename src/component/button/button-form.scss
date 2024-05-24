@@ -67,6 +67,20 @@
     }
   }
 
+  &.accept {
+    background-color: #8ac455;
+    color: white;
+    transition: 0.3s;
+    width: 125px;
+
+    &:hover {
+      background-color: #7dd729;
+      color: white;
+      border: none;
+      transition: 0.3s;
+    }
+  }
+
   @media (max-width: 420px) {
     min-width: 130px;
     font-size: 11px;

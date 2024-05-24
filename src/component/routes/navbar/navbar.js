@@ -55,7 +55,7 @@ function Navbar() {
               المنتجات
             </Link>
 
-            <Link className="nav-linkk" to={"auth"}>
+            {/* <Link className="nav-linkk" to={"auth"}>
               {" "}
               تسجيل الدخول
             </Link>
@@ -63,18 +63,18 @@ function Navbar() {
             <span className="nav-linkk" onClick={handleSignOut}>
               {" "}
               تسجيل خروج
-            </span>
+            </span> */}
 
             {!currentUser ? "" : ""}
           </div>
 
-          {currentUser?.uid === "upCC9gHfwcQQFN2ObsYXgHKg6193" ? (
+          {/* {currentUser?.uid === "upCC9gHfwcQQFN2ObsYXgHKg6193" ? (
             <></>
           ) : (
             <>
               <Cart />
             </>
-          )}
+          )} */}
 
           <i
             className="fa-solid fa-bars"

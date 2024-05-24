@@ -72,7 +72,6 @@ function ImageGallery() {
             },
           }
         );
-
         if (response.status === 200) {
           const fileNames = response.data.files.map((file) => file.fileName);
           setImageUrls(fileNames);
@@ -87,7 +86,6 @@ function ImageGallery() {
         console.error("Error fetching image URLs:", error);
       }
     };
-
     fetchImages();
   }, [apiKey, bucketName]);
 

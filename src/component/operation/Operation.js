@@ -99,6 +99,32 @@ function Operation() {
           </span>{" "}
         </button>
 
+        {/* <button
+          className="aaa"
+          onClick={() => {
+            nav("/newview");
+          }}
+        >
+          show items
+          <br />
+          <span className="ffff">
+            <i class="fa-solid fa-poo-storm"></i>
+          </span>{" "}
+        </button>
+
+        <button
+          className="aaa"
+          onClick={() => {
+            nav("/departmentproduct");
+          }}
+        >
+          all department
+          <br />
+          <span className="ffff">
+            <i class="fa-solid fa-poo-storm"></i>
+          </span>{" "}
+        </button> */}
+
         <button
           className="uuu"
           onClick={() => {

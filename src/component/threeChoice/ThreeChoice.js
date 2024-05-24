@@ -57,6 +57,7 @@ function RadioButtonExample(props) {
       <div className="radioarray">
         {selectedRadio === "1" && (
           <ArrayColorWithSize
+            handleAllImagesInAllChild={props.handleAllImagesInAllChild}
             editarray={props.editarray}
             initObjectState={props.initObjectState}
             changeStateDetails={props.changeStateDetails}

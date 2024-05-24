@@ -188,7 +188,6 @@ function NewViewProduct() {
 
   const [info13, setinfo13] = useState({
     name: "بوت GEOX 743",
-
     cost: 500,
     makesalary: 1,
     percent: 15,
@@ -244,14 +243,14 @@ function NewViewProduct() {
       <SliderProduct im={images3} information={info3} />
       <SliderProduct im={images4} information={info4} />
       <SliderProduct im={images5} information={info5} />
-      <SliderProduct im={images6} information={info6} />
+      {/* <SliderProduct im={images6} information={info6} />
       <SliderProduct im={images7} information={info7} />
       <SliderProduct im={images8} information={info8} />
       <SliderProduct im={images9} information={info9} />
       <SliderProduct im={images10} information={info10} />
       <SliderProduct im={images11} information={info11} />
       <SliderProduct im={images12} information={info12} />
-      <SliderProduct im={images13} information={info13} />
+      <SliderProduct im={images13} information={info13} /> */}
 
       {/* <input
         type="text"

@@ -6,6 +6,8 @@ function SliderProduct(props) {
   // console.log("PPPP", props.im);
   // console.log("PPPP", props.information);
 
+  const [productData, setProductData] = useState(props?.product);
+
   const ffff = {
     name: "",
     cost: "",
