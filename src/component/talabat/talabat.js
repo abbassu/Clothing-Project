@@ -72,7 +72,7 @@ function Orders() {
   }, []);
 
   return (
-    <div>
+    <div className="Orders">
       <h1 className="lablee">جميع الطلبات</h1>
       {/* <button onClick={getget}>  gg</button> */}
       <div className="searchFilter">

@@ -1,6 +1,6 @@
 .footerfooter {
   font-family: Noto Kufi Arabic;
-  height: 120px;
+  height: 100px;
   padding: 20px 30px 20px;
   width: 100%;
   font-size: 20px;
@@ -12,7 +12,11 @@
   align-items: center;
   word-spacing: 3px;
   gap: 30px;
-
+  text-align: center;
+  padding: 20px;
+  // position: fixed;
+  // bottom: 0;
+  // width: 100%;
   .onef {
     color: #f6f1f1;
     flex-wrap: nowrap;

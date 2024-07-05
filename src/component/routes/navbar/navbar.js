@@ -21,13 +21,17 @@ function Navbar() {
   console.log("now now ", currentUser);
   return (
     <>
-      <div className="navigationn">
-        <Link className="logo-container" to={"/"}>
-          <img src={logo} alt="" />
-        </Link>
-        <div className="nav-links-containerrr">
+      <div className="NavbarSection">
+        <div className="nav-links-container">
+          {currentUser?.uid === "upCC9gHfwcQQFN2ObsYXgHKg6193" ? (
+            <></>
+          ) : (
+            <>
+              <Cart />
+            </>
+          )}
           <div
-            className={`linkss  ${opeen ? "" : "jal"} `}
+            className={`links  ${opeen ? "" : "jal"} `}
             onClick={() => {
               setnotopeen(!opeen);
             }}
@@ -38,22 +42,22 @@ function Navbar() {
               <></>
             )}
 
-            {/* <Link className="nav-linkk" to={"operation"}>
+            <Link className="nav-link" to={"operation"}>
               {" "}
               عمليات
             </Link>
-            <Link className="nav-linkk" to={"orders"}>
+            <Link className="nav-link" to={"orders"}>
               طلبات{" "}
             </Link>
 
-            <Link className="nav-linkk" to={"/"}>
+            <Link className="nav-link" to={"/"}>
               {" "}
               الرئيسي{" "}
             </Link>
-            <Link className="nav-linkk" to={"shop/catebar"}>
+            <Link className="nav-link" to={"shop/catebar"}>
               {" "}
               المنتجات
-            </Link> */}
+            </Link>
 
             {/* <Link className="nav-linkk" to={"auth"}>
               {" "}
@@ -68,23 +72,20 @@ function Navbar() {
             {!currentUser ? "" : ""}
           </div>
 
-          {currentUser?.uid === "upCC9gHfwcQQFN2ObsYXgHKg6193" ? (
-            <></>
-          ) : (
-            <>
-              <Cart />
-            </>
-          )}
-
-          <i
-            className="fa-solid fa-bars"
-            onClick={() => {
-              setnotopeen(!opeen);
-            }}
-          ></i>
+          <div className="bars">
+            <i
+              className="fa-solid fa-bars"
+              onClick={() => {
+                setnotopeen(!opeen);
+              }}
+            ></i>
+          </div>
         </div>
 
         {isOpen && <CartDropdown />}
+        <Link className="logo-container" to={"/"}>
+          <img src={logo} alt="" />
+        </Link>
       </div>
     </>
   );
