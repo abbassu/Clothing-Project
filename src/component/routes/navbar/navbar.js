@@ -23,25 +23,13 @@ function Navbar() {
     <>
       <div className="NavbarSection">
         <div className="nav-links-container">
-          {currentUser?.uid === "upCC9gHfwcQQFN2ObsYXgHKg6193" ? (
-            <></>
-          ) : (
-            <>
-              <Cart />
-            </>
-          )}
+          <Cart />
           <div
-            className={`links  ${opeen ? "" : "jal"} `}
+            className={` ${opeen ? "" : "jal"} links  `}
             onClick={() => {
               setnotopeen(!opeen);
             }}
           >
-            {currentUser?.uid === "upCC9gHfwcQQFN2ObsYXgHKg6193" ? (
-              <></>
-            ) : (
-              <></>
-            )}
-
             <Link className="nav-link" to={"operation"}>
               {" "}
               عمليات
